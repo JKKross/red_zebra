@@ -8,3 +8,10 @@ Just a simple tool that you use when you're away from your computer and need to 
 update some variable value or what have you...
 
 It's nothing serious and I'm a total noob, so don't judge! :D
+
+
+
+![screenshot1](https://github.com/JKKross/Promo_Images/blob/master/Red_Zebra_screenshot_1.png)
+
+
+![screenshot2](https://github.com/JKKross/Promo_Images/blob/master/Red_Zebra_screenshot_2.png)

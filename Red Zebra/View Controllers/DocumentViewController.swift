@@ -8,11 +8,9 @@
 
 import UIKit
 
-class DocumentViewController: UIViewController, UITextViewDelegate {
+class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     @IBOutlet var titleLabel: UINavigationItem!
-    @IBOutlet var backButtonLabel: UIBarButtonItem!
-    @IBOutlet var doneButtonLabel: UIBarButtonItem!
     @IBOutlet var textView: UITextView!
     
     
@@ -21,16 +19,9 @@ class DocumentViewController: UIViewController, UITextViewDelegate {
     let autosaveInSeconds : TimeInterval = 5 * 60
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backButtonLabel.tintColor = .red
-        doneButtonLabel.tintColor = .red
         
         // adjust the text view so that it is not hidden behind keyboard
         let notificationCenter = NotificationCenter.default

@@ -8,21 +8,15 @@
 
 import UIKit
 
-class FontChooserViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class FontChooserViewController: CustomBaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet var backButton: UIBarButtonItem!
+    
     @IBOutlet var fontPicker: UIPickerView!
-    
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backButton.tintColor = .red
         
         self.fontPicker.dataSource = self
         self.fontPicker.delegate   = self

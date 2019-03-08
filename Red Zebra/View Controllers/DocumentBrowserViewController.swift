@@ -16,6 +16,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         super.viewDidLoad()
         
+        UserSettings.loadSettings()
+        
         let icon = UIImage(named: "settings_icon", in: nil, compatibleWith: nil)
         let item = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(presentSettingsView))
         
@@ -24,11 +26,11 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         delegate = self
         
-        allowsDocumentCreation = true
+        allowsDocumentCreation     = true
         allowsPickingMultipleItems = false
         
-        browserUserInterfaceStyle = .dark
-        view.tintColor = UIColor.red
+        browserUserInterfaceStyle  = .dark
+        view.tintColor             = .red
     }
     
     

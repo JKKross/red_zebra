@@ -8,23 +8,17 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class AboutViewController: CustomBaseViewController {
 
-    @IBOutlet var backButton: UIBarButtonItem!
+    
     @IBOutlet var versionNumberLabel: UILabel!
     @IBOutlet var copyright: UILabel!
     @IBOutlet var aboutTheAppLabel: UILabel!
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        backButton.tintColor = .red
+        
         versionNumberLabel.text = "version 0.5 (alpha)"
     }
 

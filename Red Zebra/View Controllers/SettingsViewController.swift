@@ -8,28 +8,15 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: CustomBaseViewController {
 
-    @IBOutlet var backButtonLabel: UIBarButtonItem!
+    
     @IBOutlet var textSizeLabel: UILabel!
     @IBOutlet var textSizeStepper: UIStepper!
-    @IBOutlet var chooseFontButton: UIButton!
-    @IBOutlet var infoButtonLabel: UIButton!
-    
-    
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        backButtonLabel.tintColor  = .red
-        textSizeStepper.tintColor  = .red
-        infoButtonLabel.tintColor  = .red
-        chooseFontButton.tintColor = .red
         
         UserSettings.loadSettings()
         
@@ -51,25 +38,35 @@ class SettingsViewController: UIViewController {
         let fontSizeValue  = Int(textSizeStepper.value)
         textSizeLabel.text = String(fontSizeValue)
         UserSettings.fontSize = Float(fontSizeValue)
+        
+        UserSettings.saveSettings()
     }
     
     
     @IBAction func chooseFontButtonTapped(_ sender: UIButton) {
-        
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let fontChooserVC = storyBoard.instantiateViewController(withIdentifier: "FontChooserViewController")
-        
-        present(fontChooserVC, animated: true, completion: nil)
+        presentVC(named: "FontChooserViewController")
+    }
+    
+    @IBAction func aboutButtonTapped(_ sender: UIButton) {
+        presentVC(named: "AboutViewController")
+    }
+    
+    @IBAction func licenseButtonTapped(_ sender: UIButton) {
+        presentVC(named: "LicenseViewController")
+    }
+    
+    @IBAction func privacyPolicyButtonTapped(_ sender: UIButton) {
+        presentVC(named: "PrivacyPolicyViewController")
     }
     
     
-    @IBAction func aboutButtonTapped(_ sender: UIButton) {
+    fileprivate func presentVC(named VC: String) {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let aboutVC = storyBoard.instantiateViewController(withIdentifier: "AboutViewController")
+        let aboutVC = storyBoard.instantiateViewController(withIdentifier: VC)
         
         present(aboutVC, animated: true, completion: nil)
     }
-   
+    
     
 }

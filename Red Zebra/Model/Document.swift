@@ -61,7 +61,7 @@ class Document: UIDocument {
         do {
             try self.writeContents(fileData, to: self.fileURL, for: .forOverwriting, originalContentsURL: self.fileURL)
         } catch {
-            print("\n\nFECK\n\n")
+            print("Something went wrong with file saving")
         }
         
         

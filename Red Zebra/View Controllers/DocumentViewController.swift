@@ -20,9 +20,11 @@ class DocumentViewController: UIViewController, UITextViewDelegate {
     var timer             : Timer?
     let autosaveInSeconds : TimeInterval = 5 * 60
     
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,11 +86,6 @@ class DocumentViewController: UIViewController, UITextViewDelegate {
     }
     
     
-//    func textViewDidChange(_ textView: UITextView) {
-//        <#code#>
-//    }
-    
-    
     @objc func adjustForKeyboard(notification: Notification) {
         // scrolls the textView so it doesn't become "invisible" behind the keyboard
         let userInfo = notification.userInfo!
@@ -125,7 +122,6 @@ class DocumentViewController: UIViewController, UITextViewDelegate {
         
         self.present(alert, animated: true, completion: nil)
     }
-    
     
     
 }

@@ -10,7 +10,7 @@ import UIKit
 
 struct UserSettings {
     
-    static var font = UIFont(name: fonts[prefferedFontNumber], size: CGFloat(fontSize))
+    static var font = UIFont(name: fonts[prefferedFontIndex], size: CGFloat(fontSize))
     
     
     static var fonts               = [
@@ -27,13 +27,13 @@ struct UserSettings {
     
     
     static var fontSize: Float     = 17
-    static var prefferedFontNumber = 6
+    static var prefferedFontIndex = 6
     
     static let defaults     = UserDefaults.standard
     
     
     static func saveSettings() {
-        defaults.set(prefferedFontNumber, forKey: Keys.fontFamily)
+        defaults.set(prefferedFontIndex, forKey: Keys.fontFamily)
         defaults.set(fontSize, forKey: Keys.fontSize)
     }
     
@@ -41,7 +41,7 @@ struct UserSettings {
     static func loadSettings() {
         
         fontSize            = defaults.float(forKey: Keys.fontSize)
-        prefferedFontNumber = defaults.integer(forKey: Keys.fontFamily)
+        prefferedFontIndex = defaults.integer(forKey: Keys.fontFamily)
         
         //  The saveSettings() method is not called when someone starts the app for the very first time,
         //  which result in:
@@ -54,7 +54,7 @@ struct UserSettings {
         //
         //  That's why there is this if statement:
         if fontSize < 10 {
-            prefferedFontNumber = 6
+            prefferedFontIndex  = 6
             fontSize            = 17
             
             //  SettingsViewController also uses some of those values to set it's default values,
@@ -62,7 +62,7 @@ struct UserSettings {
             self.saveSettings()
         }
         
-        font = UIFont(name: fonts[prefferedFontNumber], size: CGFloat(fontSize))
+        font = UIFont(name: fonts[prefferedFontIndex], size: CGFloat(fontSize))
     }
     
     
@@ -71,4 +71,5 @@ struct UserSettings {
         static let fontFamily      = "Font"
         static let fontSize        = "FontSize"
     }
+    
 }

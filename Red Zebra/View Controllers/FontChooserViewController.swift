@@ -27,7 +27,7 @@ class FontChooserViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.fontPicker.dataSource = self
         self.fontPicker.delegate   = self
         
-        self.fontPicker.selectRow(UserSettings.prefferedFontNumber, inComponent: 0, animated: true)
+        self.fontPicker.selectRow(UserSettings.prefferedFontIndex, inComponent: 0, animated: true)
     }
     
 
@@ -55,7 +55,7 @@ class FontChooserViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        UserSettings.prefferedFontNumber = row
+        UserSettings.prefferedFontIndex = row
     }
     
     

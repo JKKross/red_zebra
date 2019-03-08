@@ -20,15 +20,18 @@ class AboutViewController: UIViewController {
         return .lightContent
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         backButton.tintColor = .red
-        versionNumberLabel.text = "version 0.1 (alpha)"
+        versionNumberLabel.text = "version 0.5 (alpha)"
     }
 
     
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
 }

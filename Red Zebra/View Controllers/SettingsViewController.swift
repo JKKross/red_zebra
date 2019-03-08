@@ -70,5 +70,6 @@ class SettingsViewController: UIViewController {
         
         present(aboutVC, animated: true, completion: nil)
     }
+   
     
 }

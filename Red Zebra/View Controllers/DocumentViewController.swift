@@ -18,6 +18,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     var timer             : Timer?
     let autosaveInSeconds : TimeInterval = 5 * 60
     
+    var fileLoadedSuccesfully = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +46,12 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         // Access the document
         document?.open(completionHandler: { (success) in
             if success {
-                self.titleLabel.title = self.document?.fileURL.lastPathComponent
-                self.textView.text    = self.document?.returnFileContents()
+                self.titleLabel.title  = self.document?.fileURL.lastPathComponent
+                self.textView.text     = self.document?.returnFileContents()
+                self.fileLoadedSuccesfully = true
             } else {
-                self.textView.text    = ""
+                self.fileLoadedSuccesfully = false
+                self.textView.text     = ""
                 self.showErrorPopUp(text: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
             }
         })
@@ -57,14 +61,20 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         
         super.viewWillDisappear(animated)
-        self.document?.saveCurrentFile(text: self.textView.text)
+        
+        if fileLoadedSuccesfully {
+            self.document?.saveCurrentFile(text: self.textView.text)
+        }
     }
     
     
     @IBAction func dismissDocumentViewController() {
         dismiss(animated: true) {
             
-            self.document?.saveCurrentFile(text: self.textView.text)
+            if self.fileLoadedSuccesfully {
+                self.document?.saveCurrentFile(text: self.textView.text)
+            }
+            
             self.document?.close(completionHandler: nil)
         }
     }
@@ -73,7 +83,10 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         // hides the keyboard
         textView.resignFirstResponder()
-        self.document?.saveCurrentFile(text: self.textView.text)
+        
+        if fileLoadedSuccesfully {
+            self.document?.saveCurrentFile(text: self.textView.text)
+        }
     }
     
     
@@ -98,6 +111,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     
     @objc func autosave() {
+        
+        guard self.fileLoadedSuccesfully else { return }
         
         if let _ = self.document?.hasUnsavedChanges {
             self.document!.saveCurrentFile(text: self.textView.text)

@@ -355,9 +355,9 @@
                                         <rect key="frame" x="0.0" y="182" width="288" height="122"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">Red Zebra is a simple text editor inspired by iOS app "Textor" &amp; GNU's terminal text editor "NANO". Red Zebra is FOSS - Free and Open Source Software - and you can find the source code here.</string>
+                                                <string key="content">Red Zebra is a simple text editor inspired by iOS app "Textor" &amp; GNU's terminal text editor "NANO". Red Zebra is FOSS (Free and Open Source Software) and you can find the source code here.</string>
                                                 <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>

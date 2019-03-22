@@ -40,8 +40,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         self.textView.text = ""
         
-        UserSettings.loadSettings()
-        self.textView.font = UserSettings.font
+        UserSettings.sharedInstance.loadSettings()
+        self.textView.font = UserSettings.sharedInstance.font
         
         // Access the document
         document?.open(completionHandler: { (success) in

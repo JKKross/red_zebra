@@ -8,12 +8,18 @@
 
 import UIKit
 
-struct UserSettings {
-    
-    static var font = UIFont(name: fonts[prefferedFontIndex], size: CGFloat(fontSize))
+class UserSettings {
     
     
-    static var fonts               = [
+    private init() {}
+    static let sharedInstance = UserSettings()
+    
+    let defaults     = UserDefaults.standard
+    
+    
+    var font = UIFont(name: "Menlo", size: 17)
+    
+    var fonts               = [
                                         "American Typewriter",
                                         "Arial",
                                         "Chalkboard SE",
@@ -26,39 +32,36 @@ struct UserSettings {
                                     ]
     
     
-    static var fontSize: Float     = 17
-    static var prefferedFontIndex = 6
-    
-    static let defaults     = UserDefaults.standard
+    var fontSize: Float     = 17
+    var prefferedFontIndex = 6
     
     
-    static func saveSettings() {
+    func saveSettings() {
         defaults.set(prefferedFontIndex, forKey: Keys.fontFamily)
         defaults.set(fontSize, forKey: Keys.fontSize)
     }
     
     
-    static func loadSettings() {
+    func loadSettings() {
         
         fontSize            = defaults.float(forKey: Keys.fontSize)
         prefferedFontIndex = defaults.integer(forKey: Keys.fontFamily)
         
         //  The saveSettings() method is not called when someone starts the app for the very first time,
-        //  which result in:
+        //  which results in:
         //
-        //    darkMode     = false
         //    fontToChoose = 0
         //    fontSize     = 0.0
         //
-        //  Altough "fontToChoose = 0" is desired ("Menlo" is the default font), the other two are not.
+        //  That is not desired.
         //
         //  That's why there is this if statement:
         if fontSize < 10 {
             prefferedFontIndex  = 6
             fontSize            = 17
             
-            //  SettingsViewController also uses some of those values to set it's default values,
-            //  that's why we need to save:
+            //  FontChooserViewController also uses some of those values to set it's default values properly,
+            //  that's why we need to save here:
             self.saveSettings()
         }
         
@@ -67,7 +70,7 @@ struct UserSettings {
     
     
     
-    fileprivate struct Keys {
+    private struct Keys {
         static let fontFamily      = "Font"
         static let fontSize        = "FontSize"
     }

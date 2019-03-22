@@ -17,9 +17,9 @@ class LicenseViewController: CustomBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserSettings.loadSettings()
+        UserSettings.sharedInstance.loadSettings()
 
-        licenseTextField.font = UserSettings.font
+        licenseTextField.font = UserSettings.sharedInstance.font
         licenseTextField.text = gpl2text
         
         licenseTextField.isEditable = false

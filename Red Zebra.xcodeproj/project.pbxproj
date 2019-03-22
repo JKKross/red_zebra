@@ -19,7 +19,7 @@
 		38C2F1342222001E004C29D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C2F1332222001E004C29D1 /* Assets.xcassets */; };
 		38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2F137222208BC004C29D1 /* AboutViewController.swift */; };
 		38D472232221BEB20093B3D2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472222221BEB20093B3D2 /* SettingsViewController.swift */; };
-		38D472272221C7EE0093B3D2 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettings.swift */; };
+		38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		38C2F1332222001E004C29D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38C2F137222208BC004C29D1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		38D472222221BEB20093B3D2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		38D472262221C7EE0093B3D2 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 		38A771A622199D1B00261429 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38D472262221C7EE0093B3D2 /* UserSettings.swift */,
+				38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */,
 				384F1E372213822500D35EFA /* Document.swift */,
 			);
 			path = Model;
@@ -184,7 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */,
-				38D472272221C7EE0093B3D2 /* UserSettings.swift in Sources */,
+				38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */,
 				384F1E382213822500D35EFA /* Document.swift in Sources */,
 				38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */,
 				38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */,

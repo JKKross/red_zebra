@@ -16,7 +16,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         super.viewDidLoad()
         
-        UserSettings.loadSettings()
+        UserSettings.sharedInstance.loadSettings()
         
         let icon = UIImage(named: "settings_icon", in: nil, compatibleWith: nil)
         let item = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(presentSettingsView))

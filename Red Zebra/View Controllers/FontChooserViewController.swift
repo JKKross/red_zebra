@@ -10,8 +10,9 @@ import UIKit
 
 class FontChooserViewController: CustomBaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    
+    @IBOutlet var fontSizeLabel: UILabel!
     @IBOutlet var fontPicker: UIPickerView!
+    @IBOutlet var fontSizeStepper: UIStepper!
     
     
     override func viewDidLoad() {
@@ -22,6 +23,16 @@ class FontChooserViewController: CustomBaseViewController, UIPickerViewDataSourc
         self.fontPicker.delegate   = self
         
         self.fontPicker.selectRow(UserSettings.prefferedFontIndex, inComponent: 0, animated: true)
+        
+        UserSettings.loadSettings()
+        
+        fontSizeLabel.text    = String(Int(UserSettings.fontSize))
+        fontSizeStepper.value = Double(UserSettings.fontSize)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UserSettings.saveSettings()
     }
     
 
@@ -29,6 +40,16 @@ class FontChooserViewController: CustomBaseViewController, UIPickerViewDataSourc
         UserSettings.saveSettings()
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    @IBAction func fontSizePickerTapped(_ sender: UIStepper) {
+        
+        UserSettings.fontSize = Float(fontSizeStepper.value)
+        fontSizeLabel.text    = String(Int(UserSettings.fontSize))
+        UserSettings.saveSettings()
+    }
+    
     
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

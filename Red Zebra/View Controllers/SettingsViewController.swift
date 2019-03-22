@@ -11,39 +11,22 @@ import UIKit
 class SettingsViewController: CustomBaseViewController {
 
     
-    @IBOutlet var textSizeLabel: UILabel!
-    @IBOutlet var textSizeStepper: UIStepper!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserSettings.loadSettings()
-        
-        let fontSizeValue     = Int(UserSettings.fontSize)
-        textSizeLabel.text    = String(fontSizeValue)
-        textSizeStepper.value = Double(fontSizeValue)
     }
     
 
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
-        
-        UserSettings.saveSettings()
         dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func stepperTapped(_ sender: UIStepper) {
-        
-        let fontSizeValue  = Int(textSizeStepper.value)
-        textSizeLabel.text = String(fontSizeValue)
-        UserSettings.fontSize = Float(fontSizeValue)
-        
-        UserSettings.saveSettings()
-    }
+
     
     
-    @IBAction func chooseFontButtonTapped(_ sender: UIButton) {
+    @IBAction func fontsButtonTapped(_ sender: UIButton) {
         presentVC(named: "FontChooserViewController")
     }
     
@@ -55,9 +38,6 @@ class SettingsViewController: CustomBaseViewController {
         presentVC(named: "LicenseViewController")
     }
     
-    @IBAction func privacyPolicyButtonTapped(_ sender: UIButton) {
-        presentVC(named: "PrivacyPolicyViewController")
-    }
     
     
     fileprivate func presentVC(named VC: String) {

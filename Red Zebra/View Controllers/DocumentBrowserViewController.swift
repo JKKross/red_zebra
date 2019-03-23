@@ -154,7 +154,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let settingsVC = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController")
-        
+        settingsVC.modalPresentationStyle = .formSheet
+
         present(settingsVC, animated: true, completion: nil)
     }
     

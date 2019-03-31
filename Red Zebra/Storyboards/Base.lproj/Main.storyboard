@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +28,6 @@
         <!--Settings Tab Bar View Controller-->
         <scene sceneID="gKB-Ma-hGS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xcR-r6-zbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="SettingsViewController" id="tHq-bD-xOl" customClass="SettingsTabBarViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dDr-Ke-nIL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -37,11 +36,12 @@
                         <color key="barTintColor" red="0.11372912675142288" green="0.11372265964746475" blue="0.11372563987970352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="m28-uW-vhT" kind="relationship" relationship="viewControllers" id="Eyy-yR-8WP"/>
                         <segue destination="HXR-Vg-CuN" kind="relationship" relationship="viewControllers" id="gU6-64-zSW"/>
+                        <segue destination="m28-uW-vhT" kind="relationship" relationship="viewControllers" id="Eyy-yR-8WP"/>
                         <segue destination="neM-Oz-b0C" kind="relationship" relationship="viewControllers" id="Jne-ch-YSX"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcR-r6-zbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1022" y="1182"/>
         </scene>
@@ -88,7 +88,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cH6-XQ-cQF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="License" id="jlk-9K-onz"/>
+                    <tabBarItem key="tabBarItem" title="License" image="license_icon" id="jlk-9K-onz"/>
                     <connections>
                         <outlet property="licenseTextField" destination="xiC-2d-h9h" id="brr-Jx-Y0u"/>
                     </connections>
@@ -177,7 +177,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8EO-ma-CHq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" id="wam-oH-C6p"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about_icon" id="wam-oH-C6p"/>
                     <connections>
                         <outlet property="aboutTheAppLabel" destination="lAg-EL-OXi" id="ejV-yt-8Im"/>
                         <outlet property="copyright" destination="eVx-x9-01c" id="whM-f9-f4Y"/>
@@ -186,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITH-gn-T4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="2195"/>
+            <point key="canvasLocation" x="1022" y="2194"/>
         </scene>
         <!--Document View Controller-->
         <scene sceneID="dkP-xk-x6W">
@@ -315,7 +315,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bvl-GX-F10"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fonts" id="2G6-hd-toF"/>
+                    <tabBarItem key="tabBarItem" title="Fonts" image="fonts_icon" id="2G6-hd-toF"/>
                     <connections>
                         <outlet property="fontPicker" destination="zL2-5t-Mr9" id="igd-do-O5X"/>
                         <outlet property="fontSizeLabel" destination="5yQ-Cc-0Sv" id="ZbT-sM-h6e"/>
@@ -324,7 +324,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgX-ce-Wdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="2196"/>
+            <point key="canvasLocation" x="58" y="2193"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="about_icon" width="40" height="40"/>
+        <image name="fonts_icon" width="40" height="40"/>
+        <image name="license_icon" width="40" height="40"/>
+    </resources>
 </document>

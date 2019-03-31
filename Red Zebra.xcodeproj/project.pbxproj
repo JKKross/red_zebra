@@ -87,8 +87,8 @@
 				38A771A22219530B00261429 /* DocumentBrowserViewController.swift */,
 				384F1E352213822500D35EFA /* DocumentViewController.swift */,
 				38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */,
-				38C2F137222208BC004C29D1 /* AboutViewController.swift */,
 				38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */,
+				38C2F137222208BC004C29D1 /* AboutViewController.swift */,
 				3809AED22232D02200296D38 /* LicenseViewController.swift */,
 			);
 			path = "View Controllers";

@@ -65,11 +65,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xiC-2d-h9h">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EVU-Ol-TsO">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                </accessibility>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -78,19 +75,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862368580000001" blue="0.1686276495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="cH6-XQ-cQF" firstAttribute="bottom" secondItem="xiC-2d-h9h" secondAttribute="bottom" id="78f-Ec-4sR"/>
+                            <constraint firstItem="EVU-Ol-TsO" firstAttribute="leading" secondItem="cH6-XQ-cQF" secondAttribute="leading" id="4fr-rU-oJY"/>
+                            <constraint firstItem="EVU-Ol-TsO" firstAttribute="top" secondItem="MxL-aX-ZoQ" secondAttribute="bottom" id="HWS-vN-cRf"/>
+                            <constraint firstItem="cH6-XQ-cQF" firstAttribute="trailing" secondItem="EVU-Ol-TsO" secondAttribute="trailing" id="IOK-u0-V1V"/>
                             <constraint firstItem="MxL-aX-ZoQ" firstAttribute="top" secondItem="cH6-XQ-cQF" secondAttribute="top" id="LYN-KB-fFr"/>
                             <constraint firstItem="MxL-aX-ZoQ" firstAttribute="leading" secondItem="cH6-XQ-cQF" secondAttribute="leading" id="OaD-37-XiM"/>
-                            <constraint firstItem="xiC-2d-h9h" firstAttribute="top" secondItem="MxL-aX-ZoQ" secondAttribute="bottom" id="PfV-dZ-Voh"/>
-                            <constraint firstItem="cH6-XQ-cQF" firstAttribute="trailing" secondItem="xiC-2d-h9h" secondAttribute="trailing" id="QEo-5s-vIu"/>
+                            <constraint firstItem="cH6-XQ-cQF" firstAttribute="bottom" secondItem="EVU-Ol-TsO" secondAttribute="bottom" id="SnC-ZH-EGa"/>
                             <constraint firstItem="MxL-aX-ZoQ" firstAttribute="trailing" secondItem="cH6-XQ-cQF" secondAttribute="trailing" id="TQc-Ip-bff"/>
-                            <constraint firstItem="xiC-2d-h9h" firstAttribute="leading" secondItem="cH6-XQ-cQF" secondAttribute="leading" id="j5J-p7-wLd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cH6-XQ-cQF"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="License" image="license_icon" id="jlk-9K-onz"/>
                     <connections>
-                        <outlet property="licenseTextField" destination="xiC-2d-h9h" id="brr-Jx-Y0u"/>
+                        <outlet property="licenseTextField" destination="EVU-Ol-TsO" id="i0n-eq-nEK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzL-62-lhl" userLabel="First Responder" sceneMemberID="firstResponder"/>

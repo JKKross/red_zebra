@@ -13,13 +13,15 @@ class AboutViewController: CustomBaseViewController {
     
     @IBOutlet var versionNumberLabel: UILabel!
     @IBOutlet var copyright: UILabel!
+    @IBOutlet var settingsIconByLabel: UILabel!
     @IBOutlet var aboutTheAppLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        versionNumberLabel.text = "version 0.5 (alpha)"
+        versionNumberLabel.text    = "version 0.5 (alpha)"
+        aboutTheAppLabel.textColor = .white
     }
 
     

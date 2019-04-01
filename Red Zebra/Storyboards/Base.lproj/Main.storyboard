@@ -178,6 +178,7 @@
                     <connections>
                         <outlet property="aboutTheAppLabel" destination="lAg-EL-OXi" id="ejV-yt-8Im"/>
                         <outlet property="copyright" destination="eVx-x9-01c" id="whM-f9-f4Y"/>
+                        <outlet property="settingsIconByLabel" destination="Wgn-Ec-cbz" id="rJc-bV-9pE"/>
                         <outlet property="versionNumberLabel" destination="V8o-02-rpf" id="9xw-hO-g8V"/>
                     </connections>
                 </viewController>

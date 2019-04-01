@@ -71,6 +71,7 @@ class FontChooserViewController: CustomBaseViewController, UIPickerViewDataSourc
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         UserSettings.sharedInstance.prefferedFontIndex = row
+        UserSettings.sharedInstance.saveSettings()
     }
     
     

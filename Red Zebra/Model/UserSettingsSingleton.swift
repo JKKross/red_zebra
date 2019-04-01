@@ -14,7 +14,7 @@ class UserSettings {
     private init() {}
     static let sharedInstance = UserSettings()
     
-    let defaults     = UserDefaults.standard
+    let defaults = UserDefaults.standard
     
     
     var font = UIFont(name: "Menlo", size: 17)
@@ -32,7 +32,7 @@ class UserSettings {
                                     ]
     
     
-    var fontSize: Float     = 17
+    var fontSize: Float    = 17
     var prefferedFontIndex = 6
     
     
@@ -45,7 +45,7 @@ class UserSettings {
     func loadSettings() {
         
         fontSize            = defaults.float(forKey: Keys.fontSize)
-        prefferedFontIndex = defaults.integer(forKey: Keys.fontFamily)
+        prefferedFontIndex  = defaults.integer(forKey: Keys.fontFamily)
         
         //  The saveSettings() method is not called when someone starts the app for the very first time,
         //  which results in:

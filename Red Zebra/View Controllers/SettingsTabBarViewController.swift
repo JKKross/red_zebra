@@ -14,8 +14,5 @@ class SettingsTabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.tabBar.tintColor = .red
     }
-    
-
- 
 
 }

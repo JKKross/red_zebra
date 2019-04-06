@@ -36,8 +36,8 @@
                         <color key="barTintColor" red="0.11372912675142288" green="0.11372265964746475" blue="0.11372563987970352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="HXR-Vg-CuN" kind="relationship" relationship="viewControllers" id="gU6-64-zSW"/>
                         <segue destination="m28-uW-vhT" kind="relationship" relationship="viewControllers" id="Eyy-yR-8WP"/>
+                        <segue destination="HXR-Vg-CuN" kind="relationship" relationship="viewControllers" id="gU6-64-zSW"/>
                         <segue destination="neM-Oz-b0C" kind="relationship" relationship="viewControllers" id="Jne-ch-YSX"/>
                     </connections>
                 </tabBarController>
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzL-62-lhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1995" y="2195"/>
+            <point key="canvasLocation" x="1971" y="2193"/>
         </scene>
         <!--AboutViewController-->
         <scene sceneID="qj5-Rf-ewI">
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITH-gn-T4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="2194"/>
+            <point key="canvasLocation" x="71" y="2193"/>
         </scene>
         <!--Document View Controller-->
         <scene sceneID="dkP-xk-x6W">
@@ -213,7 +213,7 @@
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ec-0g-dTQ" userLabel="Code Text View">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -264,13 +264,13 @@
                                 <rect key="frame" x="16" y="84" width="288" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-5n-XKH">
-                                        <rect key="frame" x="0.0" y="0.0" width="83" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="25"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aG8-aN-s7H">
-                                        <rect key="frame" x="153" y="0.0" width="135" height="25"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aG8-aN-s7H">
+                                        <rect key="frame" x="149" y="0.0" width="139" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yQ-Cc-0Sv">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -283,7 +283,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minimumValue="12" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="UgS-h9-lc0">
-                                                <rect key="frame" x="41" y="0.0" width="94" height="29"/>
+                                                <rect key="frame" x="45" y="0.0" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="fontSizePickerTapped:" destination="HXR-Vg-CuN" eventType="valueChanged" id="EcT-2L-g9E"/>
                                                 </connections>
@@ -292,37 +292,60 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zL2-5t-Mr9">
-                                <rect key="frame" x="0.0" y="129" width="320" height="390"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.16862368580000001" blue="0.1686276495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="N02-bu-rdL">
+                                <rect key="frame" x="100" y="229" width="120" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXr-MC-oUG">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="56H-gt-yem"/>
+                                            <constraint firstAttribute="height" constant="40" id="hHn-5v-ydG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <state key="normal" title="Menlo"/>
+                                        <connections>
+                                            <action selector="menloTapped:" destination="HXR-Vg-CuN" eventType="touchUpInside" id="ZcG-Rn-YzI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCm-dL-gq8">
+                                        <rect key="frame" x="0.0" y="70" width="120" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="CW1-aO-tZA"/>
+                                            <constraint firstAttribute="width" constant="120" id="IU2-cf-RWF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <state key="normal" title="Helvetica"/>
+                                        <connections>
+                                            <action selector="helveticaTapped:" destination="HXR-Vg-CuN" eventType="touchUpInside" id="yRz-lf-qC8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862368580000001" blue="0.1686276495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ekD-NX-oW2" firstAttribute="top" secondItem="bvl-GX-F10" secondAttribute="top" id="1OE-9h-PSv"/>
                             <constraint firstItem="bvl-GX-F10" firstAttribute="trailing" secondItem="dKI-gi-se0" secondAttribute="trailing" constant="16" id="Epm-W2-eA6"/>
-                            <constraint firstItem="bvl-GX-F10" firstAttribute="bottom" secondItem="zL2-5t-Mr9" secondAttribute="bottom" id="HAj-nz-7IU"/>
+                            <constraint firstItem="N02-bu-rdL" firstAttribute="centerX" secondItem="GIW-G0-LmC" secondAttribute="centerX" id="IZl-Kp-pz9"/>
                             <constraint firstItem="dKI-gi-se0" firstAttribute="leading" secondItem="bvl-GX-F10" secondAttribute="leading" constant="16" id="Jjz-Ue-vKe"/>
                             <constraint firstItem="dKI-gi-se0" firstAttribute="top" secondItem="ekD-NX-oW2" secondAttribute="bottom" constant="20" id="NdV-ho-wK9"/>
                             <constraint firstItem="ekD-NX-oW2" firstAttribute="leading" secondItem="bvl-GX-F10" secondAttribute="leading" id="hxd-dn-NQS"/>
-                            <constraint firstItem="zL2-5t-Mr9" firstAttribute="top" secondItem="dKI-gi-se0" secondAttribute="bottom" constant="20" id="kM0-lK-ACw"/>
                             <constraint firstItem="ekD-NX-oW2" firstAttribute="trailing" secondItem="bvl-GX-F10" secondAttribute="trailing" id="kli-S9-VyT"/>
-                            <constraint firstItem="zL2-5t-Mr9" firstAttribute="trailing" secondItem="bvl-GX-F10" secondAttribute="trailing" id="ssT-iR-5Q3"/>
-                            <constraint firstItem="zL2-5t-Mr9" firstAttribute="leading" secondItem="bvl-GX-F10" secondAttribute="leading" id="ytK-hR-Ojp"/>
+                            <constraint firstItem="N02-bu-rdL" firstAttribute="centerY" secondItem="GIW-G0-LmC" secondAttribute="centerY" id="xFG-SX-oY0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bvl-GX-F10"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fonts" image="fonts_icon" id="2G6-hd-toF"/>
                     <connections>
-                        <outlet property="fontPicker" destination="zL2-5t-Mr9" id="igd-do-O5X"/>
                         <outlet property="fontSizeLabel" destination="5yQ-Cc-0Sv" id="ZbT-sM-h6e"/>
                         <outlet property="fontSizeStepper" destination="UgS-h9-lc0" id="JB3-LA-Fpn"/>
+                        <outlet property="helveticaButton" destination="sCm-dL-gq8" id="FGg-ns-uZy"/>
+                        <outlet property="menloButton" destination="GXr-MC-oUG" id="vxC-E0-E3A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgX-ce-Wdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="2193"/>
+            <point key="canvasLocation" x="1022" y="2194"/>
         </scene>
     </scenes>
     <resources>

@@ -20,9 +20,16 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         let icon = UIImage(named: "settings_icon", in: nil, compatibleWith: nil)
         let item = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(presentSettingsView))
-        
         self.additionalLeadingNavigationBarButtonItems = [item]
         
+        
+        let action = UIDocumentBrowserAction(identifier: "ChangeExtension", localizedTitle: "Change file extension", availability: .menu, handler: { url in
+            
+//                        self.changeFileExtension(files: url)
+            
+        })
+        
+        self.customActions = [action]
         
         delegate = self
         
@@ -66,7 +73,23 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             
             // what happens when user presses "OK"
             
-            guard let name = alert.textFields![0].text else { return }
+            guard let name = alert.textFields![0].text else {
+                importHandler(nil, .none)
+                return
+            }
+            
+            guard name.first?.isLetter == true else {
+                self.showErrorPopUp(text: #"You have to begin your file name with a letter ("a-z" or "A-Z")"#)
+                importHandler(nil, .none)
+                return
+            }
+            
+            guard self.isFileNameOkToUse(fileName: name) == true else {
+                // Cancel document creation
+                self.showErrorPopUp(text: #"You can only use characters "a-z", "A-Z", "0-9", "_" & "." followed by an extension name (e.g.: "Hello_World_v2.swift")"#)
+                importHandler(nil, .none)
+                return
+            }
             
             let newDocument    = Document(fileName: name)
             let newDocumentURL = newDocument.fileURL
@@ -155,7 +178,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let settingsVC = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController")
         settingsVC.modalPresentationStyle = .formSheet
-
+        
         present(settingsVC, animated: true, completion: nil)
     }
     
@@ -167,6 +190,44 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in return }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+//
+//     WORK IN PROGRESS
+//
+//        func changeFileExtension(files url: [URL]) {
+//
+//            var documentsToChange = url
+//
+//            let alert = UIAlertController(title: "Change the extension:", message: "without the \".\"", preferredStyle: .alert)
+//
+//            alert.addTextField(configurationHandler: { textField in
+//                textField.placeholder = "txt"
+//                })
+//
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+//                return
+//            }))
+//
+//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+//                return
+//            }))
+//
+//            self.present(alert, animated: true, completion: nil)
+//
+//        }
+//
+    
+    
+    func isFileNameOkToUse(fileName file: String) -> Bool {
+        
+        for i in file {
+            if i.isLetter != true && i.isNumber != true && i != "." && i != "_" {
+                return false
+            }
+        }
+        return true
     }
     
     

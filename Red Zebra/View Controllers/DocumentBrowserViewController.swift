@@ -84,6 +84,12 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 return
             }
             
+            guard self.doesHaveAnExtenstion(fileName: name) == true else {
+                self.showErrorPopUp(text: #"You have to give your file an extension (e.g.: ".txt", ".swift" etc.)"#)
+                importHandler(nil, .none)
+                return
+            }
+            
             guard self.isFileNameOkToUse(fileName: name) == true else {
                 // Cancel document creation
                 self.showErrorPopUp(text: #"You can only use characters "a-z", "A-Z", "0-9", "_" & "." followed by an extension name (e.g.: "Hello_World_v2.swift")"#)
@@ -223,13 +229,37 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     func isFileNameOkToUse(fileName file: String) -> Bool {
         
         for i in file {
-            if i.isLetter != true && i.isNumber != true && i != "." && i != "_" {
+            if i.isLetter == false && i.isNumber == false && i != "." && i != "_" && i != "-" && i != "(" && i != ")" && i != " " {
                 return false
             }
         }
         return true
     }
+
+
+    func doesHaveAnExtenstion(fileName: String) -> Bool {
     
+    var file = fileName
+    
+    for _ in file {
+        
+        let dot = file.removeFirst()
+        
+        if dot == "." {
+            
+            for _ in file {
+                
+                let ext = file.removeFirst()
+                if ext == " " {
+                    return false
+                }
+            }
+            return true
+        }
+    }
+    return false
+}
+
     
 }
 

@@ -213,7 +213,7 @@
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ec-0g-dTQ" userLabel="Code Text View">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -292,55 +292,47 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="N02-bu-rdL">
-                                <rect key="frame" x="100" y="229" width="120" height="110"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXr-MC-oUG">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="56H-gt-yem"/>
-                                            <constraint firstAttribute="height" constant="40" id="hHn-5v-ydG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <state key="normal" title="Menlo"/>
-                                        <connections>
-                                            <action selector="menloTapped:" destination="HXR-Vg-CuN" eventType="touchUpInside" id="ZcG-Rn-YzI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCm-dL-gq8">
-                                        <rect key="frame" x="0.0" y="70" width="120" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="CW1-aO-tZA"/>
-                                            <constraint firstAttribute="width" constant="120" id="IU2-cf-RWF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <state key="normal" title="Helvetica"/>
-                                        <connections>
-                                            <action selector="helveticaTapped:" destination="HXR-Vg-CuN" eventType="touchUpInside" id="yRz-lf-qC8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-R2-3SX">
+                                <rect key="frame" x="16" y="129" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Menlo"/>
+                                    <segment title="Helvetica"/>
+                                </segments>
+                                <connections>
+                                    <action selector="fontSwitcher:" destination="HXR-Vg-CuN" eventType="valueChanged" id="U7K-cx-i6F"/>
+                                </connections>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="// try changing your prefered font or the size to and check how it looks here!" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77o-eP-rSV">
+                                <rect key="frame" x="16" y="173" width="288" height="330"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862368580000001" blue="0.1686276495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ekD-NX-oW2" firstAttribute="top" secondItem="bvl-GX-F10" secondAttribute="top" id="1OE-9h-PSv"/>
+                            <constraint firstItem="77o-eP-rSV" firstAttribute="top" secondItem="43Z-R2-3SX" secondAttribute="bottom" constant="16" id="1wW-Jl-DBY"/>
+                            <constraint firstItem="77o-eP-rSV" firstAttribute="leading" secondItem="bvl-GX-F10" secondAttribute="leading" constant="16" id="9N7-1V-rmO"/>
                             <constraint firstItem="bvl-GX-F10" firstAttribute="trailing" secondItem="dKI-gi-se0" secondAttribute="trailing" constant="16" id="Epm-W2-eA6"/>
-                            <constraint firstItem="N02-bu-rdL" firstAttribute="centerX" secondItem="GIW-G0-LmC" secondAttribute="centerX" id="IZl-Kp-pz9"/>
                             <constraint firstItem="dKI-gi-se0" firstAttribute="leading" secondItem="bvl-GX-F10" secondAttribute="leading" constant="16" id="Jjz-Ue-vKe"/>
                             <constraint firstItem="dKI-gi-se0" firstAttribute="top" secondItem="ekD-NX-oW2" secondAttribute="bottom" constant="20" id="NdV-ho-wK9"/>
+                            <constraint firstItem="43Z-R2-3SX" firstAttribute="leading" secondItem="bvl-GX-F10" secondAttribute="leading" constant="16" id="WwZ-xE-ITW"/>
+                            <constraint firstItem="bvl-GX-F10" firstAttribute="trailing" secondItem="43Z-R2-3SX" secondAttribute="trailing" constant="16" id="cav-8O-l8x"/>
+                            <constraint firstItem="43Z-R2-3SX" firstAttribute="top" secondItem="dKI-gi-se0" secondAttribute="bottom" constant="20" id="eLQ-LS-HDU"/>
                             <constraint firstItem="ekD-NX-oW2" firstAttribute="leading" secondItem="bvl-GX-F10" secondAttribute="leading" id="hxd-dn-NQS"/>
                             <constraint firstItem="ekD-NX-oW2" firstAttribute="trailing" secondItem="bvl-GX-F10" secondAttribute="trailing" id="kli-S9-VyT"/>
-                            <constraint firstItem="N02-bu-rdL" firstAttribute="centerY" secondItem="GIW-G0-LmC" secondAttribute="centerY" id="xFG-SX-oY0"/>
+                            <constraint firstItem="bvl-GX-F10" firstAttribute="bottom" secondItem="77o-eP-rSV" secondAttribute="bottom" constant="16" id="wkE-gT-wdd"/>
+                            <constraint firstItem="bvl-GX-F10" firstAttribute="trailing" secondItem="77o-eP-rSV" secondAttribute="trailing" constant="16" id="ykc-z2-eiI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bvl-GX-F10"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fonts" image="fonts_icon" id="2G6-hd-toF"/>
                     <connections>
+                        <outlet property="fontChooserSegmentedControl" destination="43Z-R2-3SX" id="TaB-VE-7Sg"/>
+                        <outlet property="fontExampleTextView" destination="77o-eP-rSV" id="7L9-2n-oVA"/>
                         <outlet property="fontSizeLabel" destination="5yQ-Cc-0Sv" id="ZbT-sM-h6e"/>
                         <outlet property="fontSizeStepper" destination="UgS-h9-lc0" id="JB3-LA-Fpn"/>
-                        <outlet property="helveticaButton" destination="sCm-dL-gq8" id="FGg-ns-uZy"/>
-                        <outlet property="menloButton" destination="GXr-MC-oUG" id="vxC-E0-E3A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgX-ce-Wdx" userLabel="First Responder" sceneMemberID="firstResponder"/>

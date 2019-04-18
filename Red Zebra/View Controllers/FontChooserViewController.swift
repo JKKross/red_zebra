@@ -12,8 +12,8 @@ class FontChooserViewController: CustomBaseViewController {
     
     @IBOutlet var fontSizeLabel: UILabel!
     @IBOutlet var fontSizeStepper: UIStepper!
-    @IBOutlet var menloButton: UIButton!
-    @IBOutlet var helveticaButton: UIButton!
+    @IBOutlet var fontChooserSegmentedControl: UISegmentedControl!
+    @IBOutlet var fontExampleTextView: UITextView!
     
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class FontChooserViewController: CustomBaseViewController {
         fontSizeLabel.text    = String(Int(UserSettings.sharedInstance.fontSize))
         fontSizeStepper.value = Double(UserSettings.sharedInstance.fontSize)
         
-        updateButtonsAppearance()
+        updateExampleText()
     }
     
     
@@ -45,41 +45,41 @@ class FontChooserViewController: CustomBaseViewController {
         UserSettings.sharedInstance.fontSize = Float(fontSizeStepper.value)
         fontSizeLabel.text                   = String(Int(UserSettings.sharedInstance.fontSize))
         UserSettings.sharedInstance.saveSettings()
+        updateExampleText()
     }
     
-    
-    @IBAction func menloTapped(_ sender: UIButton) {
+  
+    @IBAction func fontSwitcher(_ sender: UISegmentedControl) {
         
-        UserSettings.sharedInstance.prefferedFontIndex = 0
-        updateButtonsAppearance()
-        UserSettings.sharedInstance.saveSettings()
-    }
-    
-    
-    @IBAction func helveticaTapped(_ sender: UIButton) {
-        
-        UserSettings.sharedInstance.prefferedFontIndex = 1
-        updateButtonsAppearance()
-        UserSettings.sharedInstance.saveSettings()
-    }
-    
-    
-    func updateButtonsAppearance() {
-        
-        menloButton.layer.cornerRadius        = 5
-        helveticaButton.layer.cornerRadius = 5
-        
-        if UserSettings.sharedInstance.prefferedFontIndex == 0 {
-            menloButton.backgroundColor        = .red
-            menloButton.tintColor              = .black
-            helveticaButton.backgroundColor = .clear
-            helveticaButton.tintColor       = .red
-        } else {
-            helveticaButton.backgroundColor = .red
-            helveticaButton.tintColor       = .black
-            menloButton.backgroundColor        = .clear
-            menloButton.tintColor              = .red
+        if sender.selectedSegmentIndex == 0 {
+            // "Menlo" selected
+            UserSettings.sharedInstance.prefferedFontIndex = 0
+        } else if sender.selectedSegmentIndex == 1 {
+            // "Helvetica" selected
+            UserSettings.sharedInstance.prefferedFontIndex = 1
         }
+        
+        UserSettings.sharedInstance.saveSettings()
+        updateExampleText()
     }
+    
+    
+    func updateExampleText() {
+        
+        UserSettings.sharedInstance.loadSettings()
+        fontExampleTextView.font = UserSettings.sharedInstance.font
+        
+        fontExampleTextView.text = """
+        // try changing your prefered font or it's size and see how it looks! 😎
+        
+        struct fontExample {
+        
+            var myFont: UIFont = UIFont(name: "\(UserSettings.sharedInstance.fonts[UserSettings.sharedInstance.prefferedFontIndex])", size: \(UserSettings.sharedInstance.fontSize))
+        
+        }
+        """
+        
+    }
+    
     
 }

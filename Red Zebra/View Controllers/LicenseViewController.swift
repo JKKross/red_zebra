@@ -17,20 +17,11 @@ class LicenseViewController: CustomBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserSettings.sharedInstance.loadSettings()
-
-        licenseTextField.font = UserSettings.sharedInstance.font
         licenseTextField.text = gpl2text
         
         licenseTextField.isEditable = false
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        UserSettings.sharedInstance.loadSettings()
-        licenseTextField.font = UserSettings.sharedInstance.font
-        licenseTextField.text = gpl2text
-    }
     
 
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {

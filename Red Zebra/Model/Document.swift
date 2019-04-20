@@ -14,7 +14,6 @@ class Document: UIDocument {
     
     
     override init(fileURL url: URL) {
-        
         super.init(fileURL: url)
     }
     
@@ -28,16 +27,11 @@ class Document: UIDocument {
     }
 
     
-    override func contents(forType typeName: String) throws -> Any {
-        // Encode your document with an instance of NSData or NSFileWrapper
-        
-        return Data()
-    }
+    override func contents(forType typeName: String) throws -> Any { return Data() }
     
     
-    override func load(fromContents contents: Any, ofType typeName: String?) throws {
-        // Load your document from contents
-    }
+    override func load(fromContents contents: Any, ofType typeName: String?) throws {}
+    
     
     
     func returnFileContents() -> String {
@@ -63,14 +57,6 @@ class Document: UIDocument {
         } catch {
             print("Something went wrong with file saving")
         }
-        
-        
-        
-        
-//        self.save(to: self.fileURL, for: .forOverwriting, completionHandler: { _ in return })
-        
-        
-        //return Result.success
     }
     
     

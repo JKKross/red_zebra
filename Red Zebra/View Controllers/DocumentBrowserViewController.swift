@@ -23,11 +23,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         self.additionalLeadingNavigationBarButtonItems = [item]
         
         
-        let action = UIDocumentBrowserAction(identifier: "ChangeExtension", localizedTitle: "Change file extension", availability: .menu, handler: { url in
-            
-//                        self.changeFileExtension(files: url)
-            
-        })
+        let action = UIDocumentBrowserAction(identifier: "ChangeExtension", localizedTitle: "Change file extension", availability: .menu, handler: { url in self.changeFileExtension(files: url) })
         
         self.customActions = [action]
         
@@ -51,9 +47,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
          
          func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void)
          
-         Probably will refactor in the future.
-         
-         TODO: Refactor
+         Probably should refactor in the future.
          
          */
         
@@ -84,7 +78,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 return
             }
             
-            guard self.doesHaveAnExtenstion(fileName: name) == true else {
+            guard self.doesHaveAnExtension(fileName: name) == true else {
                 self.showErrorPopUp(text: #"You have to give your file an extension (e.g.: ".txt", ".swift" etc.)"#)
                 importHandler(nil, .none)
                 return
@@ -199,31 +193,93 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
-//
-//     WORK IN PROGRESS
-//
-//        func changeFileExtension(files url: [URL]) {
-//
-//            var documentsToChange = url
-//
-//            let alert = UIAlertController(title: "Change the extension:", message: "without the \".\"", preferredStyle: .alert)
-//
-//            alert.addTextField(configurationHandler: { textField in
-//                textField.placeholder = "txt"
-//                })
-//
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//                return
-//            }))
-//
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-//                return
-//            }))
-//
-//            self.present(alert, animated: true, completion: nil)
-//
-//        }
-//
+    
+    //     WORK IN PROGRESS
+    
+    func changeFileExtension(files url: [URL]) {
+        
+        var documentsToChange = url
+        
+        let alert = UIAlertController(title: "Change the extension:", message: #"e.g.: "txt", "swift", "c", etc."#, preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: { textField in
+            textField.placeholder = "txt"
+        })
+        
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            
+            guard var newExtension = alert.textFields![0].text else { return }
+            
+            if newExtension.first == "." {
+                newExtension.removeFirst()
+            }
+            
+            for i in newExtension {
+                guard i.isLetter || i.isNumber else {
+                    self.showErrorPopUp(text: "Invalid file extension")
+                    return
+                }
+            }
+            
+            // the rest of this closure is really hacky, don't touch
+            documentsToChange[0].deletePathExtension()
+            documentsToChange[0].appendPathExtension(newExtension)
+            
+            let newDocumentName = documentsToChange[0].lastPathComponent
+            
+            let newDoc    = Document(fileName: newDocumentName)
+            let newDocURL = newDoc.fileURL
+            
+            
+            // Create a new document in a temporary location
+            newDoc.save(to: newDocURL, for: .forCreating) { (saveSuccess) in
+
+                newDoc.saveCurrentFile(text: Document(fileURL: url[0]).returnFileContents())
+                // Make sure the document saved successfully
+                guard saveSuccess else {
+                    // Cancel document creation
+                    self.showErrorPopUp(text: "Oops! Something went wrong!\nTry again, please.")
+                    return
+                }
+
+                // Close the document.
+                newDoc.close(completionHandler: { (closeSuccess) in
+
+                    // Make sure the document closed successfully
+                    guard closeSuccess else {
+                        self.showErrorPopUp(text: "Oops! Something went wrong!\nTry again, please.")
+                        return
+                    }
+
+                    // Pass the document's temporary URL to the import handler.
+                    self.importDocument(at: newDocURL, nextToDocumentAt: url[0], mode: .move, completionHandler: { _,_ in
+
+                        // when everything is finished, remove the original file
+                        let fileManager = FileManager.default
+                        do {
+                            try fileManager.removeItem(atPath: url[0].path)
+                        } catch {
+                            self.showErrorPopUp(text: "Could not remove \(url[0].lastPathComponent).\nPlease remove manualy.")
+                        }
+                        return })
+                    return
+                })
+                return
+            }
+            return
+        }))
+        
+        
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            return
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     
     
     func fileNameIsOkToUse(fileName file: String) -> Bool {
@@ -235,31 +291,31 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         }
         return true
     }
-
-
-    func doesHaveAnExtenstion(fileName: String) -> Bool {
     
-    var file = fileName
     
-    for _ in file {
+    func doesHaveAnExtension(fileName: String) -> Bool {
         
-        let dot = file.removeFirst()
+        var file = fileName
         
-        if dot == "." {
+        for _ in file {
             
-            for _ in file {
+            let dot = file.removeFirst()
+            
+            if dot == "." {
                 
-                let ext = file.removeFirst()
-                if ext == " " {
-                    return false
+                for _ in file {
+                    
+                    let ext = file.removeFirst()
+                    if ext == " " {
+                        return false
+                    }
                 }
+                return true
             }
-            return true
         }
+        return false
     }
-    return false
-}
-
+    
     
 }
 

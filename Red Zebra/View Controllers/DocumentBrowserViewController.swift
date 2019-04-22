@@ -194,7 +194,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     
     
-    //     WORK IN PROGRESS
     
     func changeFileExtension(files url: [URL]) {
         
@@ -222,12 +221,33 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 }
             }
             
-            // the rest of this closure is really hacky, don't touch
+            
+            if newExtension == documentsToChange[0].pathExtension { return }
+            
+            
+            
+            // THE REST OF THIS CLOSURE IS REALLY HACKY - DON'T TOUCH!!!
+            //
+            // The way this works is the app creates completely new file with the same name,
+            // but different file extension.
+            // Then the text from the original file is copied into this new file
+            // (again: same name, new extension) and saved.
+            // After that, the app tries to remove the original file and if it fails,
+            // it shows the user a pop-up.
+            //
+            // The reason I did it this way is because I wasn't able to solve
+            // the problem the way I expected it to be solvable - which would be using:
+            //
+            //        FileManager.default.moveItem(at: url[0], to: url[0].deletingPathExtension().appendingPathExtension(newExtension))
+            //
+            // Using that gets you an error saying you don't have permission to manipulate the files.
+            // What is weird (in my opinion) is that deleting the file is completely fine...
+            
             documentsToChange[0].deletePathExtension()
             documentsToChange[0].appendPathExtension(newExtension)
-            
+
             let newDocumentName = documentsToChange[0].lastPathComponent
-            
+
             let newDoc    = Document(fileName: newDocumentName)
             let newDocURL = newDoc.fileURL
             
@@ -257,12 +277,15 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 
                         // when everything is finished, remove the original file
                         let fileManager = FileManager.default
+                        
                         do {
                             try fileManager.removeItem(atPath: url[0].path)
                         } catch {
-                            self.showErrorPopUp(text: "Could not remove \(url[0].lastPathComponent).\nPlease remove manualy.")
+                            self.showErrorPopUp(text: "Could not automatically remove file with original extension (\(url[0].lastPathComponent)).\nPlease remove manually.")
                         }
-                        return })
+                        
+                        return
+                    })
                     return
                 })
                 return

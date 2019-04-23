@@ -12,7 +12,10 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     @IBOutlet var titleLabel: UINavigationItem!
     @IBOutlet var textView: UITextView!
+    @IBOutlet var undoButtonLabel: UIBarButtonItem!
+    @IBOutlet var redoButtonLabel: UIBarButtonItem!
     
+
     
     var document          : Document?
     var timer             : Timer?
@@ -24,14 +27,18 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // adjust the text view so that it is not hidden behind keyboard
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
+
         // autosaving
         timer = Timer.scheduledTimer(timeInterval: autosaveInSeconds, target: self, selector: #selector(self.autosave), userInfo: nil, repeats: true)
+
+        textView.delegate = self
+
+        undoButtonLabel.tintColor = .gray
+        redoButtonLabel.tintColor = .gray
     }
     
     
@@ -46,12 +53,12 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         // Access the document
         document?.open(completionHandler: { (success) in
             if success {
-                self.titleLabel.title  = self.document?.fileURL.lastPathComponent
-                self.textView.text     = self.document?.returnFileContents()
+                self.titleLabel.title      = self.document?.fileURL.lastPathComponent
+                self.textView.text         = self.document?.returnFileContents()
                 self.fileLoadedSuccesfully = true
             } else {
                 self.fileLoadedSuccesfully = false
-                self.textView.text     = ""
+                self.textView.text         = ""
                 self.showErrorPopUp(text: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
             }
         })
@@ -67,7 +74,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         }
     }
     
-    
     @IBAction func dismissDocumentViewController() {
         dismiss(animated: true) {
             
@@ -79,7 +85,33 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         }
     }
     
-    
+
+    @IBAction func undoTapped(_ sender: UIBarButtonItem) {
+
+        textView.undoManager?.undo()
+        let canUndo: Bool = textView.undoManager?.canUndo ?? false
+
+        if canUndo {
+            undoButtonLabel.tintColor = .red
+        } else {
+            undoButtonLabel.tintColor = .gray
+        }
+    }
+
+
+    @IBAction func redoTapped(_ sender: UIBarButtonItem) {
+
+        textView.undoManager?.redo()
+        let canRedo: Bool = textView.undoManager?.canRedo ?? false
+
+        if canRedo {
+            redoButtonLabel.tintColor = .red
+        } else {
+            redoButtonLabel.tintColor = .gray
+        }
+    }
+
+
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         // hides the keyboard
         textView.resignFirstResponder()
@@ -107,6 +139,25 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
         let selectedRange = textView.selectedRange
         textView.scrollRangeToVisible(selectedRange)
+    }
+
+
+    func textViewDidChange(_ textView: UITextView) {
+
+        let canUndo: Bool = textView.undoManager?.canUndo ?? false
+        let canRedo: Bool = textView.undoManager?.canRedo ?? false
+
+        if canUndo {
+            undoButtonLabel.tintColor = .red
+        } else {
+            undoButtonLabel.tintColor = .gray
+        }
+
+        if canRedo {
+            redoButtonLabel.tintColor = .red
+        } else {
+            redoButtonLabel.tintColor = .gray
+        }
     }
     
     

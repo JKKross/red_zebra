@@ -36,8 +36,8 @@
                         <color key="barTintColor" red="0.11372912675142288" green="0.11372265964746475" blue="0.11372563987970352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="m28-uW-vhT" kind="relationship" relationship="viewControllers" id="Eyy-yR-8WP"/>
                         <segue destination="HXR-Vg-CuN" kind="relationship" relationship="viewControllers" id="gU6-64-zSW"/>
+                        <segue destination="m28-uW-vhT" kind="relationship" relationship="viewControllers" id="Eyy-yR-8WP"/>
                         <segue destination="neM-Oz-b0C" kind="relationship" relationship="viewControllers" id="Jne-ch-YSX"/>
                     </connections>
                 </tabBarController>
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITH-gn-T4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="2193"/>
+            <point key="canvasLocation" x="1022" y="2193"/>
         </scene>
         <!--Document View Controller-->
         <scene sceneID="dkP-xk-x6W">
@@ -347,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgX-ce-Wdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="2194"/>
+            <point key="canvasLocation" x="94" y="2193"/>
         </scene>
     </scenes>
     <resources>

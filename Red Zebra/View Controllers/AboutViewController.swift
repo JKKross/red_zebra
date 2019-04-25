@@ -20,7 +20,7 @@ class AboutViewController: CustomBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        versionNumberLabel.text    = "version 0.6"
+        versionNumberLabel.text    = "version 0.7"
         aboutTheAppLabel.textColor = .white
     }
 

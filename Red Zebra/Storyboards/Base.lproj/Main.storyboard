@@ -184,23 +184,11 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="fdB-32-Aq6">
-                                        <leftBarButtonItems>
-                                            <barButtonItem title="Back" id="b0w-kd-57q">
-                                                <connections>
-                                                    <action selector="dismissDocumentViewController" destination="M2k-L8-Olo" id="Al2-qQ-xuS"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem systemItem="undo" id="Jha-oa-DC7">
-                                                <connections>
-                                                    <action selector="undoTapped:" destination="M2k-L8-Olo" id="oK1-fl-eyc"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem systemItem="redo" id="3pQ-v3-D9t">
-                                                <connections>
-                                                    <action selector="redoTapped:" destination="M2k-L8-Olo" id="bJ5-Jg-vOB"/>
-                                                </connections>
-                                            </barButtonItem>
-                                        </leftBarButtonItems>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="b0w-kd-57q">
+                                            <connections>
+                                                <action selector="dismissDocumentViewController" destination="M2k-L8-Olo" id="Al2-qQ-xuS"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="YzO-X0-BM1">
                                             <connections>
                                                 <action selector="doneButton:" destination="M2k-L8-Olo" id="0Ca-a1-oCD"/>
@@ -210,21 +198,39 @@
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ec-0g-dTQ" userLabel="Code Text View">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="0FB-AV-zWM">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="undo" id="Jha-oa-DC7">
+                                        <connections>
+                                            <action selector="undoTapped:" destination="M2k-L8-Olo" id="oK1-fl-eyc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="redo" id="3pQ-v3-D9t">
+                                        <connections>
+                                            <action selector="redoTapped:" destination="M2k-L8-Olo" id="bJ5-Jg-vOB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862368580000001" blue="0.1686276495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0o0-Ko-RmF" firstAttribute="trailing" secondItem="BoZ-jc-2Y8" secondAttribute="trailing" id="8yo-wG-eB1"/>
+                            <constraint firstItem="0FB-AV-zWM" firstAttribute="top" secondItem="0o0-Ko-RmF" secondAttribute="bottom" id="9XW-JW-sbj"/>
+                            <constraint firstAttribute="trailing" secondItem="0FB-AV-zWM" secondAttribute="trailing" id="C5Q-nA-J7p"/>
                             <constraint firstItem="BoZ-jc-2Y8" firstAttribute="bottom" secondItem="8ec-0g-dTQ" secondAttribute="bottom" id="MXU-LD-gYH"/>
                             <constraint firstItem="BoZ-jc-2Y8" firstAttribute="trailing" secondItem="8ec-0g-dTQ" secondAttribute="trailing" id="OEf-FP-JGj"/>
+                            <constraint firstItem="8ec-0g-dTQ" firstAttribute="top" secondItem="0FB-AV-zWM" secondAttribute="bottom" id="TGV-Jq-3hd"/>
                             <constraint firstItem="0o0-Ko-RmF" firstAttribute="top" secondItem="BoZ-jc-2Y8" secondAttribute="top" id="WRu-V3-Iv7"/>
+                            <constraint firstItem="0FB-AV-zWM" firstAttribute="leading" secondItem="BoZ-jc-2Y8" secondAttribute="leading" id="bUx-le-toP"/>
                             <constraint firstItem="8ec-0g-dTQ" firstAttribute="leading" secondItem="BoZ-jc-2Y8" secondAttribute="leading" id="kZt-ru-dGA"/>
-                            <constraint firstItem="8ec-0g-dTQ" firstAttribute="top" secondItem="0o0-Ko-RmF" secondAttribute="bottom" id="tAT-op-Q3C"/>
                             <constraint firstItem="0o0-Ko-RmF" firstAttribute="leading" secondItem="BoZ-jc-2Y8" secondAttribute="leading" id="yKH-Jz-ZnV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BoZ-jc-2Y8"/>
@@ -238,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl9-ES-qQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="176"/>
+            <point key="canvasLocation" x="1021.875" y="175.35211267605635"/>
         </scene>
         <!--Font Chooser-->
         <scene sceneID="aV6-NC-fc1">

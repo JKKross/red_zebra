@@ -8,7 +8,7 @@ Just a simple tool that you use when you're away from your computer and need to 
 update some variable value or what have you...
 
 Have to admit, it's full of hacky solutions - but it works...
-It's nothing serious and I'm a total noob, so don't judge! :D
+It's nothing serious and I'm a total noob, so don't judge! 😀
 
 
 

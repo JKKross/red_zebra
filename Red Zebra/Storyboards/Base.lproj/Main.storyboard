@@ -115,7 +115,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HM1-Fy-5y5">
-                                <rect key="frame" x="16" y="84" width="288" height="290.5"/>
+                                <rect key="frame" x="16" y="84" width="288" height="246.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Zebra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrM-cI-yKU">
                                         <rect key="frame" x="77" y="0.0" width="134" height="36"/>
@@ -124,30 +124,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4sm-7e-6YQ" userLabel="Version Stack View">
-                                        <rect key="frame" x="11" y="66" width="266.5" height="86"/>
+                                        <rect key="frame" x="95.5" y="66" width="97" height="42"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8o-02-rpf">
-                                                <rect key="frame" x="111" y="0.0" width="44" height="16"/>
+                                                <rect key="frame" x="26.5" y="0.0" width="44" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2019 Jan Kříž" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVx-x9-01c">
-                                                <rect key="frame" x="84.5" y="26" width="97" height="16"/>
+                                                <rect key="frame" x="0.0" y="26" width="97" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings icon made by Gregor Cresnar from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgn-Ec-cbz">
-                                                <rect key="frame" x="0.0" y="52" width="266.5" height="34"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-EL-OXi">
-                                        <rect key="frame" x="0.0" y="182" width="288" height="108.5"/>
+                                        <rect key="frame" x="0.0" y="138" width="288" height="108.5"/>
                                         <string key="text">Red Zebra is a simple text editor inspired by iOS app "Textor" &amp; GNU's terminal text editor "NANO". Red Zebra is Open Source software and you can find the source code here.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -171,7 +165,6 @@
                     <connections>
                         <outlet property="aboutTheAppLabel" destination="lAg-EL-OXi" id="ejV-yt-8Im"/>
                         <outlet property="copyright" destination="eVx-x9-01c" id="whM-f9-f4Y"/>
-                        <outlet property="settingsIconByLabel" destination="Wgn-Ec-cbz" id="rJc-bV-9pE"/>
                         <outlet property="versionNumberLabel" destination="V8o-02-rpf" id="9xw-hO-g8V"/>
                     </connections>
                 </viewController>

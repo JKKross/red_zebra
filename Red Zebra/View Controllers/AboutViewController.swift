@@ -9,12 +9,10 @@
 import UIKit
 
 class AboutViewController: CustomBaseViewController {
-
     
-    @IBOutlet var versionNumberLabel: UILabel!
+    @IBOutlet var redZebraLabel: UILabel!
     @IBOutlet var copyright: UILabel!
-    @IBOutlet var settingsIconByLabel: UILabel!
-    @IBOutlet var aboutTheAppLabel: UILabel!
+    @IBOutlet var aboutTheAppLabel: UITextView!
     
     let aboutTheAppText = #"""
     Red Zebra is a simple text editor inspired by iOS app "Textor" & GNU's terminal text editor "NANO". Red Zebra is open-source software and you can find the source code here.
@@ -27,7 +25,7 @@ class AboutViewController: CustomBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        versionNumberLabel.text    = "version 0.7"
+        copyright.text             = "© 2019 Jan Kříž, version 0.7"
         aboutTheAppLabel.textColor = .white
         aboutTheAppLabel.text      = aboutTheAppText
     }

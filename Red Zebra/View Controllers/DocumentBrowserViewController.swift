@@ -185,7 +185,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     func showErrorPopUp(text: String) {
         
-        let alert = UIAlertController(title: "ERROR", message: text, preferredStyle: .alert)
+        let alert = UIAlertController(title: "🤔 ERROR 🤷🏽‍♀️", message: text, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in return }))
         

@@ -21,7 +21,7 @@ class Document: UIDocument {
     init(fileName: String) {
         
         let tempDir = FileManager.default.temporaryDirectory
-        let url = tempDir.appendingPathComponent(fileName)
+        let url     = tempDir.appendingPathComponent(fileName)
         
         super.init(fileURL: url)
     }

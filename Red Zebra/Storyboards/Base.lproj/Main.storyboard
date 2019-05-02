@@ -275,7 +275,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minimumValue="12" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="UgS-h9-lc0">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minimumValue="12" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="UgS-h9-lc0">
                                                 <rect key="frame" x="38" y="0.0" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="fontSizePickerTapped:" destination="HXR-Vg-CuN" eventType="valueChanged" id="EcT-2L-g9E"/>

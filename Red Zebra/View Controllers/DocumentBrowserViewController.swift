@@ -255,7 +255,12 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             // Create a new document in a temporary location
             newDoc.save(to: newDocURL, for: .forCreating) { (saveSuccess) in
 
-                newDoc.saveCurrentFile(text: Document(fileURL: url[0]).returnFileContents())
+                do {
+                    let fileContents = try Document(fileURL: url[0]).returnFileContents()
+                    newDoc.saveCurrentFile(text: fileContents)
+                } catch {
+                    self.showErrorPopUp(text: "Oops! Something went wrong!\nTry again, please.")
+                }
                 // Make sure the document saved successfully
                 guard saveSuccess else {
                     // Cancel document creation

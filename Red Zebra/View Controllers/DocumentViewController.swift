@@ -53,13 +53,21 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         // Access the document
         document?.open(completionHandler: { (success) in
             if success {
-                self.titleLabel.title      = self.document?.fileURL.lastPathComponent
-                self.textView.text         = self.document?.returnFileContents()
-                self.fileLoadedSuccesfully = true
-            } else {
-                self.fileLoadedSuccesfully = false
-                self.textView.text         = ""
-                self.showErrorPopUp(text: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
+                
+                do {
+                    let fileContents = try self.document!.returnFileContents()
+                    
+                    self.titleLabel.title      = self.document?.fileURL.lastPathComponent
+                    self.textView.text         = fileContents
+                    self.fileLoadedSuccesfully = true
+                } catch {
+                    
+                    self.fileLoadedSuccesfully = false
+                    self.titleLabel.title      = ""
+                    self.textView.text         = ""
+                    self.showErrorPopUp(text: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
+                }
+                
             }
         })
     }

@@ -9,6 +9,11 @@
 import UIKit
 
 
+enum DocumentHandlingError: Error {
+    case couldNotLoad
+    case couldNotSave
+}
+
 
 class Document: UIDocument {
     
@@ -34,17 +39,18 @@ class Document: UIDocument {
     
     
     
-    func returnFileContents() -> String {
+    func returnFileContents() throws -> String {
+        
+        let fileData: Data!
         
         do {
-            let fileData = try Data(contentsOf: self.fileURL)
-            let text = String(decoding: fileData, as: UTF8.self)
-            return text
+            fileData = try Data(contentsOf: self.fileURL)
         } catch {
-            print("Something went wrong with file loading")
+            throw DocumentHandlingError.couldNotLoad
         }
-
-        return ""
+        
+        let text = String(decoding: fileData, as: UTF8.self)
+        return text
     }
     
     

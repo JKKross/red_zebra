@@ -21,5 +21,4 @@ class CustomBaseViewController: UIViewController {
         view.tintColor = .red
     }
     
-
 }

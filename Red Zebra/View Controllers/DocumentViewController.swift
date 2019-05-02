@@ -78,7 +78,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         super.viewWillDisappear(animated)
         
         if fileLoadedSuccesfully {
-            self.document?.saveCurrentFile(text: self.textView.text)
+            self.save()
         }
     }
     
@@ -86,7 +86,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         dismiss(animated: true) {
             
             if self.fileLoadedSuccesfully {
-                self.document?.saveCurrentFile(text: self.textView.text)
+                self.save()
             }
             
             self.document?.close(completionHandler: nil)
@@ -125,7 +125,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         textView.resignFirstResponder()
         
         if fileLoadedSuccesfully {
-            self.document?.saveCurrentFile(text: self.textView.text)
+            self.save()
         }
     }
     
@@ -169,12 +169,21 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     }
     
     
+    private func save() {
+        do {
+            try self.document!.saveCurrentFile(text: self.textView.text)
+        } catch {
+            self.showErrorPopUp(text: "Could not save file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
+        }
+    }
+    
+    
     @objc func autosave() {
         
         guard self.fileLoadedSuccesfully else { return }
         
         if let _ = self.document?.hasUnsavedChanges {
-            self.document!.saveCurrentFile(text: self.textView.text)
+            self.save()
         }
     }
     

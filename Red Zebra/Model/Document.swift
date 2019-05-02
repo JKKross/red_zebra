@@ -54,14 +54,14 @@ class Document: UIDocument {
     }
     
     
-    func saveCurrentFile(text: String) {
+    func saveCurrentFile(text: String) throws {
         
         let fileData = Data(text.utf8)
         
         do {
             try self.writeContents(fileData, to: self.fileURL, for: .forOverwriting, originalContentsURL: self.fileURL)
         } catch {
-            print("Something went wrong with file saving")
+            throw DocumentHandlingError.couldNotSave
         }
     }
     

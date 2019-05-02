@@ -257,7 +257,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 
                 do {
                     let fileContents = try Document(fileURL: url[0]).returnFileContents()
-                    newDoc.saveCurrentFile(text: fileContents)
+                    try newDoc.saveCurrentFile(text: fileContents)
                 } catch {
                     self.showErrorPopUp(text: "Oops! Something went wrong!\nTry again, please.")
                 }

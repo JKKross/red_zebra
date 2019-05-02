@@ -320,7 +320,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bvl-GX-F10"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fonts" image="fonts_icon" id="2G6-hd-toF"/>
+                    <tabBarItem key="tabBarItem" title="Font" image="fonts_icon" id="2G6-hd-toF"/>
                     <connections>
                         <outlet property="fontChooserSegmentedControl" destination="43Z-R2-3SX" id="TaB-VE-7Sg"/>
                         <outlet property="fontExampleTextView" destination="77o-eP-rSV" id="7L9-2n-oVA"/>

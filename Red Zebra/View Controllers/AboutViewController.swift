@@ -36,8 +36,24 @@ class AboutViewController: CustomBaseViewController {
     
     
     func updateAboutTheAppTextView() {
+        
+        let textForRanges = NSString(string: aboutTheAppText)
+        let textorRange   = textForRanges.range(of: "Textor")
+        let nanoRange     = textForRanges.range(of: "NANO")
+        let hereRange     = textForRanges.range(of: "here")
+        let iVimRange     = textForRanges.range(of: "iVim")
+        
+        let attributedString = NSMutableAttributedString(string: aboutTheAppText)
+        attributedString.addAttribute(.link, value: "https://github.com/louisdh/textor", range: textorRange)
+        attributedString.addAttribute(.link, value: "https://www.nano-editor.org", range: nanoRange)
+        attributedString.addAttribute(.link, value: "https://github.com/JKKross/Red_Zebra", range: hereRange)
+        attributedString.addAttribute(.link, value: "https://itunes.apple.com/us/app/ivim/id1266544660?mt=8", range: iVimRange)
+        
+        
+        let font = aboutTheAppLabel.font
+        aboutTheAppLabel.attributedText = attributedString
+        aboutTheAppLabel.font = font
         aboutTheAppLabel.textColor = .white
-        aboutTheAppLabel.text      = aboutTheAppText
     }
     
     

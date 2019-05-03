@@ -114,20 +114,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Zebra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrM-cI-yKU">
-                                <rect key="frame" x="16" y="80" width="288" height="36"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVx-x9-01c">
-                                <rect key="frame" x="16" y="132" width="288" height="16"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="***about the app text***" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-5a-4NV">
-                                <rect key="frame" x="16" y="164" width="288" height="355"/>
+                                <rect key="frame" x="16" y="64" width="288" height="455"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -136,17 +124,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862368580000001" blue="0.1686276495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="JrM-cI-yKU" firstAttribute="leading" secondItem="8EO-ma-CHq" secondAttribute="leading" constant="16" id="3YP-jf-5lg"/>
-                            <constraint firstItem="8EO-ma-CHq" firstAttribute="trailing" secondItem="eVx-x9-01c" secondAttribute="trailing" constant="16" id="57e-kG-UEP"/>
                             <constraint firstItem="0Vb-gW-sMe" firstAttribute="leading" secondItem="8EO-ma-CHq" secondAttribute="leading" id="BMj-pU-7oe"/>
                             <constraint firstItem="8EO-ma-CHq" firstAttribute="bottom" secondItem="ffv-5a-4NV" secondAttribute="bottom" id="JWP-Ne-zMi"/>
+                            <constraint firstItem="ffv-5a-4NV" firstAttribute="top" secondItem="0Vb-gW-sMe" secondAttribute="bottom" id="Rac-Wh-Zcw"/>
                             <constraint firstItem="0Vb-gW-sMe" firstAttribute="top" secondItem="8EO-ma-CHq" secondAttribute="top" id="Zm2-k7-AOQ"/>
-                            <constraint firstItem="8EO-ma-CHq" firstAttribute="trailing" secondItem="JrM-cI-yKU" secondAttribute="trailing" constant="16" id="ajd-Jg-ulP"/>
-                            <constraint firstItem="ffv-5a-4NV" firstAttribute="top" secondItem="eVx-x9-01c" secondAttribute="bottom" constant="16" id="ff0-GA-5t4"/>
-                            <constraint firstItem="eVx-x9-01c" firstAttribute="leading" secondItem="8EO-ma-CHq" secondAttribute="leading" constant="16" id="hsI-PV-8aN"/>
-                            <constraint firstItem="eVx-x9-01c" firstAttribute="top" secondItem="JrM-cI-yKU" secondAttribute="bottom" constant="16" id="mKg-i2-s0p"/>
                             <constraint firstItem="8EO-ma-CHq" firstAttribute="trailing" secondItem="ffv-5a-4NV" secondAttribute="trailing" constant="16" id="rBL-cD-mhf"/>
-                            <constraint firstItem="JrM-cI-yKU" firstAttribute="top" secondItem="0Vb-gW-sMe" secondAttribute="bottom" constant="16" id="vEP-b0-Tc1"/>
                             <constraint firstItem="0Vb-gW-sMe" firstAttribute="trailing" secondItem="8EO-ma-CHq" secondAttribute="trailing" id="vma-jc-YDZ"/>
                             <constraint firstItem="ffv-5a-4NV" firstAttribute="leading" secondItem="8EO-ma-CHq" secondAttribute="leading" constant="16" id="wFh-BG-FUe"/>
                         </constraints>
@@ -155,8 +137,6 @@
                     <tabBarItem key="tabBarItem" title="About" image="about_icon" id="wam-oH-C6p"/>
                     <connections>
                         <outlet property="aboutTheAppLabel" destination="ffv-5a-4NV" id="dDZ-Ho-VnE"/>
-                        <outlet property="copyright" destination="eVx-x9-01c" id="whM-f9-f4Y"/>
-                        <outlet property="redZebraLabel" destination="JrM-cI-yKU" id="u1Y-En-dk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITH-gn-T4C" userLabel="First Responder" sceneMemberID="firstResponder"/>

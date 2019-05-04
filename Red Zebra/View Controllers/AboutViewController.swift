@@ -17,7 +17,7 @@ class AboutViewController: CustomBaseViewController {
     @IBOutlet var aboutTheAppLabel: UITextView!
 
     // if this text is changed in any way, you need to update "let feedbackFirstLetterIndex" & "let reviewFirstLetterIndex" (in "@IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer)") accordingly!
-    let aboutTheAppText = #"""
+    var aboutTheAppText = #"""
 
     Red Zebra is a simple text editor inspired by iOS app Textor & GNU's terminal text editor NANO. Red Zebra is open-source software and you can find the source code here.
 
@@ -25,8 +25,8 @@ class AboutViewController: CustomBaseViewController {
 
     As stated previously, this app offers only basic text editing functionality in a familiar iOS Files-like user interface. If you're looking for something more "pro" & you are familiar with Vi-like editors, I'd highly recommend another open-source app - iVim.
 
-    Red Zebra © 2019 Jan Kříž, version 0.8
-
+    Red Zebra © 2019 Jan Kříž
+    
     """#
     
 
@@ -43,6 +43,11 @@ class AboutViewController: CustomBaseViewController {
     
     
     private func updateAboutTheAppTextView() {
+        
+        let appVersion  = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")
+        let buildNumber = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String)
+        aboutTheAppText.append("\nversion \(appVersion ?? "_version_number_")")
+        aboutTheAppText.append("\nbuild \(buildNumber ?? "_build_number_")\n")
         
         let textForRanges  = NSString(string: aboutTheAppText)
         let wholeTextRange = textForRanges.range(of: aboutTheAppText)

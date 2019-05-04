@@ -116,10 +116,14 @@
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="***about the app text***" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffv-5a-4NV">
                                 <rect key="frame" x="16" y="64" width="288" height="455"/>
+                                <gestureRecognizers/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RUL-lf-rhc" appends="YES" id="fcD-eI-YSX"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.16862368580000001" blue="0.1686276495" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -137,9 +141,15 @@
                     <tabBarItem key="tabBarItem" title="About" image="about_icon" id="wam-oH-C6p"/>
                     <connections>
                         <outlet property="aboutTheAppLabel" destination="ffv-5a-4NV" id="dDZ-Ho-VnE"/>
+                        <outlet property="tapGestureRecognizer" destination="RUL-lf-rhc" id="waf-It-ZKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITH-gn-T4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="RUL-lf-rhc">
+                    <connections>
+                        <action selector="tapGestureRecognizer:" destination="m28-uW-vhT" id="Cs5-iV-Jjl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1021.875" y="2192.9577464788731"/>
         </scene>

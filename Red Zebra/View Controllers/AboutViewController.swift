@@ -12,17 +12,21 @@ class AboutViewController: CustomBaseViewController {
     
     
     @IBOutlet var aboutTheAppLabel: UITextView!
+
     
     let aboutTheAppText = #"""
-    Red Zebra is a simple text editor inspired by iOS app "Textor" & GNU's terminal text editor "NANO". Red Zebra is open-source software and you can find the source code here.
+
+    Red Zebra is a simple text editor inspired by iOS app Textor & GNU's terminal text editor NANO. Red Zebra is open-source software and you can find the source code here.
 
     I highly appreciate any feedback and/or App Store review.
 
     As stated previously, this app offers only basic text editing functionality in a familiar iOS Files-like user interface. If you're looking for something more "pro" & you are familiar with Vi-like editors, I'd highly recommend another open-source app - iVim.
 
     Red Zebra © 2019 Jan Kříž, version 0.7
+
     """#
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +46,8 @@ class AboutViewController: CustomBaseViewController {
         let nanoRange     = textForRanges.range(of: "NANO")
         let hereRange     = textForRanges.range(of: "here")
         let iVimRange     = textForRanges.range(of: "iVim")
+        
+        let functionRange = textForRanges.range(of: "feedback")
         
         let attributedString = NSMutableAttributedString(string: aboutTheAppText)
         attributedString.addAttribute(.link, value: "https://github.com/louisdh/textor", range: textorRange)

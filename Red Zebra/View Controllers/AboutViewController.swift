@@ -38,7 +38,7 @@ class AboutViewController: CustomBaseViewController {
 
     
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     
@@ -83,7 +83,7 @@ class AboutViewController: CustomBaseViewController {
             let alert = UIAlertController(title: "Oops!", message: "Seems like you're not able to send email from this device! You can message me at zawadski.jkk@gmail.com", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             
-            present(alert, animated: true, completion: nil)
+            present(alert, animated: true)
             return
         }
         
@@ -92,7 +92,7 @@ class AboutViewController: CustomBaseViewController {
         mailComposer.setToRecipients(["zawadski.jkk@gmail.com"])
         mailComposer.setSubject("Red Zebra feedback")
         
-        present(mailComposer, animated: true, completion: nil)
+        present(mailComposer, animated: true)
     }
     
     
@@ -110,10 +110,12 @@ class AboutViewController: CustomBaseViewController {
         
         
         if tapAtCGPoint.x > feedbackLocation.minX && tapAtCGPoint.x < feedbackLocation.maxX && tapAtCGPoint.y > feedbackLocation.minY && tapAtCGPoint.y < feedbackLocation.maxY {
-            // user tapped "feedack"
+            
+            // user tapped "feedback"
             showMailComposer()
             
         } else if tapAtCGPoint.x > reviewLocation.minX && tapAtCGPoint.x < reviewLocation.maxX && tapAtCGPoint.y > reviewLocation.minY && tapAtCGPoint.y < reviewLocation.maxY {
+            
             // user tapped "review"
             SKStoreReviewController.requestReview()
         }
@@ -132,25 +134,25 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         
         
         if let _ = error {
-            present(alert, animated: true, completion: nil)
-            controller.dismiss(animated: true, completion: nil)
+            present(alert, animated: true)
+            controller.dismiss(animated: true)
         }
         
         switch result {
         case .failed:
-            present(alert, animated: true, completion: nil)
+            present(alert, animated: true)
             
         case .sent:
             let thanksPopUp = UIAlertController(title: "Thanks for your feedback!", message: nil, preferredStyle: .alert)
             thanksPopUp.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             
-            present(thanksPopUp, animated: true, completion: nil)
+            present(thanksPopUp, animated: true)
             
         default:
-            controller.dismiss(animated: true, completion: nil)
+            controller.dismiss(animated: true)
         }
         
-        controller.dismiss(animated: true, completion: nil)
+        controller.dismiss(animated: true)
     }
     
 }

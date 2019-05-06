@@ -73,24 +73,11 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     }
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-        
-        if fileLoadedSuccesfully {
-            self.save()
-        }
-    }
-    
     @IBAction func dismissDocumentViewController() {
-        dismiss(animated: true) {
-            
-            if self.fileLoadedSuccesfully {
-                self.save()
-            }
-            
-            self.document?.close(completionHandler: nil)
-        }
+        
+        self.save()
+        
+        dismiss(animated: true) { self.document?.close(completionHandler: nil) }
     }
     
 
@@ -124,9 +111,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         // hides the keyboard
         textView.resignFirstResponder()
         
-        if fileLoadedSuccesfully {
-            self.save()
-        }
+        self.save()
     }
     
     
@@ -170,6 +155,13 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     
     private func save() {
+        
+        guard self.fileLoadedSuccesfully else {
+            
+            self.showErrorPopUp(text: "File \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME") did not load properly. Please try closing & opening it again.")
+            return
+        }
+        
         do {
             try self.document!.saveCurrentFile(text: self.textView.text)
         } catch {
@@ -179,8 +171,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     
     @objc func autosave() {
-        
-        guard self.fileLoadedSuccesfully else { return }
         
         if let _ = self.document?.hasUnsavedChanges {
             self.save()

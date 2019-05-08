@@ -279,7 +279,7 @@
                                 <rect key="frame" x="16" y="133" width="288" height="29"/>
                                 <segments>
                                     <segment title="Menlo"/>
-                                    <segment title="Helvetica"/>
+                                    <segment title="System Font"/>
                                 </segments>
                                 <connections>
                                     <action selector="fontSwitcher:" destination="HXR-Vg-CuN" eventType="valueChanged" id="U7K-cx-i6F"/>

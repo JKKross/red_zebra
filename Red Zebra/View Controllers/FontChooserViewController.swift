@@ -21,9 +21,9 @@ class FontChooserViewController: CustomBaseViewController {
         
         UserSettings.sharedInstance.loadSettings()
         
-        fontSizeLabel.text    = String(Int(UserSettings.sharedInstance.fontSize))
-        fontSizeStepper.value = Double(UserSettings.sharedInstance.fontSize)
-        fontChooserSegmentedControl.selectedSegmentIndex = UserSettings.sharedInstance.prefferedFontIndex
+        fontSizeLabel.text    = String(Int(UserSettings.sharedInstance.preferredFontSize))
+        fontSizeStepper.value = Double(UserSettings.sharedInstance.preferredFontSize)
+        fontChooserSegmentedControl.selectedSegmentIndex = UserSettings.sharedInstance.preferredFontIndex
         
         updateExampleText()
     }
@@ -43,8 +43,8 @@ class FontChooserViewController: CustomBaseViewController {
     
     @IBAction func fontSizePickerTapped(_ sender: UIStepper) {
         
-        UserSettings.sharedInstance.fontSize = Float(fontSizeStepper.value)
-        fontSizeLabel.text                   = String(Int(UserSettings.sharedInstance.fontSize))
+        UserSettings.sharedInstance.preferredFontSize = Float(fontSizeStepper.value)
+        fontSizeLabel.text = String(Int(UserSettings.sharedInstance.preferredFontSize))
         UserSettings.sharedInstance.saveSettings()
         updateExampleText()
     }
@@ -54,30 +54,43 @@ class FontChooserViewController: CustomBaseViewController {
         
         if sender.selectedSegmentIndex == 0 {
             // "Menlo" selected
-            UserSettings.sharedInstance.prefferedFontIndex = 0
+            UserSettings.sharedInstance.preferredFontIndex = 0
         } else if sender.selectedSegmentIndex == 1 {
             // "Helvetica" selected
-            UserSettings.sharedInstance.prefferedFontIndex = 1
+            UserSettings.sharedInstance.preferredFontIndex = 1
         }
         
         UserSettings.sharedInstance.saveSettings()
         updateExampleText()
     }
-    
+
     
     func updateExampleText() {
+        
+        var UIFontForTextView = "UIFont"
+        
+        switch UserSettings.sharedInstance.preferredFontIndex {
+        case 0:
+            // "Menlo"
+            UIFontForTextView += "(name: \"Menlo\", size: \(UserSettings.sharedInstance.preferredFontSize))"
+        default:
+            // system font
+            UIFontForTextView += ".systemFont(ofSize: \(CGFloat(UserSettings.sharedInstance.preferredFontSize)))"
+        }
         
         UserSettings.sharedInstance.loadSettings()
         fontExampleTextView.font = UserSettings.sharedInstance.font
         
         fontExampleTextView.text = """
-        // try changing your prefered font or it's size and see how it looks! 😎
+        // try changing your preferred font or it's size and see how it looks! 😎
 
         import UIKit
         
         struct fontExample {
         
-            var myFont: UIFont = UIFont(name: "\(UserSettings.sharedInstance.fonts[UserSettings.sharedInstance.prefferedFontIndex])", size: \(UserSettings.sharedInstance.fontSize))
+            var myFont: UIFont = \(UIFontForTextView)
+        
+            let exampleText = "Hello, world!"
         
             let alphabetLowercase: [Character] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
         

@@ -19,23 +19,21 @@ class UserSettings {
     
     var font  = UIFont(name: "Menlo", size: 17)
     
-    var fonts = ["Menlo", "Helvetica"]
     
-    
-    var fontSize: Float    = 17
-    var prefferedFontIndex = 0
+    var preferredFontSize: Float = 17
+    var preferredFontIndex       = 0
     
     
     func saveSettings() {
-        defaults.set(prefferedFontIndex, forKey: Keys.fontFamily)
-        defaults.set(fontSize, forKey: Keys.fontSize)
+        defaults.set(preferredFontIndex, forKey: Keys.fontFamily)
+        defaults.set(preferredFontSize, forKey: Keys.fontSize)
     }
     
     
     func loadSettings() {
         
-        fontSize            = defaults.float(forKey: Keys.fontSize)
-        prefferedFontIndex  = defaults.integer(forKey: Keys.fontFamily)
+        preferredFontSize   = defaults.float(forKey: Keys.fontSize)
+        preferredFontIndex  = defaults.integer(forKey: Keys.fontFamily)
         
         //  The saveSettings() method is not called when someone starts the app for the very first time,
         //  which results in:
@@ -47,15 +45,22 @@ class UserSettings {
         //  font size = 0.0 is not.
         //
         //  That's why there is this if statement:
-        if fontSize < 10 {
-            fontSize            = 17
+        if preferredFontSize < 10 {
+            preferredFontSize = 17
             
             //  FontChooserViewController also uses some of those values to set it's default values properly,
             //  that's why we need to save here:
             self.saveSettings()
         }
         
-        font = UIFont(name: fonts[prefferedFontIndex], size: CGFloat(fontSize))
+        switch preferredFontIndex {
+        case 0:
+            // "Menlo"
+            font = UIFont(name: "Menlo", size: CGFloat(preferredFontSize))
+        default:
+            // system
+            font = UIFont.systemFont(ofSize: CGFloat(preferredFontSize))
+        }
     }
     
     

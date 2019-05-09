@@ -23,10 +23,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         self.additionalLeadingNavigationBarButtonItems = [item]
         
         
-        let action = UIDocumentBrowserAction(identifier: "ChangeExtension", localizedTitle: "Change file extension", availability: .menu, handler: { url in self.changeFileExtension(files: url) })
-        
-        self.customActions = [action]
-        
         delegate = self
         
         allowsDocumentCreation     = true
@@ -191,123 +187,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
-    
-    
-    func changeFileExtension(files url: [URL]) {
-        
-        var documentsToChange = url
-        
-        let alert = UIAlertController(title: "Change the extension:", message: #"e.g.: "txt", "swift", "c", etc."#, preferredStyle: .alert)
-        
-        alert.addTextField(configurationHandler: { textField in
-            textField.placeholder = "txt"
-        })
-        
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            
-            guard var newExtension = alert.textFields![0].text else { return }
-            
-            if newExtension.first == "." {
-                newExtension.removeFirst()
-            }
-            
-            for i in newExtension {
-                guard i.isLetter || i.isNumber else {
-                    self.showErrorPopUp(text: "Invalid file extension")
-                    return
-                }
-            }
-            
-            
-            if newExtension == documentsToChange[0].pathExtension { return }
-            
-            
-            
-            // THE REST OF THIS CLOSURE IS REALLY HACKY - DON'T TOUCH!!!
-            //
-            // The way this works is the app creates completely new file with the same name,
-            // but different file extension.
-            // Then the text from the original file is copied into this new file
-            // (again: same name, new extension) and saved.
-            // After that, the app tries to remove the original file and if it fails,
-            // it shows the user a pop-up.
-            //
-            // The reason I did it this way is because I wasn't able to solve
-            // the problem the way I expected it to be solvable - which would be using:
-            //
-            //        FileManager.default.moveItem(at: url[0], to: url[0].deletingPathExtension().appendingPathExtension(newExtension))
-            //
-            // Using that gets you an error saying you don't have permission to manipulate the files.
-            // What is weird (in my opinion) is that deleting the file is completely fine...
-            
-            documentsToChange[0].deletePathExtension()
-            documentsToChange[0].appendPathExtension(newExtension)
-
-            let newDocumentName = documentsToChange[0].lastPathComponent
-
-            let newDoc    = Document(fileName: newDocumentName)
-            let newDocURL = newDoc.fileURL
-            
-            
-            // Create a new document in a temporary location
-            newDoc.save(to: newDocURL, for: .forCreating) { (saveSuccess) in
-
-                do {
-                    let fileContents = try Document(fileURL: url[0]).returnFileContents()
-                    try newDoc.saveCurrentFile(text: fileContents)
-                } catch {
-                    self.showErrorPopUp(text: "Oops! Something went wrong!\nTry again, please.")
-                }
-                // Make sure the document saved successfully
-                guard saveSuccess else {
-                    // Cancel document creation
-                    self.showErrorPopUp(text: "Oops! Something went wrong!\nTry again, please.")
-                    return
-                }
-
-                // Close the document.
-                newDoc.close(completionHandler: { (closeSuccess) in
-
-                    // Make sure the document closed successfully
-                    guard closeSuccess else {
-                        self.showErrorPopUp(text: "Oops! Something went wrong!\nTry again, please.")
-                        return
-                    }
-
-                    // Pass the document's temporary URL to the import handler.
-                    self.importDocument(at: newDocURL, nextToDocumentAt: url[0], mode: .move, completionHandler: { _,_ in
-
-                        // when everything is finished, remove the original file
-                        let fileManager = FileManager.default
-                        
-                        do {
-                            try fileManager.removeItem(atPath: url[0].path)
-                        } catch {
-                            self.showErrorPopUp(text: "Could not automatically remove file with original extension (\(url[0].lastPathComponent)).\nPlease remove manually.")
-                        }
-                        
-                        return
-                    })
-                    return
-                })
-                return
-            }
-            return
-        }))
-        
-        
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-            return
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-        
-    }
-    
     
     
     func fileNameIsOkToUse(fileName file: String) -> Bool {

@@ -18,10 +18,11 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
 
     
     var document          : Document?
-    var timer             : Timer?
-    let autosaveInSeconds : TimeInterval = 5 * 60
     
-    var fileLoadedSuccesfully = false
+    private var timer             : Timer?
+    private let autosaveInSeconds : TimeInterval = 5 * 60
+    
+    private var fileLoadedSuccesfully = false
     
     
     override func viewDidLoad() {
@@ -170,7 +171,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     }
     
     
-    @objc func autosave() {
+    @objc private func autosave() {
         
         if let _ = self.document?.hasUnsavedChanges {
             self.save()
@@ -178,7 +179,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     }
     
     
-    func showErrorPopUp(text: String) {
+    private func showErrorPopUp(text: String) {
         
         let alert = UIAlertController(title: "🤔 ERROR 🤷🏽‍♀️", message: text, preferredStyle: .alert)
         

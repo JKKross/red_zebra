@@ -34,7 +34,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     
     
-    func createNamedFile(controller: UIDocumentBrowserViewController, importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
+    private func createNamedFile(controller: UIDocumentBrowserViewController, importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
         
         /*
          
@@ -169,7 +169,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
-    @objc func presentSettingsView() {
+    @objc private func presentSettingsView() {
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let settingsVC = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController")
@@ -179,7 +179,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
-    func showErrorPopUp(text: String) {
+    private func showErrorPopUp(text: String) {
         
         let alert = UIAlertController(title: "🤔 ERROR 🤷🏽‍♀️", message: text, preferredStyle: .alert)
         
@@ -189,7 +189,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
-    func fileNameIsOkToUse(fileName file: String) -> Bool {
+    private func fileNameIsOkToUse(fileName file: String) -> Bool {
         
         for i in file {
             if i.isLetter == false && i.isNumber == false && i != "." && i != "_" && i != "-" && i != "(" && i != ")" && i != " " {
@@ -200,7 +200,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
-    func doesHaveAnExtension(fileName: String) -> Bool {
+    private func doesHaveAnExtension(fileName: String) -> Bool {
         
         var file = fileName
         

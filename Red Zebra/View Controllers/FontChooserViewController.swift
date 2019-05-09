@@ -65,7 +65,7 @@ class FontChooserViewController: CustomBaseViewController {
     }
 
     
-    func updateExampleText() {
+    private func updateExampleText() {
         
         var UIFontForTextView = "UIFont"
         

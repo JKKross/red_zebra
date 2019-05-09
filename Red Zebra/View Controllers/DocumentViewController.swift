@@ -15,9 +15,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var undoButtonLabel: UIBarButtonItem!
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     
-
     
-    var document          : Document?
+    var document: Document?
     
     private var timer             : Timer?
     private let autosaveInSeconds : TimeInterval = 5 * 60
@@ -33,8 +32,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
-        // autosaving
-        timer = Timer.scheduledTimer(timeInterval: autosaveInSeconds, target: self, selector: #selector(self.autosave), userInfo: nil, repeats: true)
+//        // autosaving
+//        timer = Timer.scheduledTimer(timeInterval: autosaveInSeconds, target: self, selector: #selector(self.autosave), userInfo: nil, repeats: true)
 
         textView.delegate = self
 
@@ -72,12 +71,18 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             }
         })
     }
+
+
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        self.save()
+    }
     
     
     @IBAction func dismissDocumentViewController() {
         
         self.save()
-        
         dismiss(animated: true) { self.document?.close(completionHandler: nil) }
     }
     
@@ -111,8 +116,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         // hides the keyboard
         textView.resignFirstResponder()
-        
-        self.save()
     }
     
     
@@ -170,13 +173,13 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         }
     }
     
-    
-    @objc private func autosave() {
-        
-        if let _ = self.document?.hasUnsavedChanges {
-            self.save()
-        }
-    }
+//
+//    @objc private func autosave() {
+//
+//        if let _ = self.document?.hasUnsavedChanges {
+//            self.save()
+//        }
+//    }
     
     
     private func showErrorPopUp(text: String) {

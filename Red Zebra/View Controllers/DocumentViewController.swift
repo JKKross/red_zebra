@@ -32,8 +32,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 
-//        // autosaving
-//        timer = Timer.scheduledTimer(timeInterval: autosaveInSeconds, target: self, selector: #selector(self.autosave), userInfo: nil, repeats: true)
+        // autosaving
+        timer = Timer.scheduledTimer(timeInterval: autosaveInSeconds, target: self, selector: #selector(self.autosave), userInfo: nil, repeats: true)
 
         textView.delegate = self
 
@@ -76,12 +76,15 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         
         super.viewWillDisappear(animated)
+        
+        timer = nil
         self.save()
     }
     
     
     @IBAction func dismissDocumentViewController() {
         
+        timer = nil
         self.save()
         dismiss(animated: true) { self.document?.close(completionHandler: nil) }
     }
@@ -173,13 +176,13 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         }
     }
     
-//
-//    @objc private func autosave() {
-//
-//        if let _ = self.document?.hasUnsavedChanges {
-//            self.save()
-//        }
-//    }
+
+    @objc private func autosave() {
+
+        if let _ = self.document?.hasUnsavedChanges {
+            self.save()
+        }
+    }
     
     
     private func showErrorPopUp(text: String) {

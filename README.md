@@ -7,6 +7,8 @@ It's not meant to be a feature complete IDE, with fancy features and stuff...
 Just a simple tool that you use when you're away from your computer and need to review some code or
 update some variable value or what have you...
 
+Link to a testflight beta 1: https://testflight.apple.com/join/CuGQmLCx
+
 
 ![screenshot1](https://github.com/JKKross/Promo_Images/blob/master/Red_Zebra_screenshot_1.png)
 

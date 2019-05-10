@@ -14,7 +14,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var textView: UITextView!
     @IBOutlet var undoButtonLabel: UIBarButtonItem!
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
-    
+    @IBOutlet var doneButtonLabel: UIBarButtonItem!
     
     var document: Document?
     
@@ -39,6 +39,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
 
         undoButtonLabel.tintColor = .gray
         redoButtonLabel.tintColor = .gray
+        doneButtonLabel.tintColor = .gray
     }
     
     
@@ -119,6 +120,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         // hides the keyboard
         textView.resignFirstResponder()
+        doneButtonLabel.tintColor = .gray
     }
     
     
@@ -139,6 +141,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
         let selectedRange = textView.selectedRange
         textView.scrollRangeToVisible(selectedRange)
+        
+        doneButtonLabel.tintColor = .red
     }
 
 

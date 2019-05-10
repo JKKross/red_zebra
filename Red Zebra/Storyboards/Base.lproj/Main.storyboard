@@ -244,6 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="BoZ-jc-2Y8"/>
                     </view>
                     <connections>
+                        <outlet property="doneButtonLabel" destination="YzO-X0-BM1" id="lJX-1t-E6I"/>
                         <outlet property="redoButtonLabel" destination="3pQ-v3-D9t" id="7uZ-Cq-0j3"/>
                         <outlet property="textView" destination="8ec-0g-dTQ" id="l7Z-Fr-843"/>
                         <outlet property="titleLabel" destination="fdB-32-Aq6" id="P85-Fn-3gt"/>

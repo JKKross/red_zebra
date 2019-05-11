@@ -1,4 +1,11 @@
-# Red Zebra
+<h1 align="center">Red Zebra</h1>
+  
+  <p align="center">
+    <img src= "https://img.shields.io/badge/version-0.9-orange.svg" />
+    <img src= "https://img.shields.io/badge/iOS-12.2%2B-blue.svg" />
+    <img src= "https://img.shields.io/badge/swift-5.0-blue.svg" />
+  </p>
+
 
 Hi there! This is Red Zebra - very simple text editor for iOS.
 It is heavily inspired by both [GNU's NANO](https://www.nano-editor.org) text editor and [louisdh's Textor](https://github.com/louisdh/textor).

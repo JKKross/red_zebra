@@ -15,6 +15,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var undoButtonLabel: UIBarButtonItem!
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     @IBOutlet var doneButtonLabel: UIBarButtonItem!
+    @IBOutlet var linesLabel: UIBarButtonItem!
     
     var document: Document?
     
@@ -40,6 +41,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         undoButtonLabel.tintColor = .gray
         redoButtonLabel.tintColor = .gray
         doneButtonLabel.tintColor = .gray
+        linesLabel.tintColor      = .white
     }
     
     
@@ -60,6 +62,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                     
                     self.titleLabel.title      = self.document?.fileURL.lastPathComponent
                     self.textView.text         = fileContents
+                    self.linesLabel.title      = "Line: --/\(self.countLines(text: fileContents))"
                     self.fileLoadedSuccesfully = true
                 } catch {
                     
@@ -120,7 +123,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         // hides the keyboard
         textView.resignFirstResponder()
-        doneButtonLabel.tintColor = .gray
     }
     
     
@@ -132,9 +134,15 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
         
         if notification.name == UIResponder.keyboardWillHideNotification {
-            textView.contentInset = UIEdgeInsets.zero
+            
+            textView.contentInset     = UIEdgeInsets.zero
+            doneButtonLabel.tintColor = .gray
+            self.linesLabel.title     = "Line: --/\(self.countLines(text: textView.text))"
+            
         } else {
+            
             textView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+            doneButtonLabel.tintColor = .red
         }
         
         textView.scrollIndicatorInsets = textView.contentInset
@@ -142,7 +150,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let selectedRange = textView.selectedRange
         textView.scrollRangeToVisible(selectedRange)
         
-        doneButtonLabel.tintColor = .red
     }
 
 
@@ -162,6 +169,11 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         } else {
             redoButtonLabel.tintColor = .gray
         }
+        
+        
+        let cursorInTextView = Range(textView.selectedRange)!.lowerBound
+        
+        self.linesLabel.title = "Line: \(self.countLines(inText: self.textView.text, upTo: cursorInTextView))/\(self.countLines(text: self.textView.text))"
     }
     
     
@@ -186,6 +198,42 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         if let _ = self.document?.hasUnsavedChanges {
             self.save()
         }
+    }
+    
+    
+    private func countLines(text: String) -> Int {
+        
+        if text.isEmpty { return 0 }
+        
+        var total = 1
+        
+        for i in text {
+            if i.isNewline {
+                total += 1
+            }
+        }
+        
+        return total
+    }
+    
+    
+    private func countLines(inText text: String, upTo: Int) -> Int {
+        
+        if text.isEmpty { return 0 }
+        
+        var total = 1
+        
+        var text = text
+        let removeLast = text.count - upTo
+        text.removeLast(removeLast)
+        
+        for i in text {
+            if i.isNewline {
+                total += 1
+            }
+        }
+        
+        return total
     }
     
     

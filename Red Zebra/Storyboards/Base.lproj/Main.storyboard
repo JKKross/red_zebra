@@ -221,6 +221,8 @@
                                             <action selector="redoTapped:" destination="M2k-L8-Olo" id="bJ5-Jg-vOB"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bsa-XA-wQA"/>
+                                    <barButtonItem title="Lines: --" id="Ouj-TM-bae"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -245,6 +247,7 @@
                     </view>
                     <connections>
                         <outlet property="doneButtonLabel" destination="YzO-X0-BM1" id="lJX-1t-E6I"/>
+                        <outlet property="linesLabel" destination="Ouj-TM-bae" id="EtC-PR-3fF"/>
                         <outlet property="redoButtonLabel" destination="3pQ-v3-D9t" id="7uZ-Cq-0j3"/>
                         <outlet property="textView" destination="8ec-0g-dTQ" id="l7Z-Fr-843"/>
                         <outlet property="titleLabel" destination="fdB-32-Aq6" id="P85-Fn-3gt"/>

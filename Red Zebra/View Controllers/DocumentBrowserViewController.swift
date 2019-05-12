@@ -69,20 +69,20 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             }
             
             guard name.first?.isLetter == true else {
-                self.showErrorPopUp(text: #"You have to begin your file name with a letter ("a-z" or "A-Z")"#)
+                self.showErrorPopUp(message: #"You have to begin your file name with a letter ("a-z" or "A-Z")"#)
                 importHandler(nil, .none)
                 return
             }
             
             guard self.doesHaveAnExtension(fileName: name) == true else {
-                self.showErrorPopUp(text: #"You have to give your file an extension (e.g.: ".txt", ".swift" etc.)"#)
+                self.showErrorPopUp(message: #"You have to give your file an extension (e.g.: ".txt", ".swift" etc.)"#)
                 importHandler(nil, .none)
                 return
             }
             
             guard self.fileNameIsOkToUse(fileName: name) == true else {
                 // Cancel document creation
-                self.showErrorPopUp(text: #"You can only use characters "a-z", "A-Z", "0-9", "_" & "." followed by an extension name (e.g.: "Hello_World_v2.swift")"#)
+                self.showErrorPopUp(message: #"You can only use characters "a-z", "A-Z", "0-9", "_" & "." followed by an extension name (e.g.: "Hello_World_v2.swift")"#)
                 importHandler(nil, .none)
                 return
             }
@@ -96,7 +96,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 // Make sure the document saved successfully
                 guard saveSuccess else {
                     // Cancel document creation
-                    self.showErrorPopUp(text: "You have to name your file")
+                    self.showErrorPopUp(message: "You have to name your file")
                     importHandler(nil, .none)
                     return
                 }
@@ -107,7 +107,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                     // Make sure the document closed successfully
                     guard closeSuccess else {
                         // Cancel document creation
-                        self.showErrorPopUp(text: "Unable to create new document")
+                        self.showErrorPopUp(message: "Unable to create new document")
                         importHandler(nil, .none)
                         return
                     }
@@ -134,7 +134,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL]) {
         
         guard let sourceURL = documentURLs.first else {
-            showErrorPopUp(text: "Unable to open file")
+            self.showErrorPopUp(message: "Unable to open file")
             return
         }
         
@@ -154,7 +154,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController, failedToImportDocumentAt documentURL: URL, error: Error?) {
         
-        showErrorPopUp(text: "Unable to open file")
+        self.showErrorPopUp(message: "Unable to open file")
     }
     
     
@@ -176,16 +176,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         settingsVC.modalPresentationStyle = .formSheet
         
         present(settingsVC, animated: true, completion: nil)
-    }
-    
-    
-    private func showErrorPopUp(text: String) {
-        
-        let alert = UIAlertController(title: "🤔 ERROR 🤷🏽‍♀️", message: text, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in return }))
-        
-        self.present(alert, animated: true, completion: nil)
     }
     
     

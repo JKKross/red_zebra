@@ -69,7 +69,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                     self.fileLoadedSuccesfully = false
                     self.titleLabel.title      = ""
                     self.textView.text         = ""
-                    self.showErrorPopUp(text: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
+                    self.showErrorPopUp(message: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
                 }
                 
             }
@@ -180,14 +180,14 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
         guard self.fileLoadedSuccesfully else {
             
-            self.showErrorPopUp(text: "File \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME") did not load properly. Please try closing & opening it again.")
+            self.showErrorPopUp(message: "File \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME") did not load properly. Please try closing & opening it again.")
             return
         }
         
         do {
             try self.document!.saveCurrentFile(text: self.textView.text)
         } catch {
-            self.showErrorPopUp(text: "Could not save file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
+            self.showErrorPopUp(message: "Could not save file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
         }
     }
     
@@ -197,16 +197,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         if let _ = self.document?.hasUnsavedChanges {
             self.save()
         }
-    }
-    
-    
-    private func showErrorPopUp(text: String) {
-        
-        let alert = UIAlertController(title: "🤔 ERROR 🤷🏽‍♀️", message: text, preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in return }))
-        
-        self.present(alert, animated: true, completion: nil)
     }
     
     

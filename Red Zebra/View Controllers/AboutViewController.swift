@@ -24,7 +24,8 @@ class AboutViewController: CustomBaseViewController {
     I highly appreciate any feedback and/or App Store review.
 
     As stated previously, this app offers only basic text editing functionality in a familiar iOS Files-like user interface. If you're looking for something more "pro" & you are familiar with Vi-like editors, I'd highly recommend another open-source app - iVim.
-
+    
+    
     Red Zebra © 2019 Jan Kříž
     
     """#

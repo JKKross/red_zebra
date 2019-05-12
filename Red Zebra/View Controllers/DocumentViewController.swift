@@ -62,7 +62,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                     
                     self.titleLabel.title      = self.document?.fileURL.lastPathComponent
                     self.textView.text         = fileContents
-                    self.linesLabel.title      = "Line: --/\(self.textView.text.countLines())"
+                    self.linesLabel.title      = "Line: --/\(self.textView.text.countAllLines())"
                     self.fileLoadedSuccesfully = true
                 } catch {
                     
@@ -137,7 +137,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             
             textView.contentInset     = UIEdgeInsets.zero
             doneButtonLabel.tintColor = .gray
-            self.linesLabel.title     = "Line: --/\(self.textView.text.countLines())"
+            self.linesLabel.title     = "Line: --/\(self.textView.text.countAllLines())"
             
         } else {
             
@@ -172,7 +172,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
         let cursorInTextView = Range(textView.selectedRange)!.lowerBound
         
-        self.linesLabel.title = "Line: \(self.textView.text.countLines(upTo: cursorInTextView))/\(self.textView.text.countLines())"
+        self.linesLabel.title = "Line: \(self.textView.text.countLinesFromBeginning(upTo: cursorInTextView))/\(self.textView.text.countAllLines())"
     }
     
     

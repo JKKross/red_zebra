@@ -1,6 +1,6 @@
 extension String {
 
-    func countLines() -> Int {
+    func countAllLines() -> Int {
         
         if self.isEmpty { return 0 }
         
@@ -21,7 +21,7 @@ extension String {
 
     
     
-    func countLines(upTo: Int) -> Int {
+    func countLinesFromBeginning(upTo: Int) -> Int {
         
         if self.isEmpty { return 0 }
         

@@ -19,9 +19,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     var document: Document?
     
-    private var timer             : Timer?
-    private let autosaveInSeconds : TimeInterval = 5 * 60
-    
     private var fileLoadedSuccesfully = false
     
     
@@ -32,9 +29,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-
-        // autosaving
-        timer = Timer.scheduledTimer(timeInterval: autosaveInSeconds, target: self, selector: #selector(self.autosave), userInfo: nil, repeats: true)
 
         textView.delegate = self
 
@@ -57,46 +51,49 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         document?.open(completionHandler: { (success) in
             if success {
                 
-                do {
-                    let fileContents = try self.document!.returnFileContents()
-                    
-                    self.titleLabel.title      = self.document?.fileURL.lastPathComponent
-                    self.textView.text         = fileContents
-                    
-                    let linesTotal             = self.textView.text.countAllLines()
-                    
-                    if linesTotal > 10_000 {
-                        self.showErrorPopUp(message: "Wow! That's a looong file!\nI'd recommend you split it into multiple files, otherwise, performance will probably be impacted.")
-                    }
-                    
-                    self.linesLabel.title      = "Line: --/\(linesTotal)"
-                    self.fileLoadedSuccesfully = true
-                } catch {
-                    
-                    self.fileLoadedSuccesfully = false
-                    self.titleLabel.title      = ""
-                    self.textView.text         = ""
-                    self.showErrorPopUp(message: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
+                self.titleLabel.title      = self.document?.fileURL.lastPathComponent
+                self.textView.text         = self.document?.text ?? ""
+                
+                let linesTotal             = self.textView.text.countAllLines()
+                
+                if linesTotal > 10_000 {
+                    self.showErrorPopUp(message: "Wow! That's a looong file!\nI'd recommend you split it into multiple files, otherwise, performance will probably be impacted.")
                 }
                 
+                self.linesLabel.title      = "Line: --/\(linesTotal)"
+                self.fileLoadedSuccesfully = true
+                
+            } else {
+                
+                self.fileLoadedSuccesfully = false
+                self.titleLabel.title      = ""
+                self.textView.text         = ""
+                self.showErrorPopUp(message: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
             }
         })
-    }
-
-
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        super.viewWillDisappear(animated)
-        
-        timer = nil
-        self.save()
     }
     
     
     @IBAction func dismissDocumentViewController() {
         
-        timer = nil
-        self.save()
+        guard self.fileLoadedSuccesfully else {
+            
+            self.showErrorPopUp(message: "File \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME") did not load properly. Please try closing & opening it again.")
+            dismiss(animated: true)
+            return
+        }
+        
+        if document?.text == textView.text {
+            
+            dismiss(animated: true)
+            return
+        } else {
+           
+            document?.text = textView.text
+            document?.updateChangeCount(.done)
+        }
+        
+        
         dismiss(animated: true) { self.document?.close(completionHandler: nil) }
     }
     
@@ -180,30 +177,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let cursorInTextView = Range(textView.selectedRange)!.lowerBound
         
         self.linesLabel.title = "Line: \(self.textView.text.countLinesFromBeginning(upTo: cursorInTextView))/\(self.textView.text.countAllLines())"
-    }
-    
-    
-    private func save() {
-        
-        guard self.fileLoadedSuccesfully else {
-            
-            self.showErrorPopUp(message: "File \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME") did not load properly. Please try closing & opening it again.")
-            return
-        }
-        
-        do {
-            try self.document!.saveCurrentFile(text: self.textView.text)
-        } catch {
-            self.showErrorPopUp(message: "Could not save file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
-        }
-    }
-    
-
-    @objc private func autosave() {
-
-        if let _ = self.document?.hasUnsavedChanges {
-            self.save()
-        }
     }
     
     

@@ -63,35 +63,34 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             
             // what happens when user presses "OK"
             
-            guard let name = alert.textFields![0].text else {
+            guard let fileName = alert.textFields![0].text else {
                 importHandler(nil, .none)
                 return
             }
             
-            guard name.first?.isLetter == true else {
+            guard fileName.first?.isLetter == true else {
                 self.showErrorPopUp(message: #"You have to begin your file name with a letter ("a-z" or "A-Z")"#)
                 importHandler(nil, .none)
                 return
             }
             
-            guard self.doesHaveAnExtension(fileName: name) == true else {
+            guard self.doesHaveAnExtension(fileName: fileName) == true else {
                 self.showErrorPopUp(message: #"You have to give your file an extension (e.g.: ".txt", ".swift" etc.)"#)
                 importHandler(nil, .none)
                 return
             }
             
-            guard self.fileNameIsOkToUse(fileName: name) == true else {
+            guard self.fileNameIsOkToUse(fileName: fileName) == true else {
                 // Cancel document creation
                 self.showErrorPopUp(message: #"You can only use characters "a-z", "A-Z", "0-9", "_" & "." followed by an extension name (e.g.: "Hello_World_v2.swift")"#)
                 importHandler(nil, .none)
                 return
             }
             
-            let newDocument    = Document(fileName: name)
-            let newDocumentURL = newDocument.fileURL
+            let newDocument = Document(fileName: fileName)
             
             // Create a new document in a temporary location
-            newDocument.save(to: newDocumentURL, for: .forCreating) { (saveSuccess) in
+            newDocument.save(to: newDocument.fileURL, for: .forCreating) { (saveSuccess) in
                 
                 // Make sure the document saved successfully
                 guard saveSuccess else {
@@ -113,7 +112,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                     }
                     
                     // Pass the document's temporary URL to the import handler.
-                    importHandler(newDocumentURL, .move)
+                    importHandler(newDocument.fileURL, .move)
                 })
             }
             
@@ -165,7 +164,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         let documentViewController = storyBoard.instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
         documentViewController.document = Document(fileURL: documentURL)
         
-        present(documentViewController, animated: true, completion: nil)
+        present(documentViewController, animated: true)
     }
     
     
@@ -175,7 +174,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         let settingsVC = storyBoard.instantiateViewController(withIdentifier: "SettingsViewController")
         settingsVC.modalPresentationStyle = .formSheet
         
-        present(settingsVC, animated: true, completion: nil)
+        present(settingsVC, animated: true)
     }
     
     

@@ -11,12 +11,12 @@ import UIKit
 
 enum DocumentHandlingError: Error {
     case couldNotLoad
-    case couldNotSave
 }
 
 
 class Document: UIDocument {
     
+    var text: String = ""
     
     override init(fileURL url: URL) {
         super.init(fileURL: url)
@@ -32,39 +32,21 @@ class Document: UIDocument {
     }
 
     
-    override func contents(forType typeName: String) throws -> Any { return Data() }
-    
-    
-    override func load(fromContents contents: Any, ofType typeName: String?) throws {}
-    
-    
-    
-    func returnFileContents() throws -> String {
+    override func contents(forType typeName: String) throws -> Any {
         
-        let fileData: Data!
+        return Data(text.utf8)
+    }
+    
+    
+    override func load(fromContents contents: Any, ofType typeName: String?) throws {
         
-        do {
-            fileData = try Data(contentsOf: self.fileURL)
-        } catch {
+        guard let contents = contents as? Data else {
             throw DocumentHandlingError.couldNotLoad
         }
         
-        let text = String(decoding: fileData, as: UTF8.self)
-        return text
+        text = String(decoding: contents, as: UTF8.self)
     }
     
-    
-    func saveCurrentFile(text: String) throws {
-        
-        let fileData = Data(text.utf8)
-        
-        do {
-            try self.writeContents(fileData, to: self.fileURL, for: .forOverwriting, originalContentsURL: self.fileURL)
-        } catch {
-            throw DocumentHandlingError.couldNotSave
-        }
-    }
-    
-    
+     
 }
 

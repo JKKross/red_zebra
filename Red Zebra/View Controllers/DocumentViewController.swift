@@ -62,7 +62,14 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                     
                     self.titleLabel.title      = self.document?.fileURL.lastPathComponent
                     self.textView.text         = fileContents
-                    self.linesLabel.title      = "Line: --/\(self.textView.text.countAllLines())"
+                    
+                    let linesTotal             = self.textView.text.countAllLines()
+                    
+                    if linesTotal > 10_000 {
+                        self.showErrorPopUp(message: "Wow! That's a looong file!\nI'd recommend you split it into multiple files, otherwise, performance will probably be impacted.")
+                    }
+                    
+                    self.linesLabel.title      = "Line: --/\(linesTotal)"
                     self.fileLoadedSuccesfully = true
                 } catch {
                     

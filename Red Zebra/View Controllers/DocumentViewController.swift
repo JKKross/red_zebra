@@ -173,6 +173,10 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             redoButtonLabel.tintColor = .gray
         }
         
+    }
+    
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
         
         let cursorInTextView = Range(textView.selectedRange)!.lowerBound
         

@@ -12,10 +12,6 @@ extension String {
             }
         }
         
-        if self.last == "\n" {
-            total -= 1
-        }
-        
         return total
     }
 
@@ -35,10 +31,6 @@ extension String {
             if i.isNewline {
                 total += 1
             }
-        }
-        
-        if text.last == "\n" {
-            total -= 1
         }
         
         return total

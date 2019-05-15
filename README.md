@@ -17,7 +17,5 @@ update some variable value or what have you...
 Link to a testflight beta 1: https://testflight.apple.com/join/CuGQmLCx
 
 
-![screenshot1](https://github.com/JKKross/Promo_Images/blob/master/Red_Zebra_screenshot_1.png)
+![screenshot1](https://github.com/JKKross/Red_Zebra/blob/master/_screenshots/_github/Red_Zebra_iPad_simulator.png)
 
-
-![screenshot2](https://github.com/JKKross/Promo_Images/blob/master/Red_Zebra_screenshot_2.png)

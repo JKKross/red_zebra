@@ -1,3 +1,11 @@
+//
+//  CountLines_StringExtension.swift
+//  Red Zebra
+//
+//  Created by Jan Kříž on 12/05/2019.
+//  Copyright © 2019 Jan Kříž. All rights reserved.
+//
+
 extension String {
 
     func countAllLines() -> Int {

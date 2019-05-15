@@ -60,7 +60,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                     self.showErrorPopUp(message: "Wow! That's a looong file!\nI'd recommend you split it into multiple files, otherwise, performance will probably be impacted.")
                 }
                 
-                self.linesLabel.title      = "Line: --/\(linesTotal)"
+                self.linesLabel.title      = "Lines: \(linesTotal)"
                 self.fileLoadedSuccesfully = true
                 
             } else {
@@ -125,7 +125,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
 
 
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
-        // hides the keyboard
         textView.resignFirstResponder()
     }
     
@@ -141,7 +140,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             
             textView.contentInset     = UIEdgeInsets.zero
             doneButtonLabel.tintColor = .gray
-            self.linesLabel.title     = "Line: --/\(self.textView.text.countAllLines())"
             
         } else {
             
@@ -173,14 +171,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             redoButtonLabel.tintColor = .gray
         }
         
-    }
-    
-    
-    func textViewDidChangeSelection(_ textView: UITextView) {
-        
-        let cursorInTextView = Range(textView.selectedRange)!.lowerBound
-        
-        self.linesLabel.title = "Line: \(self.textView.text.countLinesFromBeginning(upTo: cursorInTextView))/\(self.textView.text.countAllLines())"
+        self.linesLabel.title = "Lines: \(self.textView.text.countAllLines())"
     }
     
     

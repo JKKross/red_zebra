@@ -28,15 +28,10 @@ class FontChooserViewController: CustomBaseViewController {
         updateExampleText()
     }
     
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        UserSettings.sharedInstance.saveSettings()
-    }
-    
 
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         UserSettings.sharedInstance.saveSettings()
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     
@@ -56,7 +51,7 @@ class FontChooserViewController: CustomBaseViewController {
             // "Menlo" selected
             UserSettings.sharedInstance.preferredFontIndex = 0
         } else if sender.selectedSegmentIndex == 1 {
-            // "Helvetica" selected
+            // "System Font" selected
             UserSettings.sharedInstance.preferredFontIndex = 1
         }
         

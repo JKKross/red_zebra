@@ -35,7 +35,8 @@ class UserSettings {
         preferredFontSize   = defaults.float(forKey: Keys.fontSize)
         preferredFontIndex  = defaults.integer(forKey: Keys.fontFamily)
         
-        //  The saveSettings() method is not called when someone starts the app for the very first time,
+        //  The saveSettings() method is not called when
+        //  someone starts the app for the very first time,
         //  which results in:
         //
         //    prefferedFontIndex = 0
@@ -44,11 +45,13 @@ class UserSettings {
         //  Altough prefferedFontIndex = 0 is what we want ("Menlo" is default font of choice),
         //  font size = 0.0 is not.
         //
-        //  That's why there is this if statement:
+        //  That's why:
+
         if preferredFontSize < 10 {
             preferredFontSize = 17
             
-            //  FontChooserViewController also uses some of those values to set it's default values properly,
+            //  FontChooserViewController also uses some of those values
+            //  to set it's default values properly,
             //  that's why we need to save here:
             self.saveSettings()
         }

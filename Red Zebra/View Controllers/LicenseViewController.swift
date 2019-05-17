@@ -25,7 +25,7 @@ class LicenseViewController: CustomBaseViewController {
     
 
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
     
     

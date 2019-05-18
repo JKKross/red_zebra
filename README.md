@@ -19,10 +19,3 @@ Link to a testflight beta 1: https://testflight.apple.com/join/CuGQmLCx
 
 ![screenshot1](https://github.com/JKKross/Red_Zebra/blob/master/_screenshots/_github/Red_Zebra_iPad_simulator.png)
 
-
-<h2 align="center">Support</h2>
-
-If you have any questions regarding the app or you just wanna provide me with some feedback, send me an e-mail at zawadski.jkk@gmail.com
-
-Alternatively, you can open an issue right here on github! 🙂
-

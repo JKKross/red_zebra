@@ -1,7 +1,7 @@
 <h1 align="center">Red Zebra</h1>
   
   <p align="center">
-    <img src= "https://img.shields.io/badge/version-1.0-green.svg" />
+    <img src= "https://img.shields.io/badge/version-1.0.1-orange.svg" />
     <img src= "https://img.shields.io/badge/iOS-12.2%2B-blue.svg" />
     <img src= "https://img.shields.io/badge/swift-5.0-blue.svg" />
   </p>

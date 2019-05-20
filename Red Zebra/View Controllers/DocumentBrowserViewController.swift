@@ -82,7 +82,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             
             guard self.fileNameIsOkToUse(fileName: fileName) == true else {
                 // Cancel document creation
-                self.showErrorPopUp(message: #"You can only use characters "a-z", "A-Z", "0-9", "_" & "." followed by an extension name (e.g.: "Hello_World_v2.swift")"#)
+                self.showErrorPopUp(message: #"You can only use characters "a-z", "A-Z", "0-9", " ", "_" & "." followed by an extension name (e.g.: "Hello World_v2.swift")"#)
                 importHandler(nil, .none)
                 return
             }

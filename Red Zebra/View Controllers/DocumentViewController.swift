@@ -68,7 +68,9 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                 self.fileLoadedSuccesfully = false
                 self.titleLabel.title      = ""
                 self.textView.text         = ""
-                self.showErrorPopUp(message: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME")")
+                self.textView.isEditable   = false
+                
+                self.showErrorPopUp(message: "Failed to load file \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME") properly.\nPlease close the file & try again.")
             }
         })
     }
@@ -78,14 +80,13 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
         guard self.fileLoadedSuccesfully else {
             
-            self.showErrorPopUp(message: "File \(self.document?.fileURL.lastPathComponent ?? "UNABLE_TO_FIND_FILE_NAME") did not load properly. Please try closing & opening it again.")
-            dismiss(animated: true)
+            self.dismiss(animated: true)
             return
         }
         
         if document?.text == textView.text {
             
-            dismiss(animated: true)
+            self.dismiss(animated: true)
             return
         } else {
            
@@ -94,7 +95,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         }
         
         
-        dismiss(animated: true) { self.document?.close(completionHandler: nil) }
+        self.dismiss(animated: true) { self.document?.close(completionHandler: nil) }
     }
     
 

@@ -26,6 +26,11 @@ class AboutViewController: CustomBaseViewController {
     As stated previously, this app offers only basic text editing functionality in a familiar iOS Files-like user interface. If you're looking for something more "pro" & you are familiar with Vi-like editors, I'd highly recommend another open-source app - iVim.
     
     
+    Privacy Policy:
+    
+    I don't have access to any of your personal data and/or information. The only way I can gain access to said information is if you decide to send me an e-mail. In that case, I will never willingly share your e-mail address or any private information included in that e-mail with anyone.
+    
+    
     Red Zebra © 2019 Jan Kříž
     
     """#

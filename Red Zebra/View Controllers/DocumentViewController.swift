@@ -131,31 +131,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
     }
-    
-    
-    @objc func adjustForKeyboard(notification: Notification) {
-        // scrolls the textView so it doesn't become "invisible" behind the keyboard
-        let userInfo = notification.userInfo!
-        
-        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-        
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            
-            textView.contentInset     = UIEdgeInsets.zero
-            doneButtonLabel.tintColor = .gray
-            
-        } else {
-            
-            textView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
-            doneButtonLabel.tintColor = .red
-        }
-        
-        textView.scrollIndicatorInsets = textView.contentInset
-        
-        let selectedRange = textView.selectedRange
-        textView.scrollRangeToVisible(selectedRange)
-    }
 
 
     func textViewDidChange(_ textView: UITextView) {
@@ -196,6 +171,31 @@ extension DocumentViewController {
         }
         
         self.document?.close(completionHandler: nil)
+    }
+    
+    
+    @objc func adjustForKeyboard(notification: Notification) {
+        // scrolls the textView so it doesn't become "invisible" behind the keyboard
+        let userInfo = notification.userInfo!
+        
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            
+            textView.contentInset     = UIEdgeInsets.zero
+            doneButtonLabel.tintColor = .gray
+            
+        } else {
+            
+            textView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+            doneButtonLabel.tintColor = .red
+        }
+        
+        textView.scrollIndicatorInsets = textView.contentInset
+        
+        let selectedRange = textView.selectedRange
+        textView.scrollRangeToVisible(selectedRange)
     }
     
 }

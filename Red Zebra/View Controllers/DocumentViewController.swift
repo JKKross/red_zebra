@@ -27,8 +27,10 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
         // adjust the text view so that it is not hidden behind keyboard
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.saveTheDocument), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.saveTheDocument), name: UIApplication.willTerminateNotification, object: nil)
 
         textView.delegate = self
 
@@ -88,6 +90,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             
             self.dismiss(animated: true)
             return
+            
         } else {
            
             document?.text = textView.text
@@ -175,5 +178,24 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         self.linesLabel.title = "Lines: \(self.textView.text.countAllLines())"
     }
     
+    
+}
+
+
+
+extension DocumentViewController {
+    
+    
+    @objc private func saveTheDocument() {
+        
+        guard self.fileLoadedSuccesfully else { return }
+        
+        if document?.text != textView.text {
+            document?.text = textView.text
+            document?.updateChangeCount(.done)
+        }
+        
+        self.document?.close(completionHandler: nil)
+    }
     
 }

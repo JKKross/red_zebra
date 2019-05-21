@@ -62,7 +62,6 @@ class AboutViewController: CustomBaseViewController {
         let nanoRange      = textForRanges.range(of: "NANO")
         let hereRange      = textForRanges.range(of: "here")
         let iVimRange      = textForRanges.range(of: "iVim")
-        
         let feedbackRange  = textForRanges.range(of: "feedback")
         let reviewRange    = textForRanges.range(of: "review")
         
@@ -118,8 +117,8 @@ class AboutViewController: CustomBaseViewController {
             showMailComposer()
             
         }
-        
     }
+    
     
 }
 

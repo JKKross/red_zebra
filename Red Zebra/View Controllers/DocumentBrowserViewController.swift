@@ -68,6 +68,12 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 return
             }
             
+            guard fileName.isEmpty == false else {
+                self.showErrorPopUp(message: "You have to name your file! 🙃")
+                importHandler(nil, .none)
+                return
+            }
+            
             guard (fileName.first?.isLetter == true || fileName.first?.isNumber == true || fileName.first == "_") else {
                 self.showErrorPopUp(message: #"You have to begin your file name with a letter, number or an underscore"#)
                 importHandler(nil, .none)
@@ -95,7 +101,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 // Make sure the document saved successfully
                 guard saveSuccess else {
                     // Cancel document creation
-                    self.showErrorPopUp(message: "You have to name your file")
+                    self.showErrorPopUp(message: "Something went wrong... please try again! 🙃")
                     importHandler(nil, .none)
                     return
                 }

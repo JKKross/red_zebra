@@ -15,7 +15,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var undoButtonLabel: UIBarButtonItem!
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     @IBOutlet var doneButtonLabel: UIBarButtonItem!
-    @IBOutlet var linesLabel: UIBarButtonItem!
     
     var document: Document?
     
@@ -37,7 +36,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         undoButtonLabel.tintColor = .gray
         redoButtonLabel.tintColor = .gray
         doneButtonLabel.tintColor = .gray
-        linesLabel.tintColor      = .white
     }
     
     
@@ -55,14 +53,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                 
                 self.titleLabel.title      = self.document?.fileURL.lastPathComponent
                 self.textView.text         = self.document?.text ?? ""
-                
-                let linesTotal             = self.textView.text.countAllLines()
-                
-                if linesTotal > 10_000 {
-                    self.showErrorPopUp(message: "Wow! That's a looong file!\nI'd recommend you split it into multiple files, otherwise, performance will probably be impacted.")
-                }
-                
-                self.linesLabel.title      = "Lines: \(linesTotal)"
                 self.fileLoadedSuccesfully = true
                 
             } else {
@@ -131,6 +121,27 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
     }
+    
+    
+    @IBAction func wordCountButton(_ sender: UIBarButtonItem) {
+        
+        let wc = WordCount(text: self.textView.text)
+        
+        var title = "📖 Word Count 📖"
+        let message = """
+        
+        Characters: \(wc.characters)
+        Words: \(wc.words)
+        Lines: \(wc.lines)
+        """
+        
+        if wc.itsTweetable == true {
+            title = "🐥 It's tweetable! 🐥"
+        }
+        
+        self.showAlertPopUp(title: title, message: message)
+    }
+    
 
 
     func textViewDidChange(_ textView: UITextView) {
@@ -150,7 +161,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             redoButtonLabel.tintColor = .gray
         }
         
-        self.linesLabel.title = "Lines: \(self.textView.text.countAllLines())"
     }
     
     

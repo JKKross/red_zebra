@@ -133,6 +133,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         Characters: \(wc.characters)
         Words: \(wc.words)
         Lines: \(wc.lines)
+        
+        Encoding: utf8
         """
         
         if wc.itsTweetable == true {

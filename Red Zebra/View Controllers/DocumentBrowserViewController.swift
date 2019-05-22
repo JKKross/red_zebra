@@ -50,7 +50,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         let alert = UIAlertController(title: "Name your file", message: nil, preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: { (textField) in
-            textField.placeholder = "e.g.: myFile.txt"
+            textField.placeholder = "Untitled.txt"
         })
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .cancel, handler: { _ in
@@ -63,15 +63,13 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             
             // what happens when user presses "OK"
             
-            guard let fileName = alert.textFields![0].text else {
+            guard var fileName = alert.textFields![0].text else {
                 importHandler(nil, .none)
                 return
             }
             
-            guard fileName.isEmpty == false else {
-                self.showErrorPopUp(message: "You have to name your file! 🙃")
-                importHandler(nil, .none)
-                return
+            if fileName.isEmpty {
+                fileName = "Untitled.txt"
             }
             
             guard (fileName.first?.isLetter == true || fileName.first?.isNumber == true || fileName.first == "_") else {

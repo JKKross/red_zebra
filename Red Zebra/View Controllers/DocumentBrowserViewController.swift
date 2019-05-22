@@ -69,7 +69,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
             }
             
             guard (fileName.first?.isLetter == true || fileName.first?.isNumber == true || fileName.first == "_") else {
-                self.showErrorPopUp(message: #"You have to begin your file name with a letter ("a-z" or "A-Z")"#)
+                self.showErrorPopUp(message: #"You have to begin your file name with a letter, number or an underscore"#)
                 importHandler(nil, .none)
                 return
             }

@@ -130,14 +130,14 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         var title = "📖 Word Count 📖"
         let message = """
         
-        Characters: \(wc.characters)
-        Words: \(wc.words)
-        Lines: \(wc.lines)
+        Characters: \(wc.characters.asFormattedString())
+        Words: \(wc.words.asFormattedString())
+        Lines: \(wc.lines.asFormattedString())
         
         Encoding: utf8
         """
         
-        if wc.itsTweetable == true {
+        if wc.itsTweetable {
             title = "🐥 It's tweetable! 🐥"
         }
         

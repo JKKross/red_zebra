@@ -16,6 +16,7 @@
 		384F1E382213822500D35EFA /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E372213822500D35EFA /* Document.swift */; };
 		384F1E3B2213822500D35EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E392213822500D35EFA /* Main.storyboard */; };
 		384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E3E2213822600D35EFA /* LaunchScreen.storyboard */; };
+		387410022297379500FCD187 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
 		38A2819E2295DC8900AD0B4D /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A771A22219530B00261429 /* DocumentBrowserViewController.swift */; };
 		38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */; };
@@ -36,6 +37,7 @@
 		384F1E3A2213822500D35EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		384F1E3F2213822600D35EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		384F1E412213822600D35EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		387410012297379500FCD187 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		38A2819D2295DC8900AD0B4D /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
 		38A771A22219530B00261429 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */,
+				387410012297379500FCD187 /* IntExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				38A2819E2295DC8900AD0B4D /* WordCount.swift in Sources */,
 				38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */,
 				38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */,
+				387410022297379500FCD187 /* IntExtension.swift in Sources */,
 				3809AED12232CC5E00296D38 /* CustomBaseViewController.swift in Sources */,
 				3809AED32232D02200296D38 /* LicenseViewController.swift in Sources */,
 				384F1E362213822500D35EFA /* DocumentViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380018E622972E6000FB6DF2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */; };
 		3809AED12232CC5E00296D38 /* CustomBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */; };
 		3809AED32232D02200296D38 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AED22232D02200296D38 /* LicenseViewController.swift */; };
 		38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */; };
@@ -15,10 +16,8 @@
 		384F1E382213822500D35EFA /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E372213822500D35EFA /* Document.swift */; };
 		384F1E3B2213822500D35EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E392213822500D35EFA /* Main.storyboard */; };
 		384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E3E2213822600D35EFA /* LaunchScreen.storyboard */; };
-		385528272295DE9A00A3AB42 /* ShowAlertPopUp_UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385528262295DE9A00A3AB42 /* ShowAlertPopUp_UIViewControllerExtension.swift */; };
 		38A2819E2295DC8900AD0B4D /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A771A22219530B00261429 /* DocumentBrowserViewController.swift */; };
-		38B4CF802288BCDE00BBCCBA /* ShowErrorPopUp_UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B4CF7E2288BCDE00BBCCBA /* ShowErrorPopUp_UIViewControllerExtension.swift */; };
 		38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */; };
 		38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2F137222208BC004C29D1 /* AboutViewController.swift */; };
 		38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */; };
@@ -26,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBaseViewController.swift; sourceTree = "<group>"; };
 		3809AED22232D02200296D38 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontChooserViewController.swift; sourceTree = "<group>"; };
@@ -36,10 +36,8 @@
 		384F1E3A2213822500D35EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		384F1E3F2213822600D35EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		384F1E412213822600D35EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		385528262295DE9A00A3AB42 /* ShowAlertPopUp_UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertPopUp_UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		38A2819D2295DC8900AD0B4D /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
 		38A771A22219530B00261429 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		38B4CF7E2288BCDE00BBCCBA /* ShowErrorPopUp_UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowErrorPopUp_UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		38C2F137222208BC004C29D1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsSingleton.swift; sourceTree = "<group>"; };
@@ -121,8 +119,7 @@
 		38B4CF812288C88200BBCCBA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				38B4CF7E2288BCDE00BBCCBA /* ShowErrorPopUp_UIViewControllerExtension.swift */,
-				385528262295DE9A00A3AB42 /* ShowAlertPopUp_UIViewControllerExtension.swift */,
+				380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,9 +215,8 @@
 				38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */,
 				3809AED12232CC5E00296D38 /* CustomBaseViewController.swift in Sources */,
 				3809AED32232D02200296D38 /* LicenseViewController.swift in Sources */,
-				38B4CF802288BCDE00BBCCBA /* ShowErrorPopUp_UIViewControllerExtension.swift in Sources */,
 				384F1E362213822500D35EFA /* DocumentViewController.swift in Sources */,
-				385528272295DE9A00A3AB42 /* ShowAlertPopUp_UIViewControllerExtension.swift in Sources */,
+				380018E622972E6000FB6DF2 /* UIViewControllerExtension.swift in Sources */,
 				384F1E322213822500D35EFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

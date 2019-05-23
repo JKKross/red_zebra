@@ -1,5 +1,5 @@
 //
-//  ShowAlertPopUp_UIViewControllerExtension.swift
+//  UIViewControllerExtension.swift
 //  Red Zebra
 //
 //  Created by Jan Kříž on 22/05/2019.
@@ -18,5 +18,12 @@ extension UIViewController {
         
         self.present(alert, animated: true)
     }
+
+
+
+    func showErrorPopUp(message: String) {
+        self.showAlertPopUp(title: "🤔 ERROR 🤷🏽‍♀️", message: message)
+    }
+
     
 }

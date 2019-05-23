@@ -19,7 +19,7 @@ class AboutViewController: CustomBaseViewController {
     // if this text is changed in any way, you need to update "feedbackFirstLetterIndex" (in "@IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer)") accordingly!
     private var aboutTheAppText = #"""
 
-    Red Zebra is a simple text editor inspired by iOS app Textor & GNU's terminal text editor NANO. Red Zebra is open-source software and you can find the source code here.
+    Red Zebra is a simple text editor inspired by iOS app Textor & GNU's terminal text editor NANO. Red Zebra is open-source software and you can find the source code on Github.
 
     I highly appreciate any feedback and/or App Store review.
 
@@ -60,7 +60,7 @@ class AboutViewController: CustomBaseViewController {
         
         let textorRange    = textForRanges.range(of: "Textor")
         let nanoRange      = textForRanges.range(of: "NANO")
-        let hereRange      = textForRanges.range(of: "here")
+        let githubRange    = textForRanges.range(of: "Github")
         let iVimRange      = textForRanges.range(of: "iVim")
         let feedbackRange  = textForRanges.range(of: "feedback")
         let reviewRange    = textForRanges.range(of: "review")
@@ -68,7 +68,7 @@ class AboutViewController: CustomBaseViewController {
         let attributedString = NSMutableAttributedString(string: aboutTheAppText)
         attributedString.addAttribute(.link, value: "https://github.com/louisdh/textor", range: textorRange)
         attributedString.addAttribute(.link, value: "https://www.nano-editor.org", range: nanoRange)
-        attributedString.addAttribute(.link, value: "https://github.com/JKKross/Red_Zebra", range: hereRange)
+        attributedString.addAttribute(.link, value: "https://github.com/JKKross/Red_Zebra", range: githubRange)
         attributedString.addAttribute(.link, value: "https://itunes.apple.com/app/ivim/id1266544660?mt=8", range: iVimRange)
         attributedString.addAttribute(.link, value: "https://itunes.apple.com/app/red-zebra/id1463017929?l=cs&ls=1&mt=8", range: reviewRange)
         
@@ -104,7 +104,7 @@ class AboutViewController: CustomBaseViewController {
     @IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         
         // you have to change this value if you modified "aboutTheAppText"!!!
-        let feedbackFirstLetterIndex = 196
+        let feedbackFirstLetterIndex = 199
         
         let feedbackLocation = aboutTheAppLabel.layoutManager.boundingRect(forGlyphRange: NSRange(location: feedbackFirstLetterIndex, length: 8), in: aboutTheAppLabel.layoutManager.textContainers[0])
         

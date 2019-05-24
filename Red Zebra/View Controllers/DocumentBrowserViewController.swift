@@ -9,7 +9,7 @@
 import UIKit
 
 
-class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocumentBrowserViewControllerDelegate {
+class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocumentBrowserViewControllerDelegate, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
@@ -33,6 +33,14 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Makes the textField in the "name your file" pop-up selected.
+        // I have NO CLUE why textField.selectAll(self) is not working... #MoreBoilerPlate
+        textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.endOfDocument)
+        textField.becomeFirstResponder()
+    }
+    
+    
     
     private func createNamedFile(controller: UIDocumentBrowserViewController, importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
         
@@ -51,6 +59,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         alert.addTextField(configurationHandler: { (textField) in
             textField.placeholder = "Untitled.txt"
+            textField.text        = "Untitled.txt"
+            textField.delegate    = self
         })
         
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .cancel, handler: { _ in

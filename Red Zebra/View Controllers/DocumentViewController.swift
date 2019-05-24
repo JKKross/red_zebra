@@ -152,10 +152,10 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let message = """
         
         Characters: \(wc.characters.asFormattedString())
+        Bytes: \(wc.bytes.asFormattedString())
         Words: \(wc.words.asFormattedString())
         Lines: \(wc.lines.asFormattedString())
         
-        Encoding: utf8
         """
         
         if wc.itsTweetable {

@@ -12,6 +12,7 @@ struct WordCount {
     var characters: Int
     var words:      Int
     var lines:      Int
+    var bytes:      Int
     
     var itsTweetable: Bool
     
@@ -50,7 +51,10 @@ struct WordCount {
         words.removeAll(where: { $0 == "" })
         
         
+        
+        
         self.characters = text.count
+        self.bytes      = text.utf8.count
         self.words      = words.count
         self.lines      = 0
         

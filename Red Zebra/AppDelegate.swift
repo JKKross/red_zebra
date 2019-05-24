@@ -15,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let fileManager   = FileManager.default
+        let homeDirectory = "\(NSHomeDirectory())/Documents"
+        
+        if fileManager.fileExists(atPath: "\(homeDirectory)/.red_zebra") == false {
+            
+            let emptyFile = Data.init()
+            fileManager.createFile(atPath: "\(homeDirectory)/.red_zebra", contents: emptyFile, attributes: nil)
+        }
+        
         return true
     }
 

@@ -15,6 +15,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var undoButtonLabel: UIBarButtonItem!
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     @IBOutlet var doneButtonLabel: UIBarButtonItem!
+    @IBOutlet var previewButtonLabel: UIBarButtonItem!
     
     var document: Document?
     
@@ -36,6 +37,12 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         undoButtonLabel.tintColor = .gray
         redoButtonLabel.tintColor = .gray
         doneButtonLabel.tintColor = .gray
+        
+        if self.document!.is_HTML_or_markdown() {
+            previewButtonLabel.title = "Preview"
+        } else {
+            previewButtonLabel.title = ""
+        }
     }
     
     
@@ -120,6 +127,20 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
 
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
+    }
+    
+    
+    
+    @IBAction func previewButton(_ sender: UIBarButtonItem) {
+        
+        if self.document!.is_HTML_or_markdown() == false { return }
+        
+        let webBrowser = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebBrowserViewController") as! WebBrowserViewController
+        
+        webBrowser.webContent = WebContent(data: self.textView.text, url: self.document?.fileURL)
+        
+        self.present(webBrowser, animated: true)
+        
     }
     
     

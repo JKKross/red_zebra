@@ -13,9 +13,3 @@ It is heavily inspired by both [GNU's NANO](https://www.nano-editor.org) text ed
 It's not meant to be a feature complete IDE, with fancy features and stuff...
 Just a simple tool that you use when you're away from your computer and need to review some code or
 update some variable value or what have you...
-
-Link to a testflight beta 1: https://testflight.apple.com/join/CuGQmLCx
-
-
-![screenshot1](https://github.com/JKKross/Red_Zebra/blob/master/_screenshots/_github/Red_Zebra_iPad_simulator.png)
-

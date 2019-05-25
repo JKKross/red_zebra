@@ -34,9 +34,9 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
 
         textView.delegate = self
 
-        undoButtonLabel.tintColor = .gray
-        redoButtonLabel.tintColor = .gray
-        doneButtonLabel.tintColor = .gray
+        undoButtonLabel.isEnabled = false
+        redoButtonLabel.isEnabled = false
+        doneButtonLabel.isEnabled = false
         
         if self.document!.is_HTML_or_markdown() {
             previewButtonLabel.title = "Preview"
@@ -105,9 +105,9 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let canUndo: Bool = textView.undoManager?.canUndo ?? false
 
         if canUndo {
-            undoButtonLabel.tintColor = .red
+            undoButtonLabel.isEnabled = true
         } else {
-            undoButtonLabel.tintColor = .gray
+            undoButtonLabel.isEnabled = false
         }
     }
 
@@ -118,9 +118,9 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let canRedo: Bool = textView.undoManager?.canRedo ?? false
 
         if canRedo {
-            redoButtonLabel.tintColor = .red
+            redoButtonLabel.isEnabled = true
         } else {
-            redoButtonLabel.tintColor = .gray
+            redoButtonLabel.isEnabled = false
         }
     }
 
@@ -173,15 +173,15 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let canRedo: Bool = textView.undoManager?.canRedo ?? false
 
         if canUndo {
-            undoButtonLabel.tintColor = .red
+            undoButtonLabel.isEnabled = true
         } else {
-            undoButtonLabel.tintColor = .gray
+            undoButtonLabel.isEnabled = false
         }
 
         if canRedo {
-            redoButtonLabel.tintColor = .red
+            redoButtonLabel.isEnabled = true
         } else {
-            redoButtonLabel.tintColor = .gray
+            redoButtonLabel.isEnabled = false
         }
         
     }
@@ -217,12 +217,12 @@ extension DocumentViewController {
         if notification.name == UIResponder.keyboardWillHideNotification {
             
             textView.contentInset     = UIEdgeInsets.zero
-            doneButtonLabel.tintColor = .gray
+            doneButtonLabel.isEnabled = false
             
         } else {
             
             textView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
-            doneButtonLabel.tintColor = .red
+            doneButtonLabel.isEnabled = true
         }
         
         textView.scrollIndicatorInsets = textView.contentInset

@@ -284,39 +284,53 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="g4S-ak-HrH">
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="kFp-1X-Eoe">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Preview" id="dr8-8i-wGI">
-                                        <barButtonItem key="leftBarButtonItem" title="Dismiss" id="nb3-XR-VMF">
+                                    <navigationItem title="Preview" id="46U-Vr-QyP">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="PL2-O3-pSQ">
                                             <connections>
-                                                <action selector="dismissButton:" destination="j7V-Vo-pU4" id="RfX-Pu-bJd"/>
+                                                <action selector="closeButton:" destination="j7V-Vo-pU4" id="iXW-ck-c6Z"/>
                                             </connections>
                                         </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Frwrd" id="aiL-So-Q8H">
+                                                <connections>
+                                                    <action selector="forwardButton:" destination="j7V-Vo-pU4" id="RZT-my-0Yz"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Back" id="AeH-Wv-grR">
+                                                <connections>
+                                                    <action selector="backButton:" destination="j7V-Vo-pU4" id="7nU-Qq-OCe"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" name="barlike_color"/>
                         <constraints>
-                            <constraint firstItem="g4S-ak-HrH" firstAttribute="top" secondItem="D97-0F-IsT" secondAttribute="top" id="1Gq-uQ-j77"/>
-                            <constraint firstItem="D97-0F-IsT" firstAttribute="trailing" secondItem="ps8-Xv-wac" secondAttribute="trailing" id="Jdj-6I-BRY"/>
-                            <constraint firstItem="ps8-Xv-wac" firstAttribute="top" secondItem="g4S-ak-HrH" secondAttribute="bottom" id="Pdr-sP-xAa"/>
-                            <constraint firstItem="g4S-ak-HrH" firstAttribute="trailing" secondItem="D97-0F-IsT" secondAttribute="trailing" id="UE9-H6-tZt"/>
-                            <constraint firstItem="g4S-ak-HrH" firstAttribute="leading" secondItem="D97-0F-IsT" secondAttribute="leading" id="iE9-E0-Cnn"/>
-                            <constraint firstItem="D97-0F-IsT" firstAttribute="bottom" secondItem="ps8-Xv-wac" secondAttribute="bottom" id="oLd-Vp-bF5"/>
-                            <constraint firstItem="ps8-Xv-wac" firstAttribute="leading" secondItem="D97-0F-IsT" secondAttribute="leading" id="w4g-pi-ja4"/>
+                            <constraint firstItem="kFp-1X-Eoe" firstAttribute="top" secondItem="D97-0F-IsT" secondAttribute="top" id="62q-0U-hHw"/>
+                            <constraint firstItem="kFp-1X-Eoe" firstAttribute="trailing" secondItem="D97-0F-IsT" secondAttribute="trailing" id="9xf-a0-BiC"/>
+                            <constraint firstItem="ps8-Xv-wac" firstAttribute="leading" secondItem="D97-0F-IsT" secondAttribute="leading" id="ETd-iW-xMS"/>
+                            <constraint firstItem="ps8-Xv-wac" firstAttribute="bottom" secondItem="D97-0F-IsT" secondAttribute="bottom" id="Xcw-h1-AWP"/>
+                            <constraint firstItem="ps8-Xv-wac" firstAttribute="top" secondItem="kFp-1X-Eoe" secondAttribute="bottom" id="aek-cx-JfB"/>
+                            <constraint firstItem="kFp-1X-Eoe" firstAttribute="leading" secondItem="D97-0F-IsT" secondAttribute="leading" id="cl1-ry-WJU"/>
+                            <constraint firstItem="ps8-Xv-wac" firstAttribute="trailing" secondItem="D97-0F-IsT" secondAttribute="trailing" id="kiF-01-1sK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D97-0F-IsT"/>
                     </view>
                     <connections>
-                        <outlet property="titleLabel" destination="dr8-8i-wGI" id="26z-Hz-xQ2"/>
+                        <outlet property="backButtonLabel" destination="AeH-Wv-grR" id="4ku-oG-yGz"/>
+                        <outlet property="forwardButtonLabel" destination="aiL-So-Q8H" id="5YQ-cJ-hRx"/>
+                        <outlet property="navBarTitleLabel" destination="46U-Vr-QyP" id="U9T-sa-346"/>
                         <outlet property="webView" destination="ps8-Xv-wac" id="AvB-0z-fmm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="935-Tu-mmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1971" y="175"/>
+            <point key="canvasLocation" x="1970.625" y="174.29577464788733"/>
         </scene>
         <!--Font Chooser-->
         <scene sceneID="aV6-NC-fc1">

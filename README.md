@@ -1,13 +1,13 @@
 <h1 align="center">Red Zebra</h1>
 
   <p align="center">
-    <a href="https://itunes.apple.com/app/red-zebra/id1463017929?l=cs&ls=1&mt=8"><img src="/_ASSETS_/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store"/></a>
+    <a href="https://itunes.apple.com/app/red-zebra/id1463017929?l=cs&ls=1&mt=8"><img src="/_ASSETS_/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store badge"/></a>
   </p>
 
   <p align="center">
-    <img src= "https://img.shields.io/badge/version-1.1-orange.svg" />
-    <img src= "https://img.shields.io/badge/iOS-12.2%2B-blue.svg" />
-    <img src= "https://img.shields.io/badge/swift-5.0-blue.svg" />
+    <img src= "https://img.shields.io/badge/version-1.1-orange.svg" alt="version 1.1"/>
+    <img src= "https://img.shields.io/badge/iOS-12.2%2B-blue.svg" alt="iOS 12.2 plus"/>
+    <img src= "https://img.shields.io/badge/swift-5.0-blue.svg" alt="Swift 5.0"/>
   </p>
 
 
@@ -19,4 +19,4 @@ Just a simple tool that you use when you're away from your computer and need to 
 update some variable value or what have you...
 
 
-![screenshot1](/_ASSETS_/_screenshots/_github/Red_Zebra_iPad_simulator.png)
+<img source="/_ASSETS_/_screenshots/_github/Red_Zebra_iPad_simulator.png" alt="Picture of the app running on an iPad"/>

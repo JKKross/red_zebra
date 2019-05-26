@@ -1,7 +1,7 @@
 <h1 align="center">Red Zebra</h1>
 
   <p align="center">
-    <a href="https://itunes.apple.com/app/red-zebra/id1463017929?l=cs&ls=1&mt=8"><img src="/_ASSETS_/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store badge"/></a>
+    <a href="https://itunes.apple.com/app/red-zebra/id1463017929?l=cs&ls=1&mt=8"><img src="https://github.com/JKKross/Red_Zebra/blob/master/_ASSETS_/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store badge"/></a>
   </p>
 
   <p align="center">
@@ -19,4 +19,4 @@ Just a simple tool that you use when you're away from your computer and need to 
 update some variable value or what have you...
 
 
-<img source="/_ASSETS_/_screenshots/_github/Red_Zebra_iPad_simulator.png" alt="Picture of the app running on an iPad"/>
+<img src="https://github.com/JKKross/Red_Zebra/blob/master/_ASSETS_/_screenshots/_github/Red_Zebra_iPad_simulator.png" alt="Picture of the app running on an iPad"/>

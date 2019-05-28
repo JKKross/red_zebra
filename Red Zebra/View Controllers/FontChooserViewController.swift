@@ -83,7 +83,7 @@ class FontChooserViewController: CustomBaseViewController {
         
         struct fontExample {
         
-            var myFont: UIFont = \(UIFontForTextView)
+            var myFont = \(UIFontForTextView)
         
             let exampleText = "Hello, world!"
         

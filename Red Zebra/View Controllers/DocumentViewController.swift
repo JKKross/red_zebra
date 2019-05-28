@@ -75,27 +75,15 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     }
     
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.saveTheDocument()
+    }
+    
+    
     @IBAction func dismissDocumentViewController() {
-        
-        guard self.fileLoadedSuccesfully else {
-            
-            self.dismiss(animated: true)
-            return
-        }
-        
-        if document?.text == textView.text {
-            
-            self.dismiss(animated: true)
-            return
-            
-        } else {
-           
-            document?.text = textView.text
-            document?.updateChangeCount(.done)
-        }
-        
-        
-        self.dismiss(animated: true) { self.document?.close(completionHandler: nil) }
+        self.dismiss(animated: true)
     }
     
 
@@ -197,11 +185,10 @@ extension DocumentViewController {
     @objc private func saveTheDocument() {
         
         guard self.fileLoadedSuccesfully else { return }
+        guard self.document?.text != self.textView.text else { return }
         
-        if document?.text != textView.text {
-            document?.text = textView.text
-            document?.updateChangeCount(.done)
-        }
+        document?.text = textView.text
+        document?.updateChangeCount(.done)
         
         self.document?.close(completionHandler: nil)
     }

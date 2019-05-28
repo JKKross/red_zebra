@@ -93,13 +93,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 importHandler(nil, .none)
                 return
             }
-            
-            guard self.fileNameIsOkToUse(fileName: fileName) == true else {
-                // Cancel document creation
-                self.showErrorPopUp(message: #"You can only use characters "a-z", "A-Z", "0-9", " ", "_" & "." followed by an extension name (e.g.: "Hello World_v2.swift")"#)
-                importHandler(nil, .none)
-                return
-            }
+
             
             let newDocument = Document(fileName: fileName)
             
@@ -189,17 +183,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         settingsVC.modalPresentationStyle = .formSheet
         
         present(settingsVC, animated: true)
-    }
-    
-    
-    private func fileNameIsOkToUse(fileName file: String) -> Bool {
-        
-        for i in file {
-            if i.isLetter == false && i.isNumber == false && i != "." && i != "_" && i != "-" && i != "(" && i != ")" && i != " " {
-                return false
-            }
-        }
-        return true
     }
     
     

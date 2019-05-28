@@ -88,10 +88,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 return
             }
             
-            guard self.doesHaveAnExtension(fileName: fileName) == true else {
-                self.showErrorPopUp(message: #"You have to give your file an extension (e.g.: ".txt", ".swift" etc.)"#)
-                importHandler(nil, .none)
-                return
+            if self.doesHaveAnExtension(fileName: fileName) == false {
+                fileName.append(".txt")
             }
 
             
@@ -199,7 +197,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 for _ in file {
                     
                     let ext = file.removeFirst()
-                    if ext == " " {
+                    if ext.isLetter == false {
                         return false
                     }
                 }

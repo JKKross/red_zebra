@@ -82,8 +82,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 fileName = "Untitled.txt"
             }
             
-            guard (fileName.first?.isLetter == true || fileName.first?.isNumber == true || fileName.first == "_") else {
-                self.showErrorPopUp(message: #"You have to begin your file name with a letter, number or an underscore"#)
+            if fileName.first == "." {
+                self.showErrorPopUp(message: #"If you start your file name with a ".", you won't be able to see it on iOS - it would become a hidden file"#)
                 importHandler(nil, .none)
                 return
             }

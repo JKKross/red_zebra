@@ -184,6 +184,14 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
+    
+}
+
+
+
+extension DocumentBrowserViewController {
+
+    
     private func doesHaveAnExtension(fileName: String) -> Bool {
         
         var file = fileName
@@ -206,7 +214,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         }
         return false
     }
-    
-    
-}
 
+
+
+}

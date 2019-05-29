@@ -19,4 +19,4 @@ Just a simple tool that you use when you're away from your computer and need to 
 update some variable value or what have you...
 
 
-<img src="https://github.com/JKKross/Red_Zebra/blob/master/_ASSETS_/_screenshots/_github/Red_Zebra_iPad_simulator.png" alt="Picture of the app running on an iPad"/>
+<img src="https://github.com/JKKross/Red_Zebra/blob/master/_ASSETS_/_screenshots/_github/Red_Zebra_iPad.png" alt="Picture of the app running on an iPad"/>

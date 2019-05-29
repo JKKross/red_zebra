@@ -16,12 +16,10 @@
 		384F1E382213822500D35EFA /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E372213822500D35EFA /* Document.swift */; };
 		384F1E3B2213822500D35EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E392213822500D35EFA /* Main.storyboard */; };
 		384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E3E2213822600D35EFA /* LaunchScreen.storyboard */; };
-		385328B722975DCC00924A5C /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385328B622975DCC00924A5C /* DocumentExtension.swift */; };
 		38539CAD22983523005C5DD8 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38539CAC22983523005C5DD8 /* WebContent.swift */; };
 		387410022297379500FCD187 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
 		38A2819E2295DC8900AD0B4D /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A771A22219530B00261429 /* DocumentBrowserViewController.swift */; };
-		38B01F1422981E8800D302A7 /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B01F1322981E8800D302A7 /* WebBrowserViewController.swift */; };
 		38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */; };
 		38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2F137222208BC004C29D1 /* AboutViewController.swift */; };
 		38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */; };
@@ -40,12 +38,10 @@
 		384F1E3A2213822500D35EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		384F1E3F2213822600D35EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		384F1E412213822600D35EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		385328B622975DCC00924A5C /* DocumentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
 		38539CAC22983523005C5DD8 /* WebContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContent.swift; sourceTree = "<group>"; };
 		387410012297379500FCD187 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		38A2819D2295DC8900AD0B4D /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
 		38A771A22219530B00261429 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		38B01F1322981E8800D302A7 /* WebBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
 		38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		38C2F137222208BC004C29D1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsSingleton.swift; sourceTree = "<group>"; };
@@ -98,7 +94,6 @@
 			children = (
 				38A771A22219530B00261429 /* DocumentBrowserViewController.swift */,
 				384F1E352213822500D35EFA /* DocumentViewController.swift */,
-				38B01F1322981E8800D302A7 /* WebBrowserViewController.swift */,
 				38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */,
 				38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */,
 				38C2F137222208BC004C29D1 /* AboutViewController.swift */,
@@ -131,7 +126,6 @@
 			children = (
 				380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */,
 				387410012297379500FCD187 /* IntExtension.swift */,
-				385328B622975DCC00924A5C /* DocumentExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,11 +214,9 @@
 			files = (
 				38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */,
 				38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */,
-				38B01F1422981E8800D302A7 /* WebBrowserViewController.swift in Sources */,
 				38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */,
 				38539CAD22983523005C5DD8 /* WebContent.swift in Sources */,
 				384F1E382213822500D35EFA /* Document.swift in Sources */,
-				385328B722975DCC00924A5C /* DocumentExtension.swift in Sources */,
 				38A2819E2295DC8900AD0B4D /* WordCount.swift in Sources */,
 				38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */,
 				38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */,

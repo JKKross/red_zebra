@@ -38,10 +38,12 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         redoButtonLabel.isEnabled = false
         doneButtonLabel.isEnabled = false
         
-        if self.document!.is_HTML_or_markdown() {
-            previewButtonLabel.title = "Preview"
+        if self.document!.isHTML() || self.document!.isMarkdown() {
+            previewButtonLabel.title     = "Preview"
+            previewButtonLabel.isEnabled = true
         } else {
-            previewButtonLabel.title = ""
+            previewButtonLabel.title     = ""
+            previewButtonLabel.isEnabled = false
         }
     }
     
@@ -59,7 +61,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             if success {
                 
                 self.titleLabel.title      = self.document?.fileURL.lastPathComponent
-                self.textView.text         = self.document?.text ?? ""
+                self.textView.text         = self.document!.text
                 self.fileLoadedSuccesfully = true
                 
             } else {
@@ -77,7 +79,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         self.saveTheDocument()
     }
     
@@ -121,13 +122,19 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     @IBAction func previewButton(_ sender: UIBarButtonItem) {
         
-        if self.document!.is_HTML_or_markdown() == false { return }
+        if self.document!.isHTML() {
         
-        let webBrowser = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebBrowserViewController") as! WebBrowserViewController
+            let webBrowser = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebBrowserViewController") as! WebBrowserViewController
         
-        webBrowser.webContent = WebContent(data: self.textView.text, url: self.document?.fileURL)
+            webBrowser.webContent = WebContent(data: self.textView.text, url: self.document?.fileURL)
         
-        self.present(webBrowser, animated: true)
+            self.present(webBrowser, animated: true)
+
+        } else if self.document!.isMarkdown() {
+
+            print("Markdown")
+            return
+        }
         
     }
     

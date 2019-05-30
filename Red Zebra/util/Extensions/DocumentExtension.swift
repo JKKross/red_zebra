@@ -10,11 +10,23 @@ import UIKit
 
 extension Document {
     
-    func is_HTML_or_markdown() -> Bool {
+    func isHTML() -> Bool {
         
         let fileExtension = self.fileURL.pathExtension
         
-        if fileExtension == "html" || fileExtension == "htm" || fileExtension == "md" {
+        if fileExtension == "html" || fileExtension == "htm" {
+            return true
+        }
+        
+        return false
+    }
+
+
+    func isMarkdown() -> Bool {
+        
+        let fileExtension = self.fileURL.pathExtension
+        
+        if fileExtension == "md" {
             return true
         }
         

@@ -132,8 +132,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
 
         } else if self.document!.isMarkdown() {
 
-            print("Markdown")
-            return
+            self.showAlertPopUp(title: "Not implemented", message: nil)
         }
         
     }

@@ -25,5 +25,3 @@ update some variable value or what have you...
 
 **Master** branch is the version that is currently available on the App Store.
 If you wanna check out the experiments/upcoming features, check out **dev** branch.
-
-Sometimes, there is a Testflight Beta available - for that reason, there is **beta** branch (coming soon).

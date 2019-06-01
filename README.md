@@ -26,4 +26,4 @@ If you are willing to test the [beta version](https://testflight.apple.com/join/
 ### Branches:
 
 **Master** branch is the version that is currently available on the App Store.
-If you wanna check out the experiments/upcoming features, check out **dev** branch.
+If you wanna check out the experiments/upcoming features, check out [**dev**](https://github.com/JKKross/Red_Zebra/tree/dev) branch.

@@ -294,12 +294,12 @@
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem title="Frwrd" id="aiL-So-Q8H">
+                                            <barButtonItem image="forward_icon" id="aiL-So-Q8H">
                                                 <connections>
                                                     <action selector="forwardButton:" destination="j7V-Vo-pU4" id="RZT-my-0Yz"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Back" id="AeH-Wv-grR">
+                                            <barButtonItem image="back_icon" id="AeH-Wv-grR">
                                                 <connections>
                                                     <action selector="backButton:" destination="j7V-Vo-pU4" id="7nU-Qq-OCe"/>
                                                 </connections>
@@ -439,7 +439,9 @@
     </scenes>
     <resources>
         <image name="about_icon" width="40" height="40"/>
+        <image name="back_icon" width="40" height="40"/>
         <image name="fonts_icon" width="40" height="40"/>
+        <image name="forward_icon" width="40" height="40"/>
         <image name="license_icon" width="40" height="40"/>
         <namedColor name="background">
             <color red="0.17000000178813934" green="0.17000000178813934" blue="0.17000000178813934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -38,7 +38,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         redoButtonLabel.isEnabled = false
         doneButtonLabel.isEnabled = false
         
-        if self.document!.isHTML() || self.document!.isMarkdown() {
+        if self.document!.isHTML() {
             previewButtonLabel.title     = "Preview"
             previewButtonLabel.isEnabled = true
         } else {
@@ -130,9 +130,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
             self.present(webBrowser, animated: true)
 
-        } else if self.document!.isMarkdown() {
-
-            self.showAlertPopUp(title: "Not implemented", message: nil)
         }
         
     }

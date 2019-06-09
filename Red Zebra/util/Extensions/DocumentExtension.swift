@@ -26,7 +26,7 @@ extension Document {
         
         let fileExtension = self.fileURL.pathExtension
         
-        if fileExtension == "md" {
+        if fileExtension == "md" || fileExtension == "markdown" {
             return true
         }
         

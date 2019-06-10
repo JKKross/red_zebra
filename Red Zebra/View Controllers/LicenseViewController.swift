@@ -18,8 +18,9 @@ class LicenseViewController: CustomBaseViewController {
         super.viewDidLoad()
         
         licenseTextField.text = licenseText
-        
         licenseTextField.isEditable = false
+        
+        licenseTextField.accessibilityLabel = "Standart M.I.T. License"
     }
     
     

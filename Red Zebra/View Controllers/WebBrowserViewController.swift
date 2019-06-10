@@ -35,6 +35,9 @@ class WebBrowserViewController: CustomBaseViewController, WKNavigationDelegate {
         backButtonLabel.isEnabled    = false
         forwardButtonLabel.isEnabled = false
         
+        backButtonLabel.accessibilityLabel    = "Previous page"
+        forwardButtonLabel.accessibilityLabel = "Next page"
+        
         super.viewDidLoad()
     }
     

@@ -26,6 +26,9 @@ class FontChooserViewController: CustomBaseViewController {
         fontChooserSegmentedControl.selectedSegmentIndex = UserSettings.sharedInstance.preferredFontIndex
         
         updateExampleText()
+        
+        fontSizeLabel.accessibilityLabel       = "Font size is \(fontSizeLabel.text!)"
+        fontExampleTextView.accessibilityLabel = "Font preview"
     }
     
 

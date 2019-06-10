@@ -16,6 +16,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     @IBOutlet var doneButtonLabel: UIBarButtonItem!
     @IBOutlet var previewButtonLabel: UIBarButtonItem!
+    @IBOutlet var wordCountButtonLabel: UIBarButtonItem!
     
     var document: Document?
     
@@ -38,9 +39,17 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         redoButtonLabel.isEnabled = false
         doneButtonLabel.isEnabled = false
         
+        titleLabel.accessibilityLabel           = "\(document!.fileURL.lastPathComponent)"
+        textView.accessibilityLabel             = "Enter your text here"
+        undoButtonLabel.accessibilityLabel      = "Undo"
+        redoButtonLabel.accessibilityLabel      = "Redo"
+        doneButtonLabel.accessibilityLabel      = "Hide keyboard"
+        wordCountButtonLabel.accessibilityLabel = "Word Count"
+        
         if self.document!.isHTML() {
-            previewButtonLabel.title     = "Preview"
-            previewButtonLabel.isEnabled = true
+            previewButtonLabel.title              = "Preview"
+            previewButtonLabel.accessibilityLabel = "Preview \(document!.fileURL.lastPathComponent)"
+            previewButtonLabel.isEnabled          = true
         } else {
             previewButtonLabel.title     = ""
             previewButtonLabel.isEnabled = false

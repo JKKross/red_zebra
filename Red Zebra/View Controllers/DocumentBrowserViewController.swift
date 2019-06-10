@@ -20,8 +20,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         let icon = UIImage(named: "settings_icon", in: nil, compatibleWith: nil)
         let item = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(presentSettingsView))
+        item.accessibilityLabel = "Settings" // TODO: This is not working, for some weird reason...
         self.additionalLeadingNavigationBarButtonItems = [item]
-        
         
         delegate = self
         

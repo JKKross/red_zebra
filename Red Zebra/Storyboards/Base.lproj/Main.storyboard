@@ -262,6 +262,7 @@
                         <outlet property="textView" destination="8ec-0g-dTQ" id="l7Z-Fr-843"/>
                         <outlet property="titleLabel" destination="fdB-32-Aq6" id="P85-Fn-3gt"/>
                         <outlet property="undoButtonLabel" destination="Jha-oa-DC7" id="4NO-gE-IcR"/>
+                        <outlet property="wordCountButtonLabel" destination="Ouj-TM-bae" id="fRx-9k-WwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl9-ES-qQn" userLabel="First Responder" sceneMemberID="firstResponder"/>

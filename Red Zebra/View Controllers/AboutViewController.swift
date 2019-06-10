@@ -39,6 +39,8 @@ class AboutViewController: CustomBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        aboutTheAppLabel.accessibilityLabel = "About the app"
+        
         updateAboutTheAppTextView()
     }
 

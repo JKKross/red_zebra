@@ -388,7 +388,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-R2-3SX">
                                 <rect key="frame" x="16" y="133" width="288" height="29"/>
                                 <segments>
-                                    <segment title="Menlo"/>
+                                    <segment title="Monospace Font"/>
                                     <segment title="System Font"/>
                                 </segments>
                                 <connections>

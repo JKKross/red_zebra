@@ -151,10 +151,10 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         var title = "📖 Word Count 📖"
         let message = """
         
-        Characters: \(wc.characters.asFormattedString())
-        Bytes: \(wc.bytes.asFormattedString())
-        Words: \(wc.words.asFormattedString())
-        Lines: \(wc.lines.asFormattedString())
+        Characters: \(wc.characters.asFormattedString())s
+        Bytes: \(wc.bytes.asFormattedString()),
+        Words: \(wc.words.asFormattedString()),
+        Lines: \(wc.lines.asFormattedString()).
         
         """
         

@@ -23,6 +23,8 @@ class WordCountTests: XCTestCase {
     let expectedWords = 10
     let expectedLines = 3
     
+    let expectedItsTweetable = true
+    
     var wc: WordCount!
     
     override func setUp() {
@@ -47,6 +49,11 @@ class WordCountTests: XCTestCase {
     
     func testLines() {
         XCTAssert(expectedLines == wc.lines)
+    }
+    
+    
+    func testItsTweetable() {
+        XCTAssert(expectedItsTweetable == wc.itsTweetable)
     }
 
 }

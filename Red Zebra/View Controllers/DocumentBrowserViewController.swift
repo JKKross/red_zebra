@@ -18,9 +18,22 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         UserSettings.sharedInstance.loadSettings()
         
-        let icon = UIImage(named: "settings_icon", in: nil, compatibleWith: nil)
-        let item = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(presentSettingsView))
-        item.accessibilityLabel = "Settings" // TODO: This is not working, for some weird reason...
+        let item: UIBarButtonItem!
+        
+        // The following is a workaround for users who have Voice Over turned on.
+        // There is most likely a bug in UIDocumentBrowserViewController, that makes me unable to set accessibility label on an UIBarButtonItem that was initialized using UIImage
+        // See Feedback "FB6156475"
+        if UIAccessibility.isVoiceOverRunning {
+            
+            item = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(presentSettingsView))
+        } else {
+         
+            let icon = UIImage(named: "settings_icon", in: nil, compatibleWith: nil)
+            item = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(presentSettingsView))
+        }
+        
+        item.accessibilityLabel = "Settings"
+        
         self.additionalLeadingNavigationBarButtonItems = [item]
         
         delegate = self
@@ -59,7 +72,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         alert.addTextField(configurationHandler: { (textField) in
             textField.placeholder = "Untitled.txt"
-            textField.text        = "Untitled.txt"
+            textField.text        = "Untitled"
             textField.delegate    = self
         })
         

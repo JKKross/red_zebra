@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "384F1E2D2213822500D35EFA"
-               BuildableName = "Red Zebra.app"
+               BuildableName = "RedZebra.app"
                BlueprintName = "Red Zebra"
                ReferencedContainer = "container:Red Zebra.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "38A5D81322B44F6F007DADE9"
+               BlueprintIdentifier = "386C502422B6C2A500D1F397"
                BuildableName = "RedZebraTests.xctest"
                BlueprintName = "RedZebraTests"
                ReferencedContainer = "container:Red Zebra.xcodeproj">
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "384F1E2D2213822500D35EFA"
-            BuildableName = "Red Zebra.app"
+            BuildableName = "RedZebra.app"
             BlueprintName = "Red Zebra"
             ReferencedContainer = "container:Red Zebra.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "384F1E2D2213822500D35EFA"
-            BuildableName = "Red Zebra.app"
+            BuildableName = "RedZebra.app"
             BlueprintName = "Red Zebra"
             ReferencedContainer = "container:Red Zebra.xcodeproj">
          </BuildableReference>
@@ -85,7 +85,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "384F1E2D2213822500D35EFA"
-            BuildableName = "Red Zebra.app"
+            BuildableName = "RedZebra.app"
             BlueprintName = "Red Zebra"
             ReferencedContainer = "container:Red Zebra.xcodeproj">
          </BuildableReference>

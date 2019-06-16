@@ -17,6 +17,7 @@
 		384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E3E2213822600D35EFA /* LaunchScreen.storyboard */; };
 		385328B722975DCC00924A5C /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385328B622975DCC00924A5C /* DocumentExtension.swift */; };
 		38539CAD22983523005C5DD8 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38539CAC22983523005C5DD8 /* WebContent.swift */; };
+		386924CA22B6E72800D1E498 /* WordCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386924C922B6E72800D1E498 /* WordCountTests.swift */; };
 		386C502822B6C2A500D1F397 /* RedZebraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C502722B6C2A500D1F397 /* RedZebraTests.swift */; };
 		386C503022B6C33B00D1F397 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AED22232D02200296D38 /* LicenseViewController.swift */; };
 		387410022297379500FCD187 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
@@ -53,6 +54,7 @@
 		384F1E412213822600D35EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385328B622975DCC00924A5C /* DocumentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
 		38539CAC22983523005C5DD8 /* WebContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContent.swift; sourceTree = "<group>"; };
+		386924C922B6E72800D1E498 /* WordCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests.swift; sourceTree = "<group>"; };
 		386C502522B6C2A500D1F397 /* RedZebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedZebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		386C502722B6C2A500D1F397 /* RedZebraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedZebraTests.swift; sourceTree = "<group>"; };
 		386C502922B6C2A500D1F397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				386C502722B6C2A500D1F397 /* RedZebraTests.swift */,
+				386924C922B6E72800D1E498 /* WordCountTests.swift */,
 				386C502922B6C2A500D1F397 /* Info.plist */,
 			);
 			path = RedZebraTests;
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				386C502822B6C2A500D1F397 /* RedZebraTests.swift in Sources */,
+				386924CA22B6E72800D1E498 /* WordCountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

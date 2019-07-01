@@ -22,4 +22,11 @@ update some variable value or what have you...
 
 <img src="https://github.com/JKKross/Red_Zebra/blob/master/_ASSETS_/_screenshots/_github/Red_Zebra_iPad.png" alt="Picture of the app running on an iPad"/>
 
-If you are willing to test the [beta version](https://testflight.apple.com/join/ru9BvuJe) of Red Zebra, thank you!!!
+If you are willing to become a [beta tester](https://testflight.apple.com/join/ru9BvuJe), thank you!!!
+
+### Branches:
+
+**Master** is the branch where all the new development is happening & it's version number should be close to the public beta.
+
+The version that is on App Store is the "latest non-master branch" - for example: if there is branch named "**1.2.9**", that's the version that you can find on the App Store.
+**Master** is most likely a little bit ahead of the App Store version - given our example probably something like 1.3 or 1.2.10.

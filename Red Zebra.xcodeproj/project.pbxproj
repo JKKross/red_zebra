@@ -10,6 +10,8 @@
 		380018E622972E6000FB6DF2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */; };
 		3809AED12232CC5E00296D38 /* CustomBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */; };
 		3809AED32232D02200296D38 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3809AED22232D02200296D38 /* LicenseViewController.swift */; };
+		3817666322CAA0EF005920B8 /* IntAsFormattedStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */; };
+		3817666522CAA12D005920B8 /* WordCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817666422CAA12D005920B8 /* WordCountTests.swift */; };
 		38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */; };
 		384F1E322213822500D35EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E312213822500D35EFA /* AppDelegate.swift */; };
 		384F1E362213822500D35EFA /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E352213822500D35EFA /* DocumentViewController.swift */; };
@@ -28,10 +30,22 @@
 		38E3C77322773FFA00FE4985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E3C77222773FFA00FE4985 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		38F5523422CAA08B00135C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 384F1E262213822500D35EFA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 384F1E2D2213822500D35EFA;
+			remoteInfo = "Red Zebra";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBaseViewController.swift; sourceTree = "<group>"; };
 		3809AED22232D02200296D38 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntAsFormattedStringTests.swift; sourceTree = "<group>"; };
+		3817666422CAA12D005920B8 /* WordCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests.swift; sourceTree = "<group>"; };
 		38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontChooserViewController.swift; sourceTree = "<group>"; };
 		384F1E2E2213822500D35EFA /* RedZebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedZebra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384F1E312213822500D35EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,10 +64,19 @@
 		38DEB06222CA978C000DD296 /* DocumentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
 		38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
 		38E3C77222773FFA00FE4985 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38F5522F22CAA08B00135C24 /* RedZebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedZebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F5523322CAA08B00135C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		384F1E2B2213822500D35EFA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F5522C22CAA08B00135C24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				384F1E302213822500D35EFA /* Red Zebra */,
+				38F5523022CAA08B00135C24 /* RedZebraTests */,
 				384F1E2F2213822500D35EFA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				384F1E2E2213822500D35EFA /* RedZebra.app */,
+				38F5522F22CAA08B00135C24 /* RedZebraTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +171,16 @@
 			path = util;
 			sourceTree = "<group>";
 		};
+		38F5523022CAA08B00135C24 /* RedZebraTests */ = {
+			isa = PBXGroup;
+			children = (
+				38F5523322CAA08B00135C24 /* Info.plist */,
+				3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */,
+				3817666422CAA12D005920B8 /* WordCountTests.swift */,
+			);
+			path = RedZebraTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,19 +201,42 @@
 			productReference = 384F1E2E2213822500D35EFA /* RedZebra.app */;
 			productType = "com.apple.product-type.application";
 		};
+		38F5522E22CAA08B00135C24 /* RedZebraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F5523822CAA08B00135C24 /* Build configuration list for PBXNativeTarget "RedZebraTests" */;
+			buildPhases = (
+				38F5522B22CAA08B00135C24 /* Sources */,
+				38F5522C22CAA08B00135C24 /* Frameworks */,
+				38F5522D22CAA08B00135C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38F5523522CAA08B00135C24 /* PBXTargetDependency */,
+			);
+			name = RedZebraTests;
+			productName = RedZebraTests;
+			productReference = 38F5522F22CAA08B00135C24 /* RedZebraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		384F1E262213822500D35EFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Jan Kříž";
 				TargetAttributes = {
 					384F1E2D2213822500D35EFA = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+					};
+					38F5522E22CAA08B00135C24 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+						TestTargetID = 384F1E2D2213822500D35EFA;
 					};
 				};
 			};
@@ -196,6 +254,7 @@
 			projectRoot = "";
 			targets = (
 				384F1E2D2213822500D35EFA /* Red Zebra */,
+				38F5522E22CAA08B00135C24 /* RedZebraTests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +267,13 @@
 				384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */,
 				384F1E3B2213822500D35EFA /* Main.storyboard in Resources */,
 				38E3C77322773FFA00FE4985 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F5522D22CAA08B00135C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +303,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38F5522B22CAA08B00135C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3817666322CAA0EF005920B8 /* IntAsFormattedStringTests.swift in Sources */,
+				3817666522CAA12D005920B8 /* WordCountTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38F5523522CAA08B00135C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 384F1E2D2213822500D35EFA /* Red Zebra */;
+			targetProxy = 38F5523422CAA08B00135C24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		384F1E392213822500D35EFA /* Main.storyboard */ = {
@@ -413,6 +496,51 @@
 			};
 			name = Release;
 		};
+		38F5523622CAA08B00135C24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8938J75P7;
+				INFOPLIST_FILE = RedZebraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jankriz.RedZebraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedZebra.app/RedZebra";
+			};
+			name = Debug;
+		};
+		38F5523722CAA08B00135C24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8938J75P7;
+				INFOPLIST_FILE = RedZebraTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jankriz.RedZebraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RedZebra.app/RedZebra";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,6 +558,15 @@
 			buildConfigurations = (
 				384F1E452213822600D35EFA /* Debug */,
 				384F1E462213822600D35EFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F5523822CAA08B00135C24 /* Build configuration list for PBXNativeTarget "RedZebraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F5523622CAA08B00135C24 /* Debug */,
+				38F5523722CAA08B00135C24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

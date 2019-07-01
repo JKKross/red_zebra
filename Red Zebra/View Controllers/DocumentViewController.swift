@@ -5,7 +5,6 @@
 //  Created by Jan Kříž on 12/02/2019.
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
-
 import UIKit
 
 class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
@@ -15,6 +14,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var undoButtonLabel: UIBarButtonItem!
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     @IBOutlet var doneButtonLabel: UIBarButtonItem!
+    @IBOutlet var previewButtonLabel: UIBarButtonItem!
+    @IBOutlet var wordCountButtonLabel: UIBarButtonItem!
     
     var document: Document?
     
@@ -30,12 +31,28 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         notificationCenter.addObserver(self, selector: #selector(self.adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(self.saveTheDocument), name: UIApplication.willResignActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(self.saveTheDocument), name: UIApplication.willTerminateNotification, object: nil)
-
+        
         textView.delegate = self
-
+        
         undoButtonLabel.isEnabled = false
         redoButtonLabel.isEnabled = false
         doneButtonLabel.isEnabled = false
+        
+        titleLabel.accessibilityLabel           = "\(document!.fileURL.lastPathComponent)"
+        textView.accessibilityLabel             = "Enter your text here"
+        undoButtonLabel.accessibilityLabel      = "Undo"
+        redoButtonLabel.accessibilityLabel      = "Redo"
+        doneButtonLabel.accessibilityLabel      = "Hide keyboard"
+        wordCountButtonLabel.accessibilityLabel = "Word Count"
+        
+        if self.document!.isHTML() {
+            previewButtonLabel.title              = "Preview"
+            previewButtonLabel.accessibilityLabel = "Preview \(document!.fileURL.lastPathComponent)"
+            previewButtonLabel.isEnabled          = true
+        } else {
+            previewButtonLabel.title     = ""
+            previewButtonLabel.isEnabled = false
+        }
     }
     
     
@@ -52,7 +69,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             if success {
                 
                 self.titleLabel.title      = self.document?.fileURL.lastPathComponent
-                self.textView.text         = self.document?.text ?? ""
+                self.textView.text         = self.document!.text
                 self.fileLoadedSuccesfully = true
                 
             } else {
@@ -70,7 +87,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         self.saveTheDocument()
     }
     
@@ -79,35 +95,51 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         self.dismiss(animated: true)
     }
     
-
+    
     @IBAction func undoTapped(_ sender: UIBarButtonItem) {
-
+        
         textView.undoManager?.undo()
         let canUndo: Bool = textView.undoManager?.canUndo ?? false
-
+        
         if canUndo {
             undoButtonLabel.isEnabled = true
         } else {
             undoButtonLabel.isEnabled = false
         }
     }
-
-
+    
+    
     @IBAction func redoTapped(_ sender: UIBarButtonItem) {
-
+        
         textView.undoManager?.redo()
         let canRedo: Bool = textView.undoManager?.canRedo ?? false
-
+        
         if canRedo {
             redoButtonLabel.isEnabled = true
         } else {
             redoButtonLabel.isEnabled = false
         }
     }
-
-
+    
+    
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
+    }
+    
+    
+    
+    @IBAction func previewButton(_ sender: UIBarButtonItem) {
+        
+        if self.document!.isHTML() {
+            
+            let webBrowser = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebBrowserViewController") as! WebBrowserViewController
+            
+            webBrowser.webContent = WebContent(data: self.textView.text, url: self.document?.fileURL)
+            
+            self.present(webBrowser, animated: true)
+            
+        }
+        
     }
     
     
@@ -118,10 +150,10 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         var title = "📖 Word Count 📖"
         let message = """
         
-        Characters: \(wc.characters.asFormattedString())
-        Bytes: \(wc.bytes.asFormattedString())
-        Words: \(wc.words.asFormattedString())
-        Lines: \(wc.lines.asFormattedString())
+        Characters: \(wc.characters.asFormattedString()),
+        Bytes: \(wc.bytes.asFormattedString()),
+        Words: \(wc.words.asFormattedString()),
+        Lines: \(wc.lines.asFormattedString()).
         
         """
         
@@ -132,19 +164,19 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         self.showAlertPopUp(title: title, message: message)
     }
     
-
-
+    
+    
     func textViewDidChange(_ textView: UITextView) {
-
+        
         let canUndo: Bool = textView.undoManager?.canUndo ?? false
         let canRedo: Bool = textView.undoManager?.canRedo ?? false
-
+        
         if canUndo {
             undoButtonLabel.isEnabled = true
         } else {
             undoButtonLabel.isEnabled = false
         }
-
+        
         if canRedo {
             redoButtonLabel.isEnabled = true
         } else {

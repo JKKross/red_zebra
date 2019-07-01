@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
 
-
 struct WordCount {
     
     var characters: Int

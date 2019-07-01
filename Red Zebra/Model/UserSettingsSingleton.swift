@@ -5,7 +5,6 @@
 //  Created by Jan Kříž on 04/02/2019.
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
-
 import UIKit
 
 class UserSettings {
@@ -46,7 +45,6 @@ class UserSettings {
         //  font size = 0.0 is not.
         //
         //  That's why:
-
         if preferredFontSize < 10 {
             preferredFontSize = 17
             

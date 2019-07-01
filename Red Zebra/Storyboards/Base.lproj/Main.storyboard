@@ -222,6 +222,12 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="6KF-9F-Sts"/>
+                                    <barButtonItem title="Preview" id="GNo-oo-kRw">
+                                        <connections>
+                                            <action selector="previewButton:" destination="M2k-L8-Olo" id="i4S-nh-bT6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Us6-OW-eKS"/>
                                     <barButtonItem title="WordCount" id="Ouj-TM-bae">
                                         <connections>
                                             <action selector="wordCountButton:" destination="M2k-L8-Olo" id="OlD-I1-19Q"/>
@@ -251,15 +257,81 @@
                     </view>
                     <connections>
                         <outlet property="doneButtonLabel" destination="YzO-X0-BM1" id="lJX-1t-E6I"/>
+                        <outlet property="previewButtonLabel" destination="GNo-oo-kRw" id="9U9-iP-nvm"/>
                         <outlet property="redoButtonLabel" destination="3pQ-v3-D9t" id="7uZ-Cq-0j3"/>
                         <outlet property="textView" destination="8ec-0g-dTQ" id="l7Z-Fr-843"/>
                         <outlet property="titleLabel" destination="fdB-32-Aq6" id="P85-Fn-3gt"/>
                         <outlet property="undoButtonLabel" destination="Jha-oa-DC7" id="4NO-gE-IcR"/>
+                        <outlet property="wordCountButtonLabel" destination="Ouj-TM-bae" id="340-37-jLj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rl9-ES-qQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1021.875" y="175.35211267605635"/>
+        </scene>
+        <!--Web Browser View Controller-->
+        <scene sceneID="q6d-uK-wcO">
+            <objects>
+                <viewController storyboardIdentifier="WebBrowserViewController" id="t6G-xJ-3Wl" customClass="WebBrowserViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wmo-UG-K0u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="ytd-bo-Gs9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="PjN-j2-qsc">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="TRR-CL-BPd">
+                                            <connections>
+                                                <action selector="closeButton:" destination="t6G-xJ-3Wl" id="18I-pA-wgW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem image="forward_icon" id="qqv-CG-XYs">
+                                                <connections>
+                                                    <action selector="forwardButton:" destination="t6G-xJ-3Wl" id="UG9-wh-DdL"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="back_icon" id="fhL-8o-TIb">
+                                                <connections>
+                                                    <action selector="backButton:" destination="t6G-xJ-3Wl" id="mv2-mb-aKN"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZC-83-sXI">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" name="barlike_color"/>
+                        <constraints>
+                            <constraint firstItem="FTD-Fc-gcX" firstAttribute="trailing" secondItem="HZC-83-sXI" secondAttribute="trailing" id="9xV-wQ-d2r"/>
+                            <constraint firstItem="ytd-bo-Gs9" firstAttribute="top" secondItem="FTD-Fc-gcX" secondAttribute="top" id="FhR-mZ-J2p"/>
+                            <constraint firstItem="ytd-bo-Gs9" firstAttribute="leading" secondItem="FTD-Fc-gcX" secondAttribute="leading" id="Hjd-6c-zqZ"/>
+                            <constraint firstAttribute="bottom" secondItem="HZC-83-sXI" secondAttribute="bottom" id="Jhy-Sb-a1L"/>
+                            <constraint firstItem="HZC-83-sXI" firstAttribute="top" secondItem="ytd-bo-Gs9" secondAttribute="bottom" id="Utr-Ls-E2G"/>
+                            <constraint firstItem="ytd-bo-Gs9" firstAttribute="trailing" secondItem="FTD-Fc-gcX" secondAttribute="trailing" id="cvh-wu-ZLy"/>
+                            <constraint firstItem="HZC-83-sXI" firstAttribute="leading" secondItem="wmo-UG-K0u" secondAttribute="leading" id="t1D-FE-dQC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FTD-Fc-gcX"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButtonLabel" destination="fhL-8o-TIb" id="77c-6M-qmX"/>
+                        <outlet property="forwardButtonLabel" destination="qqv-CG-XYs" id="Cbm-Wo-cG9"/>
+                        <outlet property="navBarTitleLabel" destination="PjN-j2-qsc" id="JBz-4L-TlI"/>
+                        <outlet property="webView" destination="HZC-83-sXI" id="mBn-hs-sjm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RlH-vU-YX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="177"/>
         </scene>
         <!--Font Chooser-->
         <scene sceneID="aV6-NC-fc1">
@@ -316,7 +388,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="43Z-R2-3SX">
                                 <rect key="frame" x="16" y="133" width="288" height="29"/>
                                 <segments>
-                                    <segment title="Menlo"/>
+                                    <segment title="Monospace"/>
                                     <segment title="System Font"/>
                                 </segments>
                                 <connections>
@@ -368,7 +440,9 @@
     </scenes>
     <resources>
         <image name="about_icon" width="40" height="40"/>
+        <image name="back_icon" width="40" height="40"/>
         <image name="fonts_icon" width="40" height="40"/>
+        <image name="forward_icon" width="40" height="40"/>
         <image name="license_icon" width="40" height="40"/>
         <namedColor name="background">
             <color red="0.17000000178813934" green="0.17000000178813934" blue="0.17000000178813934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

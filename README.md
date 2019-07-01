@@ -23,8 +23,3 @@ update some variable value or what have you...
 <img src="https://github.com/JKKross/Red_Zebra/blob/master/_ASSETS_/_screenshots/_github/Red_Zebra_iPad.png" alt="Picture of the app running on an iPad"/>
 
 If you are willing to test the [beta version](https://testflight.apple.com/join/ru9BvuJe) of Red Zebra, thank you!!!
-
-### Branches:
-
-**Master** branch is the version that is currently available on the App Store.
-If you wanna check out the experiments/upcoming features, check out [**dev**](https://github.com/JKKross/Red_Zebra/tree/dev) branch.

@@ -5,7 +5,6 @@
 //  Created by Jan Kříž on 24/02/2019.
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
-
 import UIKit
 import StoreKit
 import MessageUI
@@ -15,14 +14,11 @@ class AboutViewController: CustomBaseViewController {
     @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
     
     @IBOutlet var aboutTheAppLabel: UITextView!
-
+    
     // if this text is changed in any way, you need to update "feedbackFirstLetterIndex" (in "@IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer)") accordingly!
     private var aboutTheAppText = #"""
-
     Red Zebra is a simple text editor inspired by iOS app Textor & GNU's terminal text editor NANO. Red Zebra is open-source software and you can find the source code on Github.
-
     I highly appreciate any feedback and/or App Store review.
-
     As stated previously, this app offers only basic text editing functionality in a familiar iOS Files-like user interface. If you're looking for something more "pro" & you are familiar with Vi-like editors, I'd highly recommend another open-source app - iVim.
     
     
@@ -35,13 +31,15 @@ class AboutViewController: CustomBaseViewController {
     
     """#
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        aboutTheAppLabel.accessibilityLabel = "About the app"
+        
         updateAboutTheAppTextView()
     }
-
+    
     
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true)

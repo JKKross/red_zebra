@@ -5,7 +5,6 @@
 //  Created by Jan Kříž on 22/05/2019.
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
-
 import UIKit
 
 extension UIViewController {
@@ -18,12 +17,12 @@ extension UIViewController {
         
         self.present(alert, animated: true)
     }
-
-
-
+    
+    
+    
     func showErrorPopUp(message: String) {
         self.showAlertPopUp(title: "🤔 ERROR 🤷🏽‍♀️", message: message)
     }
-
+    
     
 }

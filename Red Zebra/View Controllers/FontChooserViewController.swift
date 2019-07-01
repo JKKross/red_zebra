@@ -5,7 +5,6 @@
 //  Created by Jan Kříž on 02/03/2019.
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
-
 import UIKit
 
 class FontChooserViewController: CustomBaseViewController {
@@ -26,9 +25,12 @@ class FontChooserViewController: CustomBaseViewController {
         fontChooserSegmentedControl.selectedSegmentIndex = UserSettings.sharedInstance.preferredFontIndex
         
         updateExampleText()
+        
+        fontSizeLabel.accessibilityLabel       = "Font size is \(fontSizeLabel.text!)"
+        fontExampleTextView.accessibilityLabel = "Font preview"
     }
     
-
+    
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         UserSettings.sharedInstance.saveSettings()
         dismiss(animated: true)
@@ -44,7 +46,7 @@ class FontChooserViewController: CustomBaseViewController {
         updateExampleText()
     }
     
-  
+    
     @IBAction func fontSwitcher(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 0 {
@@ -58,7 +60,7 @@ class FontChooserViewController: CustomBaseViewController {
         UserSettings.sharedInstance.saveSettings()
         updateExampleText()
     }
-
+    
     
     private func updateExampleText() {
         
@@ -78,14 +80,13 @@ class FontChooserViewController: CustomBaseViewController {
         
         fontExampleTextView.text = """
         // try changing your preferred font or it's size and see how it looks! 😎
-
         import UIKit
         
         struct fontExample {
         
-            var myFont = \(UIFontForTextView)
+        var myFont = \(UIFontForTextView)
         
-            let exampleText = "Hello, world!"
+        let exampleText = "Hello, world!"
         
         }
         """

@@ -5,9 +5,7 @@
 //  Created by Jan Kříž on 12/02/2019.
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
-
 import UIKit
-
 
 enum DocumentHandlingError: Error {
     case couldNotLoad
@@ -30,7 +28,7 @@ class Document: UIDocument {
         
         super.init(fileURL: url)
     }
-
+    
     
     override func contents(forType typeName: String) throws -> Any {
         
@@ -47,6 +45,5 @@ class Document: UIDocument {
         text = String(decoding: contents, as: UTF8.self)
     }
     
-     
+    
 }
-

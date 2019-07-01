@@ -23,6 +23,8 @@
 		38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */; };
 		38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2F137222208BC004C29D1 /* AboutViewController.swift */; };
 		38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */; };
+		38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06222CA978C000DD296 /* DocumentExtension.swift */; };
+		38DEB06522CA993D000DD296 /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */; };
 		38E3C77322773FFA00FE4985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E3C77222773FFA00FE4985 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +33,7 @@
 		3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBaseViewController.swift; sourceTree = "<group>"; };
 		3809AED22232D02200296D38 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontChooserViewController.swift; sourceTree = "<group>"; };
-		384F1E2E2213822500D35EFA /* Red Zebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Red Zebra.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		384F1E2E2213822500D35EFA /* RedZebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedZebra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384F1E312213822500D35EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		384F1E352213822500D35EFA /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		384F1E372213822500D35EFA /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		38C2F137222208BC004C29D1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsSingleton.swift; sourceTree = "<group>"; };
+		38DEB06222CA978C000DD296 /* DocumentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
+		38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
 		38E3C77222773FFA00FE4985 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +74,7 @@
 		384F1E2F2213822500D35EFA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				384F1E2E2213822500D35EFA /* Red Zebra.app */,
+				384F1E2E2213822500D35EFA /* RedZebra.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +100,7 @@
 				384F1E352213822500D35EFA /* DocumentViewController.swift */,
 				38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */,
 				38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */,
+				38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */,
 				38C2F137222208BC004C29D1 /* AboutViewController.swift */,
 				3809AED22232D02200296D38 /* LicenseViewController.swift */,
 			);
@@ -126,6 +131,7 @@
 			children = (
 				380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */,
 				387410012297379500FCD187 /* IntExtension.swift */,
+				38DEB06222CA978C000DD296 /* DocumentExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,7 +163,7 @@
 			);
 			name = "Red Zebra";
 			productName = "Code Editor";
-			productReference = 384F1E2E2213822500D35EFA /* Red Zebra.app */;
+			productReference = 384F1E2E2213822500D35EFA /* RedZebra.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -213,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */,
+				38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */,
 				38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */,
 				38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */,
 				38539CAD22983523005C5DD8 /* WebContent.swift in Sources */,
@@ -221,6 +228,7 @@
 				38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */,
 				38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */,
 				387410022297379500FCD187 /* IntExtension.swift in Sources */,
+				38DEB06522CA993D000DD296 /* WebBrowserViewController.swift in Sources */,
 				3809AED12232CC5E00296D38 /* CustomBaseViewController.swift in Sources */,
 				3809AED32232D02200296D38 /* LicenseViewController.swift in Sources */,
 				384F1E362213822500D35EFA /* DocumentViewController.swift in Sources */,
@@ -370,7 +378,7 @@
 		384F1E452213822600D35EFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-beta";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8938J75P7;
 				INFOPLIST_FILE = "Red Zebra/Info.plist";
@@ -380,7 +388,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -389,7 +397,7 @@
 		384F1E462213822600D35EFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-beta";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8938J75P7;
 				INFOPLIST_FILE = "Red Zebra/Info.plist";
@@ -399,7 +407,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

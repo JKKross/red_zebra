@@ -80,15 +80,17 @@ class FontChooserViewController: CustomBaseViewController {
         
         fontExampleTextView.text = """
         // try changing your preferred font or it's size and see how it looks! 😎
+        
         import UIKit
         
         struct fontExample {
         
-        var myFont = \(UIFontForTextView)
+            var myFont = \(UIFontForTextView)
         
-        let exampleText = "Hello, world!"
+            let exampleText = "Hello, world!"
         
         }
+        
         """
         
     }

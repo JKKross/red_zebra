@@ -71,7 +71,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         alert.addTextField(configurationHandler: { (textField) in
             textField.placeholder = "Untitled.txt"
-            textField.text        = "Untitled"
+            textField.text        = "Untitled.txt"
             textField.delegate    = self
         })
         

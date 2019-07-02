@@ -45,7 +45,7 @@ class UserSettings {
         //  font size = 0.0 is not.
         //
         //  That's why:
-        if preferredFontSize < 10 {
+        if preferredFontSize < 5 {
             preferredFontSize = 17
             
             //  FontChooserViewController also uses some of those values

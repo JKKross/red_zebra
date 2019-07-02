@@ -14,7 +14,7 @@
         <!--Document Browser View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="DocumentBrowserViewController" id="BYZ-38-t0r" customClass="DocumentBrowserViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DocumentBrowserViewController" id="BYZ-38-t0r" customClass="DocumentBrowserViewController" customModule="RedZebra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
         <!--Settings Tab Bar View Controller-->
         <scene sceneID="gKB-Ma-hGS">
             <objects>
-                <tabBarController storyboardIdentifier="SettingsViewController" id="tHq-bD-xOl" customClass="SettingsTabBarViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="SettingsViewController" id="tHq-bD-xOl" customClass="SettingsTabBarViewController" customModule="RedZebra" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="dDr-Ke-nIL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,7 +48,7 @@
         <!--License View Controller-->
         <scene sceneID="46K-ag-sUc">
             <objects>
-                <viewController storyboardIdentifier="LicenseViewController" id="neM-Oz-b0C" userLabel="License View Controller" customClass="LicenseViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LicenseViewController" id="neM-Oz-b0C" userLabel="License View Controller" customClass="LicenseViewController" customModule="RedZebra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qxU-hG-3ez">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +106,7 @@
         <!--AboutViewController-->
         <scene sceneID="qj5-Rf-ewI">
             <objects>
-                <viewController storyboardIdentifier="AboutViewController" id="m28-uW-vhT" userLabel="AboutViewController" customClass="AboutViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" id="m28-uW-vhT" userLabel="AboutViewController" customClass="AboutViewController" customModule="RedZebra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zw1-fT-2O9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,7 +174,7 @@
         <!--Document View Controller-->
         <scene sceneID="dkP-xk-x6W">
             <objects>
-                <viewController storyboardIdentifier="DocumentViewController" id="M2k-L8-Olo" customClass="DocumentViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DocumentViewController" id="M2k-L8-Olo" customClass="DocumentViewController" customModule="RedZebra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIE-Uh-Zny">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +272,7 @@
         <!--Web Browser View Controller-->
         <scene sceneID="q6d-uK-wcO">
             <objects>
-                <viewController storyboardIdentifier="WebBrowserViewController" id="t6G-xJ-3Wl" customClass="WebBrowserViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebBrowserViewController" id="t6G-xJ-3Wl" customClass="WebBrowserViewController" customModule="RedZebra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wmo-UG-K0u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
         <!--Font Chooser-->
         <scene sceneID="aV6-NC-fc1">
             <objects>
-                <viewController storyboardIdentifier="FontChooserViewController" id="HXR-Vg-CuN" userLabel="Font Chooser" customClass="FontChooserViewController" customModule="Red_Zebra" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FontChooserViewController" id="HXR-Vg-CuN" userLabel="Font Chooser" customClass="FontChooserViewController" customModule="RedZebra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GIW-G0-LmC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,7 +375,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minimumValue="12" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="UgS-h9-lc0">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minimumValue="5" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="UgS-h9-lc0">
                                                 <rect key="frame" x="38" y="0.0" width="94" height="29"/>
                                                 <connections>
                                                     <action selector="fontSizePickerTapped:" destination="HXR-Vg-CuN" eventType="valueChanged" id="EcT-2L-g9E"/>

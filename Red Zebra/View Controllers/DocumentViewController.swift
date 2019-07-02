@@ -15,7 +15,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     @IBOutlet var doneButtonLabel: UIBarButtonItem!
     @IBOutlet var previewButtonLabel: UIBarButtonItem!
-    @IBOutlet var wordCountButtonLabel: UIBarButtonItem!
+    @IBOutlet var moreButtonLabel: UIBarButtonItem!
     
     var document: Document?
     
@@ -43,7 +43,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         undoButtonLabel.accessibilityLabel      = "Undo"
         redoButtonLabel.accessibilityLabel      = "Redo"
         doneButtonLabel.accessibilityLabel      = "Hide keyboard"
-        wordCountButtonLabel.accessibilityLabel = "Word Count"
+        moreButtonLabel.accessibilityLabel = "More options"
         
         if self.document!.isHTML() {
             previewButtonLabel.title              = "Preview"
@@ -143,25 +143,16 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     }
     
     
-    @IBAction func wordCountButton(_ sender: UIBarButtonItem) {
+    @IBAction func moreButton(_ sender: UIBarButtonItem) {
         
-        let wc = WordCount(text: self.textView.text)
+        let alert = UIAlertController(title: "What do you want to do?", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Word Count", style: .default, handler: { _ in self.wordCount() } ))
+        alert.addAction(UIAlertAction(title: "Zalgo-ify text", style: .default, handler: { _ in self.zalgoify() } ))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in return } ))
         
-        var title = "📖 Word Count 📖"
-        let message = """
+        alert.popoverPresentationController?.barButtonItem = self.moreButtonLabel
         
-        Characters: \(wc.characters.asFormattedString()),
-        Bytes: \(wc.bytes.asFormattedString()),
-        Words: \(wc.words.asFormattedString()),
-        Lines: \(wc.lines.asFormattedString()).
-        
-        """
-        
-        if wc.itsTweetable {
-            title = "🐥 It's tweetable! 🐥"
-        }
-        
-        self.showAlertPopUp(title: title, message: message)
+        self.present(alert, animated: true)
     }
     
     
@@ -227,6 +218,40 @@ extension DocumentViewController {
         
         let selectedRange = textView.selectedRange
         textView.scrollRangeToVisible(selectedRange)
+    }
+    
+    
+    private func wordCount() {
+        let wc = WordCount(text: self.textView.text)
+        
+        var title = "📖 Word Count 📖"
+        let message = """
+        
+        Characters: \(wc.characters.asFormattedString()),
+        Bytes: \(wc.bytes.asFormattedString()),
+        Words: \(wc.words.asFormattedString()),
+        Lines: \(wc.lines.asFormattedString()).
+        
+        """
+        
+        if wc.itsTweetable {
+            title = "🐥 It's tweetable! 🐥"
+        }
+        
+        self.showAlertPopUp(title: title, message: message)
+    }
+    
+    
+    private func zalgoify() {
+        
+        let zalgo = Zalgo()
+        let zalgoifiedText = zalgo.transform(self.textView.text)
+        
+        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(zalgoifiedText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = zalgoifiedText }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        
+        self.present(alert, animated: true)
     }
     
 }

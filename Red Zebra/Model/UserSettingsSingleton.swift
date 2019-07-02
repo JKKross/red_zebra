@@ -9,27 +9,24 @@ import UIKit
 
 class UserSettings {
     
+    private let defaults = UserDefaults.standard
     
     private init() {}
-    static let sharedInstance = UserSettings()
+    static public let sharedInstance = UserSettings()
     
-    let defaults = UserDefaults.standard
+    public var font  = UIFont(name: "Menlo", size: 17)
     
-    
-    var font  = UIFont(name: "Menlo", size: 17)
-    
-    
-    var preferredFontSize: Float = 17
-    var preferredFontIndex       = 0
+    public var preferredFontSize: Float = 17
+    public var preferredFontIndex       = 0
     
     
-    func saveSettings() {
+    public func saveSettings() {
         defaults.set(preferredFontIndex, forKey: Keys.fontFamily)
         defaults.set(preferredFontSize, forKey: Keys.fontSize)
     }
     
     
-    func loadSettings() {
+    public func loadSettings() {
         
         preferredFontSize   = defaults.float(forKey: Keys.fontSize)
         preferredFontIndex  = defaults.integer(forKey: Keys.fontFamily)

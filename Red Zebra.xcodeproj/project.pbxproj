@@ -474,6 +474,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
 				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;
@@ -493,6 +494,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LINKER_DISPLAYS_MANGLED_NAMES = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
 				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;

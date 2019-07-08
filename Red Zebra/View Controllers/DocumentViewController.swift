@@ -19,7 +19,11 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     var document: Document?
     
-    private var fileLoadedSuccesfully = false
+    // previously called fileLoadedSuccessfully
+    // The name changed because there are now two reasons the document shouldn't be saved:
+    // 1) Something went wrong with opening the file
+    // 2) User chose the "Close without saving" option in "More..."
+    private var saveWhileClosing = false
     
     
     override func viewDidLoad() {
@@ -70,11 +74,11 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                 
                 self.titleLabel.title      = self.document?.fileURL.lastPathComponent
                 self.textView.text         = self.document!.text
-                self.fileLoadedSuccesfully = true
+                self.saveWhileClosing = true
                 
             } else {
                 
-                self.fileLoadedSuccesfully = false
+                self.saveWhileClosing = false
                 self.titleLabel.title      = ""
                 self.textView.text         = ""
                 self.textView.isEditable   = false
@@ -148,6 +152,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let alert = UIAlertController(title: "What do you want to do?", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Word Count", style: .default, handler: { _ in self.wordCount() } ))
         alert.addAction(UIAlertAction(title: "Zalgo-ify text", style: .default, handler: { _ in self.zalgoify() } ))
+        alert.addAction(UIAlertAction(title: "Close without saving", style: .default, handler: { _ in self.closeWithoutSaving() } ))
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in return } ))
         
         alert.popoverPresentationController?.barButtonItem = self.moreButtonLabel
@@ -186,7 +191,7 @@ extension DocumentViewController {
     
     @objc private func saveTheDocument() {
         
-        guard self.fileLoadedSuccesfully else { return }
+        guard self.saveWhileClosing else { return }
         guard self.document?.text != self.textView.text else { return }
         
         document?.text = textView.text
@@ -252,6 +257,12 @@ extension DocumentViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
         
         self.present(alert, animated: true)
+    }
+    
+    
+    private func closeWithoutSaving() {
+        self.saveWhileClosing = false
+        self.dismissDocumentViewController()
     }
     
 }

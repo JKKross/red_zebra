@@ -187,7 +187,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="fdB-32-Aq6">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="b0w-kd-57q">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="b0w-kd-57q">
                                             <connections>
                                                 <action selector="dismissDocumentViewController" destination="M2k-L8-Olo" id="Al2-qQ-xuS"/>
                                             </connections>

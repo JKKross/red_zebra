@@ -489,7 +489,7 @@
 		384F1E452213822600D35EFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-beta";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8938J75P7;
 				INFOPLIST_FILE = "Red Zebra/Info.plist";
@@ -509,7 +509,7 @@
 		384F1E462213822600D35EFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-beta";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8938J75P7;
 				INFOPLIST_FILE = "Red Zebra/Info.plist";

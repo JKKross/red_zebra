@@ -32,3 +32,10 @@ The version that is on App Store is the "latest non-master branch" - for example
 **Master** is most likely a little bit ahead of the App Store version - given our example probably something like 1.3 or 1.2.10.
 
 (The first App Store version was 1.0. All the previous versions/branches were kinda random in-development branches)
+
+### Contributing:
+
+I don't expect anyone to consider contributing to this low-profile app.
+
+That said: if you wanna contribute (for example, if you are a beginner like me & want to make your first pull request), just open an issue or send me an e-mail and we can discuss the details! 😎
+Especially if you are a beginner - don't be afraid to contact me, I'm a human, just like you! 🙃

@@ -189,6 +189,15 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
 extension DocumentViewController {
     
     
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(saveTheDocument), discoverabilityTitle: "Save"),
+            UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(closeWithoutSaving), discoverabilityTitle: "Close without saving"),
+            UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(dismissDocumentViewController), discoverabilityTitle: "Save & Close")
+        ]
+    }
+    
+    
     @objc private func saveTheDocument() {
         
         guard self.saveWhileClosing else { return }
@@ -198,6 +207,7 @@ extension DocumentViewController {
         document?.updateChangeCount(.done)
         
         self.document?.close(completionHandler: nil)
+        print("worked")
     }
     
     
@@ -260,7 +270,7 @@ extension DocumentViewController {
     }
     
     
-    private func closeWithoutSaving() {
+    @objc private func closeWithoutSaving() {
         self.saveWhileClosing = false
         self.dismissDocumentViewController()
     }

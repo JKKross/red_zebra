@@ -191,10 +191,23 @@ extension DocumentViewController {
     
     override var keyCommands: [UIKeyCommand]? {
         return [
+            UIKeyCommand(input: "h", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Home Screen"),
+            UIKeyCommand(input: "z", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Undo"),
+            UIKeyCommand(input: "z", modifierFlags: UIKeyModifierFlags(arrayLiteral: .command, .shift), action: #selector(doNothing), discoverabilityTitle: "Redo"),
+            UIKeyCommand(input: "a", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Select all"),
+            UIKeyCommand(input: "x", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Cut"),
+            UIKeyCommand(input: "c", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Copy"),
+            UIKeyCommand(input: "v", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Paste"),
             UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(saveTheDocument), discoverabilityTitle: "Save"),
             UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(closeWithoutSaving), discoverabilityTitle: "Close without saving"),
             UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(dismissDocumentViewController), discoverabilityTitle: "Save & Close")
         ]
+    }
+    
+    
+    @objc private func doNothing() {
+        // this dummy function is here only because built in keyboard shortcuts (like cmd+z to undo)
+        // aren't exposed to the user by default - see "keyCommands" above
     }
     
     
@@ -207,7 +220,6 @@ extension DocumentViewController {
         document?.updateChangeCount(.done)
         
         self.document?.close(completionHandler: nil)
-        print("worked")
     }
     
     

@@ -30,3 +30,5 @@ If you are willing to become a [beta tester](https://testflight.apple.com/join/r
 
 The version that is on App Store is the "latest non-master branch" - for example: if there is branch named "**1.2.9**", that's the version that you can find on the App Store.
 **Master** is most likely a little bit ahead of the App Store version - given our example probably something like 1.3 or 1.2.10.
+
+(The first App Store version was 1.0. All the previous versions/branches were kinda random in-development branches)

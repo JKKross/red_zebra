@@ -80,3 +80,17 @@ class WebBrowserViewController: CustomBaseViewController, WKNavigationDelegate {
     
     
 }
+
+
+extension WebBrowserViewController {
+    
+    
+    override var keyCommands: [UIKeyCommand]?  {
+        return [
+            UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(closeButton(_:)), discoverabilityTitle: "Close preview"),
+            UIKeyCommand(input: "[", modifierFlags: .command, action: #selector(backButton(_:)), discoverabilityTitle: "Previous page"),
+            UIKeyCommand(input: "]", modifierFlags: .command, action: #selector(forwardButton(_:)), discoverabilityTitle: "Next page")
+        ]
+    }
+    
+}

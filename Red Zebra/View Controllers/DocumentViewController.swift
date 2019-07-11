@@ -29,7 +29,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // adjust the text view so that it is not hidden behind keyboard
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(self.adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(self.adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -47,7 +46,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         undoButtonLabel.accessibilityLabel      = "Undo"
         redoButtonLabel.accessibilityLabel      = "Redo"
         doneButtonLabel.accessibilityLabel      = "Hide keyboard"
-        moreButtonLabel.accessibilityLabel = "More options"
+        moreButtonLabel.accessibilityLabel      = "More options"
         
         if self.document!.isHTML() {
             previewButtonLabel.title              = "Preview"
@@ -74,11 +73,11 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
                 
                 self.titleLabel.title      = self.document?.fileURL.lastPathComponent
                 self.textView.text         = self.document!.text
-                self.saveWhileClosing = true
+                self.saveWhileClosing      = true
                 
             } else {
                 
-                self.saveWhileClosing = false
+                self.saveWhileClosing      = false
                 self.titleLabel.title      = ""
                 self.textView.text         = ""
                 self.textView.isEditable   = false

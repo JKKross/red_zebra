@@ -78,6 +78,20 @@
 				<string>com.recordare.musicxml</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleRole</key>
+			<string>Editor</string>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeName</key>
+			<string>Rust</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.rust-lang.rust-source-code</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
@@ -139,6 +153,26 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>musicxml</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Rust</string>
+			<key>UTTypeIconFiles</key>
+			<array/>
+			<key>UTTypeIdentifier</key>
+			<string>org.rust-lang.rust-source-code</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>rs</string>
+					<string>rlib</string>
 				</array>
 			</dict>
 		</dict>

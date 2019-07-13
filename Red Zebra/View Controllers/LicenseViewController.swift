@@ -18,8 +18,6 @@ class LicenseViewController: CustomBaseViewController {
         
         licenseTextField.text = licenseText
         licenseTextField.isEditable = false
-        
-        licenseTextField.accessibilityLabel = "Standart M.I.T. License"
     }
     
     
@@ -30,6 +28,8 @@ class LicenseViewController: CustomBaseViewController {
     
     
     private let licenseText = """
+    
+    MIT License
     
     Copyright (c) 2019 Jan Kříž
     

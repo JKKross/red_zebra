@@ -6,17 +6,17 @@
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
 
-struct WordCount {
+public struct WordCount {
     
-    var characters: Int
-    var words:      Int
-    var lines:      Int
-    var bytes:      Int
+    public var characters: Int
+    public var words:      Int
+    public var lines:      Int
+    public var bytes:      Int
     
-    var itsTweetable: Bool
+    public var itsTweetable: Bool
     
     
-    init(text: String) {
+    public init(text: String) {
         
         var words = text.split(separator: " ")
         

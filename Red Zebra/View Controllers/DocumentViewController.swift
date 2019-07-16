@@ -6,6 +6,7 @@
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
 import UIKit
+import RedZebraShared
 
 class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     

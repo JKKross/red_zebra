@@ -8,12 +8,12 @@
 
 public struct WordCount {
     
-    public var characters: Int
-    public var words:      Int
-    public var lines:      Int
-    public var bytes:      Int
+    public private(set) var characters: Int
+    public private(set) var words:      Int
+    public private(set) var lines:      Int
+    public private(set) var bytes:      Int
     
-    public var itsTweetable: Bool
+    public private(set) var itsTweetable: Bool
     
     
     public init(text: String) {

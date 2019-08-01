@@ -152,6 +152,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let alert = UIAlertController(title: "What do you want to do?", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Word Count", style: .default, handler: { _ in self.wordCount() } ))
         alert.addAction(UIAlertAction(title: "Zalgo-ify text", style: .default, handler: { _ in self.zalgoify() } ))
+        alert.addAction(UIAlertAction(title: "S̶t̶r̶i̶k̶e̶ t̶h̶r̶o̶u̶g̶h̶ text", style: .default, handler: { _ in self.strikeThru() } ))
         alert.addAction(UIAlertAction(title: "Close without saving", style: .default, handler: { _ in self.closeWithoutSaving() } ))
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in return } ))
         
@@ -276,6 +277,19 @@ extension DocumentViewController {
         
         let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(zalgoifiedText)\n", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = zalgoifiedText }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    
+    private func strikeThru() {
+        
+        
+        let strikedThruText = strikeThrough(self.textView.text)
+        
+        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(strikedThruText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = strikedThruText }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
         
         self.present(alert, animated: true)

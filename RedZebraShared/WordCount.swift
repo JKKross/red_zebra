@@ -8,76 +8,42 @@
 
 public struct WordCount {
     
-    public private(set) var characters: Int
-    public private(set) var words:      Int
-    public private(set) var lines:      Int
-    public private(set) var bytes:      Int
-    
-    public private(set) var itsTweetable: Bool
+    public private(set) var words = 0
+    public private(set) var lines = 0
+    public private(set) var characters = 0
+    public private(set) var bytes = 0
     
     
-    public init(text: String) {
+    public init(_ text: String) {
         
-        var words = text.split(separator: " ")
-        
-        // The following may seem like black magic, but it works, so DON'T TOUCH IT!!!
-        for i in 0..<words.count {
-            
-            while words[i].contains("\n") {
-                
-                if words[i].first == "\n" {
-                    
-                    words[i].removeFirst()
-                    
-                } else if words[i].last == "\n" {
-                    
-                    words[i].removeLast()
-                    
-                } else {
-                    
-                    let newWords = words[i].split(separator: "\n")
-                    words[i].removeAll()
-                    
-                    for i in newWords {
-                        words.append(i)
-                    }
-                    
-                }
-                
-            }
-        }
-        
-        words.removeAll(where: { $0 == "" })
-        
-        
-        
-        
-        self.characters = text.count
-        self.bytes      = text.utf8.count
-        self.words      = words.count
-        self.lines      = 0
-        
-        self.itsTweetable = false
-        
-        if text.isEmpty {
+        if text.count == 0 {
             return
-        } else {
-            // otherwise we get one line less (from our human perspective)
+        } else if text.count > 1 {
+            // There may not be \n at the end of a single line,
+            // but it's still one line
             self.lines += 1
         }
+        // count characters
+        self.bytes = text.utf8.count
+        self.characters = text.count
         
+        var isInWord = false
         
         for i in text {
-            if i == "\n" {
+            // count lines
+            if i.isNewline {
                 self.lines += 1
             }
-        }
-        
-        if self.characters < 280 {
-            self.itsTweetable = true
+            
+            // count words
+            if i.isWhitespace == false && isInWord == false {
+                self.words += 1
+                isInWord = true
+            } else if i.isWhitespace && isInWord {
+                isInWord = false
+            }
         }
         
     }
-    
     
 }

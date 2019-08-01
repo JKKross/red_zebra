@@ -249,7 +249,7 @@ extension DocumentViewController {
     
     
     private func wordCount() {
-        let wc = WordCount(text: self.textView.text)
+        let wc = WordCount(self.textView.text)
         
         var title = "📖 Word Count 📖"
         let message = """
@@ -261,7 +261,7 @@ extension DocumentViewController {
         
         """
         
-        if wc.itsTweetable {
+        if wc.characters < 280 {
             title = "🐥 It's tweetable! 🐥"
         }
         

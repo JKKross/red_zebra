@@ -1,27 +1,32 @@
 //
-//  WordCountTests.swift
-//  RedZebraTests
+//  WordCountTests3.swift
+//  RedZebraSharedTests
 //
-//  Created by Jan Kříž on 1/07/2019.
+//  Created by Jan Kříž on 01/08/2019.
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
 
 import XCTest
 @testable import RedZebraShared
 
-class WordCountTests: XCTestCase {
+class WordCountTests3: XCTestCase {
     
     
     let text = """
-    Hello there! 😎
-    We have a wonderful day/night here, right?
-
+    
+    
+    This is
+    a test
+    for
+    
+    word
+    \t count
     """
     
-    let expectedChars = 58
-    let expectedBytes = 61
-    let expectedWords = 10
-    let expectedLines = 3
+    let expectedChars = 34
+    let expectedBytes = 34
+    let expectedWords = 7
+    let expectedLines = 8
     
     var wc: WordCount!
     

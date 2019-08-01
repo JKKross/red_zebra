@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
 
-func strikeThrough(_ text: String) -> String {
+public func strikeThrough(_ text: String) -> String {
     
     var input = text
     var output = ""

@@ -36,6 +36,8 @@
 		38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06222CA978C000DD296 /* DocumentExtension.swift */; };
 		38DEB06522CA993D000DD296 /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */; };
 		38E3C77322773FFA00FE4985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E3C77222773FFA00FE4985 /* Assets.xcassets */; };
+		38FE6AB422F34772009B563F /* strikeThrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE6AB322F34772009B563F /* strikeThrough.swift */; };
+		38FE6AB622F347A2009B563F /* StrikeThroughTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE6AB522F347A2009B563F /* StrikeThroughTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		38E3C77222773FFA00FE4985 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F5522F22CAA08B00135C24 /* RedZebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedZebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F5523322CAA08B00135C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38FE6AB322F34772009B563F /* strikeThrough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strikeThrough.swift; sourceTree = "<group>"; };
+		38FE6AB522F347A2009B563F /* StrikeThroughTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikeThroughTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				38A2819D2295DC8900AD0B4D /* WordCount.swift */,
+				38FE6AB322F34772009B563F /* strikeThrough.swift */,
 				385143AE22CBD9BF00D169D7 /* Zalgo.swift */,
 				3810DFF722DE1643000EF76E /* Info.plist */,
 			);
@@ -179,6 +184,7 @@
 				3817666422CAA12D005920B8 /* WordCountTests.swift */,
 				38793BEC22F2F21600A26791 /* WordCountTests2.swift */,
 				38793BEE22F2F2AB00A26791 /* WordCountTests3.swift */,
+				38FE6AB522F347A2009B563F /* StrikeThroughTests.swift */,
 				3810E00522DE1643000EF76E /* Info.plist */,
 			);
 			path = RedZebraSharedTests;
@@ -468,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				387305AA22DE189500253AF0 /* Zalgo.swift in Sources */,
+				38FE6AB422F34772009B563F /* strikeThrough.swift in Sources */,
 				387305A922DE189200253AF0 /* WordCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38793BED22F2F21600A26791 /* WordCountTests2.swift in Sources */,
+				38FE6AB622F347A2009B563F /* StrikeThroughTests.swift in Sources */,
 				38793BEF22F2F2AB00A26791 /* WordCountTests3.swift in Sources */,
 				389026D522DE1B280087F6F6 /* WordCountTests.swift in Sources */,
 			);

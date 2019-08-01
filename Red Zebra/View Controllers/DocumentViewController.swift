@@ -151,7 +151,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         
         let alert = UIAlertController(title: "What do you want to do?", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Word Count", style: .default, handler: { _ in self.wordCount() } ))
-        alert.addAction(UIAlertAction(title: "Zalgo-ify text", style: .default, handler: { _ in self.zalgoify() } ))
+        alert.addAction(UIAlertAction(title: " ̆̊҉̴͎͓Z̷̧̹̞̊̄Ä̷͈͎̿͞Ļ̙̬ͬ̅͟G̴͔̺ͦͥ̀Ŏ̧͗҉̗̣ ̤̠͋ͥ̀͞ text", style: .default, handler: { _ in self.zalgoify() } ))
         alert.addAction(UIAlertAction(title: "S̶t̶r̶i̶k̶e̶ t̶h̶r̶o̶u̶g̶h̶ text", style: .default, handler: { _ in self.strikeThru() } ))
         alert.addAction(UIAlertAction(title: "Close without saving", style: .default, handler: { _ in self.closeWithoutSaving() } ))
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in return } ))

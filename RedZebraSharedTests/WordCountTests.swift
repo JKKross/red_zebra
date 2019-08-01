@@ -15,13 +15,12 @@ class WordCountTests: XCTestCase {
     let text = """
     Hello there! 😎
     We have a wonderful day/night here, right?
-
     """
     
-    let expectedChars = 58
-    let expectedBytes = 61
+    let expectedChars = 57
+    let expectedBytes = 60
     let expectedWords = 10
-    let expectedLines = 3
+    let expectedLines = 2
     
     var wc: WordCount!
     

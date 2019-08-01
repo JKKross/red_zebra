@@ -17,7 +17,7 @@ class WordCountTests2: XCTestCase {
     let expectedChars = 7
     let expectedBytes = 7
     let expectedWords = 0
-    let expectedLines = 5
+    let expectedLines = 4
     
     var wc: WordCount!
     

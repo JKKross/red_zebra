@@ -18,10 +18,6 @@ public struct WordCount {
         
         if text.count == 0 {
             return
-        } else if text.count > 1 {
-            // There may not be \n at the end of a single line,
-            // but it's still one line
-            self.lines += 1
         }
         // count characters
         self.bytes = text.utf8.count
@@ -42,6 +38,35 @@ public struct WordCount {
             } else if i.isWhitespace && isInWord {
                 isInWord = false
             }
+        }
+        
+        
+        if text.count > 1 && self.lines == 0 {
+            // There may not be \n at the end of a single line,
+            // but it's still one line
+            self.lines = 1
+        } else if text.last != "\n" && text.last != "\r" && text.last != "\0" {
+            // This is more than peculiar:
+            //
+            // If you write something like this in Red Zebra or TextEdit:
+            /*
+                Hello
+                There
+                People
+            */
+            // running wc on the file in terminal says that there are only 2 lines.
+            //
+            // However, if you the write THE SAME EXACT THING IN SOME TERMINAL EDITOR like vim,
+            // and then run wc on that, you get 3 lines...
+            //
+            // The reason (at least I think) is that vim & other old-school stuff
+            // puts either newline or EOF at the end of the file when saving it,
+            // but modern text editors don't.
+            //
+            // That's why I put this check here.
+            //
+            // For more info, see: https://stackoverflow.com/a/1761086/8742664
+            self.lines += 1
         }
         
     }

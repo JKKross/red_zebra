@@ -55,17 +55,20 @@ class UserSettings {
         case 0:
             // "Menlo"
             font = UIFont(name: "Menlo", size: CGFloat(preferredFontSize))
-        default:
-            // system
+        case 1:
+            // system (San Francisco)
             font = UIFont.systemFont(ofSize: CGFloat(preferredFontSize))
+        default:
+            // this should never happen
+            fatalError("ERROR: Invalid font index selected while loading from UserSettingSingleton.")
         }
     }
     
     
     
     private struct Keys {
-        static let fontFamily      = "Font"
-        static let fontSize        = "FontSize"
+        static let fontFamily = "Font"
+        static let fontSize   = "FontSize"
     }
     
 }

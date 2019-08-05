@@ -21,6 +21,8 @@
 		384F1E3B2213822500D35EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E392213822500D35EFA /* Main.storyboard */; };
 		384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E3E2213822600D35EFA /* LaunchScreen.storyboard */; };
 		38539CAD22983523005C5DD8 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38539CAC22983523005C5DD8 /* WebContent.swift */; };
+		385D2C1722F844BD00F0904E /* doesHaveExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */; };
+		385D2C1922F846FE00F0904E /* doesHaveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1822F846FE00F0904E /* doesHaveExtension.swift */; };
 		387305A922DE189200253AF0 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		387305AA22DE189500253AF0 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385143AE22CBD9BF00D169D7 /* Zalgo.swift */; };
 		387410022297379500FCD187 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
@@ -115,6 +117,8 @@
 		384F1E412213822600D35EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385143AE22CBD9BF00D169D7 /* Zalgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zalgo.swift; sourceTree = "<group>"; };
 		38539CAC22983523005C5DD8 /* WebContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContent.swift; sourceTree = "<group>"; };
+		385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doesHaveExtensionTests.swift; sourceTree = "<group>"; };
+		385D2C1822F846FE00F0904E /* doesHaveExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = doesHaveExtension.swift; path = "../../../../../my_projects/iOS_Projects/red_zebra/Red Zebra/util/doesHaveExtension.swift"; sourceTree = "<group>"; };
 		387410012297379500FCD187 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		38793BEC22F2F21600A26791 /* WordCountTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests2.swift; sourceTree = "<group>"; };
 		38793BEE22F2F2AB00A26791 /* WordCountTests3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests3.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */,
+				385D2C1822F846FE00F0904E /* doesHaveExtension.swift */,
 				38B4CF812288C88200BBCCBA /* Extensions */,
 			);
 			path = util;
@@ -292,6 +297,7 @@
 			children = (
 				38F5523322CAA08B00135C24 /* Info.plist */,
 				3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */,
+				385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */,
 			);
 			path = RedZebraTests;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				389026D322DE1AB50087F6F6 /* WordCount.swift in Sources */,
 				38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */,
 				38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */,
+				385D2C1922F846FE00F0904E /* doesHaveExtension.swift in Sources */,
 				38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */,
 				38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */,
 				38539CAD22983523005C5DD8 /* WebContent.swift in Sources */,
@@ -519,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3817666322CAA0EF005920B8 /* IntAsFormattedStringTests.swift in Sources */,
+				385D2C1722F844BD00F0904E /* doesHaveExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

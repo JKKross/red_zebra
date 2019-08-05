@@ -86,7 +86,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
                 return
             }
             
-            if self.doesHaveAnExtension(fileName: fileName) == false {
+            if doesHaveExtension(fileName: fileName) == false {
                 fileName.append(".txt")
             }
             
@@ -172,29 +172,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         settingsVC.modalPresentationStyle = .formSheet
         
         present(settingsVC, animated: true)
-    }
-    
-}
-
-
-
-extension DocumentBrowserViewController {
-    
-    private func doesHaveAnExtension(fileName: String) -> Bool {
-        var file = fileName
-        for _ in file {
-            let searchingForDot = file.removeFirst()
-            if searchingForDot == "." {
-                for _ in file {
-                    let ext = file.removeFirst()
-                    if ext.isLetter == false {
-                        return false
-                    }
-                }
-                return true
-            }
-        }
-        return false
     }
     
 }

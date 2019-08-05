@@ -120,7 +120,7 @@
 		38793BEE22F2F2AB00A26791 /* WordCountTests3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests3.swift; sourceTree = "<group>"; };
 		38924BE122D3C3E9008FE207 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		38A2819D2295DC8900AD0B4D /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
-		38A771A22219530B00261429 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
+		38A771A22219530B00261429 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		38C2F137222208BC004C29D1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsSingleton.swift; sourceTree = "<group>"; };

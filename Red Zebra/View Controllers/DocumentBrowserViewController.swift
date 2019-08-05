@@ -23,10 +23,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         // There is most likely a bug in UIDocumentBrowserViewController, that makes me unable to set accessibility label on an UIBarButtonItem that was initialized using UIImage
         // See Feedback "FB6156475"
         if UIAccessibility.isVoiceOverRunning {
-            
             item = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(presentSettingsView))
         } else {
-            
             let icon = UIImage(named: "settings_icon", in: nil, compatibleWith: nil)
             item = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(presentSettingsView))
         }
@@ -53,19 +51,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     }
     
     
-    
-    private func createNamedFile(controller: UIDocumentBrowserViewController, importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-        
-        /*
-         
-         this function in a hacky way mixes together the pop-up for naming your file and the file creation,
-         normally handled by:
-         
-         func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void)
-         
-         Probably should refactor in the future.
-         
-         */
+    func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
         
         let alert = UIAlertController(title: "Name your file", message: nil, preferredStyle: .alert)
         
@@ -141,13 +127,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     
     
-    func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-        
-        createNamedFile(controller: controller, importHandler: importHandler)
-    }
-    
-    
-    
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL]) {
         
         guard let sourceURL = documentURLs.first else {
@@ -195,27 +174,18 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         present(settingsVC, animated: true)
     }
     
-    
-    
 }
 
 
 
 extension DocumentBrowserViewController {
     
-    
     private func doesHaveAnExtension(fileName: String) -> Bool {
-        
         var file = fileName
-        
         for _ in file {
-            
-            let dot = file.removeFirst()
-            
-            if dot == "." {
-                
+            let searchingForDot = file.removeFirst()
+            if searchingForDot == "." {
                 for _ in file {
-                    
                     let ext = file.removeFirst()
                     if ext.isLetter == false {
                         return false
@@ -226,7 +196,5 @@ extension DocumentBrowserViewController {
         }
         return false
     }
-    
-    
     
 }

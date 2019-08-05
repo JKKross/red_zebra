@@ -7,18 +7,17 @@
 //
 
 public func doesHaveExtension(fileName: String) -> Bool {
-    var file = fileName
-    for _ in file {
-        let searchingForDot = file.removeFirst()
-        if searchingForDot == "." {
-            for _ in file {
-                let ext = file.removeFirst()
-                if ext.isLetter == false {
-                    return false
-                }
-            }
+    // get rid of the possibility of the file ending with a dot
+    if fileName.last! == "." { return false }
+    
+    for i in fileName.reversed() {
+        if (i.isASCII == false || i.isLetter == false) && i != "." {
+            return false
+        } else if i == "." {
             return true
         }
     }
+    // if we're here, something obviously went wrong,
+    // but Swift requires me to return what I promised
     return false
 }

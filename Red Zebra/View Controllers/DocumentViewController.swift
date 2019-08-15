@@ -153,6 +153,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         alert.addAction(UIAlertAction(title: "Word Count", style: .default, handler: { _ in self.wordCount() } ))
         alert.addAction(UIAlertAction(title: " ̆̊҉̴͎͓Z̷̧̹̞̊̄Ä̷͈͎̿͞Ļ̙̬ͬ̅͟G̴͔̺ͦͥ̀Ŏ̧͗҉̗̣ ̤̠͋ͥ̀͞ text", style: .default, handler: { _ in self.zalgoify() } ))
         alert.addAction(UIAlertAction(title: "S̶t̶r̶i̶k̶e̶ t̶h̶r̶o̶u̶g̶h̶ text", style: .default, handler: { _ in self.strikeThru() } ))
+        alert.addAction(UIAlertAction(title: "UPPERCASE text", style: .default, handler: { _ in self.uppercased() } ))
+        alert.addAction(UIAlertAction(title: "lowercase text", style: .default, handler: { _ in self.lowercased() } ))
         alert.addAction(UIAlertAction(title: "Close without saving", style: .default, handler: { _ in self.closeWithoutSaving() } ))
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in return } ))
         
@@ -285,11 +287,34 @@ extension DocumentViewController {
     
     private func strikeThru() {
         
-        
         let strikedThruText = strikeThrough(self.textView.text)
         
         let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(strikedThruText)\n", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = strikedThruText }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    
+    private func uppercased() {
+        
+        let uppercasedText = uppercase(self.textView.text)
+        
+        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(uppercasedText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = uppercasedText }))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    
+    private func lowercased() {
+        
+        let lowercasedText = lowercase(self.textView.text)
+        
+        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(lowercasedText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = lowercasedText }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
         
         self.present(alert, animated: true)

@@ -149,13 +149,23 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     @IBAction func moreButton(_ sender: UIBarButtonItem) {
         
+        var text = ""
+        
+        if let range = textView.selectedTextRange, let txt = textView.text(in: range) {
+            text = txt
+        }
+        
+        if text.isEmpty {
+            text = self.textView.text
+        }
+        
         let alert = UIAlertController(title: "What do you want to do?", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Word Count", style: .default, handler: { _ in self.wordCount() } ))
-        alert.addAction(UIAlertAction(title: " ̆̊҉̴͎͓Z̷̧̹̞̊̄Ä̷͈͎̿͞Ļ̙̬ͬ̅͟G̴͔̺ͦͥ̀Ŏ̧͗҉̗̣ ̤̠͋ͥ̀͞ text", style: .default, handler: { _ in self.zalgoify() } ))
-        alert.addAction(UIAlertAction(title: "S̶t̶r̶i̶k̶e̶ t̶h̶r̶o̶u̶g̶h̶ text", style: .default, handler: { _ in self.strikeThru() } ))
-        alert.addAction(UIAlertAction(title: "UPPERCASE text", style: .default, handler: { _ in self.uppercased() } ))
-        alert.addAction(UIAlertAction(title: "lowercase text", style: .default, handler: { _ in self.lowercased() } ))
-        alert.addAction(UIAlertAction(title: "Close without saving", style: .default, handler: { _ in self.closeWithoutSaving() } ))
+        alert.addAction(UIAlertAction(title: "Word Count", style: .default, handler: { _ in self.wordCount(text) } ))
+        alert.addAction(UIAlertAction(title: " ̆̊҉̴͎͓Z̷̧̹̞̊̄Ä̷͈͎̿͞Ļ̙̬ͬ̅͟G̴͔̺ͦͥ̀Ŏ̧͗҉̗̣ ̤̠͋ͥ̀͞ text", style: .default, handler: { _ in self.zalgoify(text) } ))
+        alert.addAction(UIAlertAction(title: "S̶t̶r̶i̶k̶e̶ t̶h̶r̶o̶u̶g̶h̶ text", style: .default, handler: { _ in self.strikeThru(text) } ))
+        alert.addAction(UIAlertAction(title: "UPPERCASE text", style: .default, handler: { _ in self.uppercased(text) } ))
+        alert.addAction(UIAlertAction(title: "lowercase text", style: .default, handler: { _ in self.lowercased(text) } ))
+        alert.addAction(UIAlertAction(title: "Close without saving", style: .destructive, handler: { _ in self.closeWithoutSaving() } ))
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in return } ))
         
         alert.popoverPresentationController?.barButtonItem = self.moreButtonLabel
@@ -251,8 +261,8 @@ extension DocumentViewController {
     }
     
     
-    private func wordCount() {
-        let wc = WordCount(self.textView.text)
+    private func wordCount(_ text: String) {
+        let wc = WordCount(text)
         
         var title = "📖 Word Count 📖"
         let message = """
@@ -272,10 +282,10 @@ extension DocumentViewController {
     }
     
     
-    private func zalgoify() {
+    private func zalgoify(_ text: String) {
         
         let zalgo = Zalgo()
-        let zalgoifiedText = zalgo.transform(self.textView.text)
+        let zalgoifiedText = zalgo.transform(text)
         
         let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(zalgoifiedText)\n", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = zalgoifiedText }))
@@ -285,9 +295,9 @@ extension DocumentViewController {
     }
     
     
-    private func strikeThru() {
+    private func strikeThru(_ text: String) {
         
-        let strikedThruText = strikeThrough(self.textView.text)
+        let strikedThruText = strikeThrough(text)
         
         let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(strikedThruText)\n", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = strikedThruText }))
@@ -297,9 +307,9 @@ extension DocumentViewController {
     }
     
     
-    private func uppercased() {
+    private func uppercased(_ text: String) {
         
-        let uppercasedText = uppercase(self.textView.text)
+        let uppercasedText = uppercase(text)
         
         let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(uppercasedText)\n", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = uppercasedText }))
@@ -309,9 +319,9 @@ extension DocumentViewController {
     }
     
     
-    private func lowercased() {
+    private func lowercased(_ text: String) {
         
-        let lowercasedText = lowercase(self.textView.text)
+        let lowercasedText = lowercase(text)
         
         let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(lowercasedText)\n", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = lowercasedText }))

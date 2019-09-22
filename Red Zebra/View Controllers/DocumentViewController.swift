@@ -287,9 +287,14 @@ extension DocumentViewController {
         let zalgo = Zalgo()
         let zalgoifiedText = zalgo.transform(text)
         
-        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(zalgoifiedText)\n", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = zalgoifiedText }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        let alert = UIAlertController(title: nil, message: "\n\(zalgoifiedText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Copy", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = zalgoifiedText }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Replace in document", comment: "Default action"), style: .default, handler: { _ in
+            self.replaceCurrentSelection(with: zalgoifiedText)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
         
         self.present(alert, animated: true)
     }
@@ -299,9 +304,14 @@ extension DocumentViewController {
         
         let strikedThruText = strikeThrough(text)
         
-        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(strikedThruText)\n", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = strikedThruText }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        let alert = UIAlertController(title: nil, message: "\n\(strikedThruText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Copy", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = strikedThruText }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Replace in document", comment: "Default action"), style: .default, handler: { _ in
+            self.replaceCurrentSelection(with: strikedThruText)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
         
         self.present(alert, animated: true)
     }
@@ -311,9 +321,14 @@ extension DocumentViewController {
         
         let uppercasedText = uppercase(text)
         
-        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(uppercasedText)\n", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = uppercasedText }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        let alert = UIAlertController(title: nil, message: "\n\(uppercasedText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Copy", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = uppercasedText }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Replace in document", comment: "Default action"), style: .default, handler: { _ in
+            self.replaceCurrentSelection(with: uppercasedText)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
         
         self.present(alert, animated: true)
     }
@@ -323,9 +338,14 @@ extension DocumentViewController {
         
         let lowercasedText = lowercase(text)
         
-        let alert = UIAlertController(title: "Copy to clipboard?", message: "\n\(lowercasedText)\n", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Yes", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = lowercasedText }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("No", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
+        let alert = UIAlertController(title: nil, message: "\n\(lowercasedText)\n", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Copy", comment: "Default action"), style: .default, handler: { _ in UIPasteboard.general.string = lowercasedText }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Replace in document", comment: "Default action"), style: .default, handler: { _ in
+            self.replaceCurrentSelection(with: lowercasedText)
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel action"), style: .destructive, handler: { _ in return }))
         
         self.present(alert, animated: true)
     }
@@ -334,6 +354,20 @@ extension DocumentViewController {
     @objc private func closeWithoutSaving() {
         self.saveWhileClosing = false
         self.dismissDocumentViewController()
+    }
+    
+    
+    private func replaceCurrentSelection(with text: String) {
+        
+        guard var range = self.textView.selectedTextRange else { return }
+        
+        if range.isEmpty {
+            // This is executed when user doesn't have anything selected.
+            // In that case, I presume user wants the operation performed on the whole document.
+            // We need to set the range manually in this case, if we want the undoManager to work properly.
+            range = self.textView.textRange(from: self.textView.beginningOfDocument, to: self.textView.endOfDocument)!
+        }
+        self.textView.replace(range, withText: text)
     }
     
 }

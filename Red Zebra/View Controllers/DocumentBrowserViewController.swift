@@ -37,6 +37,9 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         
         allowsDocumentCreation     = true
         allowsPickingMultipleItems = false
+        // This should just work, but it doesn't.
+        // I hope it'll be fixed in the next Xcode update - if not, I'll e filing a radar
+        shouldShowFileExtensions   = true
         
         browserUserInterfaceStyle  = .dark
         view.tintColor             = .red

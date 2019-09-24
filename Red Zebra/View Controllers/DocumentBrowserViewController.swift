@@ -160,6 +160,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let documentViewController = storyBoard.instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
         documentViewController.document = Document(fileURL: documentURL)
+        documentViewController.modalPresentationStyle = .fullScreen
         
         present(documentViewController, animated: true)
     }

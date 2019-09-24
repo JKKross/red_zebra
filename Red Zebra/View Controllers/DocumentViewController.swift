@@ -138,6 +138,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
             
             let webBrowser = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebBrowserViewController") as! WebBrowserViewController
             
+            webBrowser.modalPresentationStyle = .fullScreen
             webBrowser.webContent = WebContent(data: self.textView.text, url: self.document?.fileURL)
             
             self.present(webBrowser, animated: true)

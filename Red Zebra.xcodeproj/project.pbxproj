@@ -34,6 +34,7 @@
 		389026D422DE1AC40087F6F6 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385143AE22CBD9BF00D169D7 /* Zalgo.swift */; };
 		389026D522DE1B280087F6F6 /* WordCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817666422CAA12D005920B8 /* WordCountTests.swift */; };
 		38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A771A22219530B00261429 /* DocumentBrowserViewController.swift */; };
+		38AE2353233FB04C005C43C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AE2352233FB04B005C43C1 /* SceneDelegate.swift */; };
 		38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */; };
 		38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2F137222208BC004C29D1 /* AboutViewController.swift */; };
 		38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */; };
@@ -129,6 +130,7 @@
 		38924BE122D3C3E9008FE207 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		38A2819D2295DC8900AD0B4D /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
 		38A771A22219530B00261429 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		38AE2352233FB04B005C43C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		38C2F137222208BC004C29D1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsSingleton.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				384F1E312213822500D35EFA /* AppDelegate.swift */,
+				38AE2352233FB04B005C43C1 /* SceneDelegate.swift */,
 				38B9F135224689980062372E /* util */,
 				38A771A622199D1B00261429 /* Model */,
 				38A514AF221724960008C9BA /* View Controllers */,
@@ -524,6 +527,7 @@
 				3809AED12232CC5E00296D38 /* CustomBaseViewController.swift in Sources */,
 				3809AED32232D02200296D38 /* LicenseViewController.swift in Sources */,
 				384F1E362213822500D35EFA /* DocumentViewController.swift in Sources */,
+				38AE2353233FB04C005C43C1 /* SceneDelegate.swift in Sources */,
 				380018E622972E6000FB6DF2 /* UIViewControllerExtension.swift in Sources */,
 				384F1E322213822500D35EFA /* AppDelegate.swift in Sources */,
 			);
@@ -815,7 +819,7 @@
 					"@executable_path/Frameworks",
 				);
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
 				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;
@@ -838,7 +842,7 @@
 					"@executable_path/Frameworks",
 				);
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
 				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;

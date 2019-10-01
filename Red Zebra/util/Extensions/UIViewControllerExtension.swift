@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func showAlertPopUp(title: String, message: String?) {
+    func showAlertPopUp(title: String, message: String = "") {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

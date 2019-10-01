@@ -60,6 +60,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard !URLContexts.isEmpty else { return }
         
         for urlContext in URLContexts {
+            // For some reason, even if I select multiple documents in Files app,
+            // tap "share" and pick "open in Red Zebra", URLContexts.count returns 1.
+            // So this for loop seems unnecessary, right?
+            // However, if I try to access the URLContexts set via some other means -
+            // for example by .first - this code does nothing...
+            //
+            // So this is weird, but it somehow works...
+            //
+            // TODO: Figure out & fix...?
             guard urlContext.url.isFileURL else { return }
             
             guard let documentBrowserViewController = window?.rootViewController as? DocumentBrowserViewController else { return }

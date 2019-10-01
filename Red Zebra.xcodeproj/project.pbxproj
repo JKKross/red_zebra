@@ -819,7 +819,7 @@
 					"@executable_path/Frameworks",
 				);
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
 				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;
@@ -842,7 +842,7 @@
 					"@executable_path/Frameworks",
 				);
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jankriz.Red-Zebra";
 				PRODUCT_NAME = RedZebra;
 				SWIFT_VERSION = 5.0;

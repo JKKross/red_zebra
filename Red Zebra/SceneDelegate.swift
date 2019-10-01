@@ -18,9 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        
-
-        // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DocumentBrowserViewController") as! UIDocumentBrowserViewController
@@ -57,6 +54,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        
+        guard !URLContexts.isEmpty else { return }
+        
+        for urlContext in URLContexts {
+            guard urlContext.url.isFileURL else { return }
+            
+            guard let documentBrowserViewController = window?.rootViewController as? DocumentBrowserViewController else { return }
+            
+            documentBrowserViewController.revealDocument(at: urlContext.url, importIfNeeded: true) { (revealedDocumentURL, error) in
+                if let error = error {
+                    documentBrowserViewController.showErrorPopUp(message: "Failed to reveal the document at URL \(urlContext.url) with error: '\(error)'")
+                    return
+                }
+                
+                documentBrowserViewController.presentDocument(at: revealedDocumentURL!)
+            }
+            
+        }
+        
+        
+        
+    }
 
 }
 

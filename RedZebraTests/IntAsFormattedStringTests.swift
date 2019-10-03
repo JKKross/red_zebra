@@ -19,5 +19,7 @@ class IntAsFormattedStringTests: XCTestCase {
     func testIsFormattedProperly() {
         XCTAssert(intToFormat.asFormattedString() == expectedFormattedString)
     }
+
+    // TODO: add more test cases!
     
 }

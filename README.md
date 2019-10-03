@@ -5,7 +5,7 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/version-2.0-green.svg" alt="version 2.0"/>
+    <img src="https://img.shields.io/badge/version-2.0.1-green.svg" alt="version 2.0.1"/>
     <img src="https://img.shields.io/badge/iOS-13%2B-blue.svg" alt="iOS 13 plus"/>
     <img src="https://img.shields.io/badge/swift-5.1-blue.svg" alt="Swift 5.1"/>
     <img src="https://img.shields.io/badge/UIKit-blue.svg" alt="UIKit"/>

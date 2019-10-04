@@ -277,7 +277,6 @@
 		38A771A622199D1B00261429 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */,
 				38539CAC22983523005C5DD8 /* WebContent.swift */,
 				384F1E372213822500D35EFA /* Document.swift */,
 			);
@@ -297,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */,
+				38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */,
 				385D2C1822F846FE00F0904E /* doesHaveExtension.swift */,
 				38B4CF812288C88200BBCCBA /* Extensions */,
 			);

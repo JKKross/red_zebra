@@ -86,11 +86,16 @@ extension WebBrowserViewController {
     
     
     override var keyCommands: [UIKeyCommand]?  {
-        return [
-            UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(closeButton(_:)), discoverabilityTitle: "Close preview"),
-            UIKeyCommand(input: "[", modifierFlags: .command, action: #selector(backButton(_:)), discoverabilityTitle: "Previous page"),
-            UIKeyCommand(input: "]", modifierFlags: .command, action: #selector(forwardButton(_:)), discoverabilityTitle: "Next page")
-        ]
+        
+        let closePreview = UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(closeButton(_:)))
+        let previousPage = UIKeyCommand(input: "[", modifierFlags: .command, action: #selector(backButton(_:)))
+        let nextPage = UIKeyCommand(input: "]", modifierFlags: .command, action: #selector(forwardButton(_:)))
+        
+        closePreview.discoverabilityTitle = "Close preview"
+        previousPage.discoverabilityTitle = "Previous page"
+        nextPage.discoverabilityTitle     = "Next page"
+        
+        return [closePreview, previousPage, nextPage]
     }
     
 }

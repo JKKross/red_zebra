@@ -204,18 +204,30 @@ extension DocumentViewController {
     
     
     override var keyCommands: [UIKeyCommand]? {
-        return [
-            UIKeyCommand(input: "h", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Home Screen"),
-            UIKeyCommand(input: "z", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Undo"),
-            UIKeyCommand(input: "z", modifierFlags: UIKeyModifierFlags(arrayLiteral: .command, .shift), action: #selector(doNothing), discoverabilityTitle: "Redo"),
-            UIKeyCommand(input: "a", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Select all"),
-            UIKeyCommand(input: "x", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Cut"),
-            UIKeyCommand(input: "c", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Copy"),
-            UIKeyCommand(input: "v", modifierFlags: .command, action: #selector(doNothing), discoverabilityTitle: "Paste"),
-            UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(saveTheDocument), discoverabilityTitle: "Save"),
-            UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(closeWithoutSaving), discoverabilityTitle: "Close without saving"),
-            UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(dismissDocumentViewController), discoverabilityTitle: "Save & Close")
-        ]
+        
+        let homeScreen = UIKeyCommand(input: "h", modifierFlags: .command, action: #selector(doNothing))
+        let undo = UIKeyCommand(input: "z", modifierFlags: .command, action: #selector(doNothing))
+        let redo = UIKeyCommand(input: "z", modifierFlags: UIKeyModifierFlags(arrayLiteral: .command, .shift), action: #selector(doNothing))
+        let selectAll = UIKeyCommand(input: "a", modifierFlags: .command, action: #selector(doNothing))
+        let cut = UIKeyCommand(input: "x", modifierFlags: .command, action: #selector(doNothing))
+        let copy = UIKeyCommand(input: "c", modifierFlags: .command, action: #selector(doNothing))
+        let paste = UIKeyCommand(input: "v", modifierFlags: .command, action: #selector(doNothing))
+        let save = UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(saveTheDocument))
+        let closeWithoutSavingCmd = UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(closeWithoutSaving))
+        let saveAndClose = UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(dismissDocumentViewController))
+        
+        homeScreen.discoverabilityTitle            = "Home Screen"
+        undo.discoverabilityTitle                  = "Undo"
+        redo.discoverabilityTitle                  = "Redo"
+        selectAll.discoverabilityTitle             = "Select all"
+        cut.discoverabilityTitle                   = "Cut"
+        copy.discoverabilityTitle                  = "Copy"
+        paste.discoverabilityTitle                 = "Paste"
+        save.discoverabilityTitle                  = "Save"
+        closeWithoutSavingCmd.discoverabilityTitle = "Close without saving"
+        saveAndClose.discoverabilityTitle          = "Save & Close"
+        
+        return [homeScreen, undo, redo, selectAll, cut, copy, paste, save, closeWithoutSavingCmd, saveAndClose]
     }
     
     

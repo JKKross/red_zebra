@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jan Kříž. All rights reserved.
 //
 
-extension Int {
+public extension BinaryInteger {
     
     func asFormattedString() -> String {
         

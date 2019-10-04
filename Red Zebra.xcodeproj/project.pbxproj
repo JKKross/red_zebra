@@ -24,7 +24,6 @@
 		38539CAD22983523005C5DD8 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38539CAC22983523005C5DD8 /* WebContent.swift */; };
 		385D2C1722F844BD00F0904E /* doesHaveExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */; };
 		385D2C1922F846FE00F0904E /* doesHaveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1822F846FE00F0904E /* doesHaveExtension.swift */; };
-		386F4393234795630082DD17 /* IntAsFormattedStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */; };
 		387305A922DE189200253AF0 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		387305AA22DE189500253AF0 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385143AE22CBD9BF00D169D7 /* Zalgo.swift */; };
 		387410022297379500FCD187 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
@@ -33,11 +32,13 @@
 		389026D322DE1AB50087F6F6 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		389026D422DE1AC40087F6F6 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385143AE22CBD9BF00D169D7 /* Zalgo.swift */; };
 		389026D522DE1B280087F6F6 /* WordCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817666422CAA12D005920B8 /* WordCountTests.swift */; };
+		389F8F5623479956000318C0 /* BinaryIntegerAsFormattedStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389F8F5523479956000318C0 /* BinaryIntegerAsFormattedStringTests.swift */; };
 		38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A771A22219530B00261429 /* DocumentBrowserViewController.swift */; };
 		38AE2353233FB04C005C43C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AE2352233FB04B005C43C1 /* SceneDelegate.swift */; };
 		38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */; };
 		38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2F137222208BC004C29D1 /* AboutViewController.swift */; };
 		38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */; };
+		38D8EF062347CF3E00550C2E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
 		38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06222CA978C000DD296 /* DocumentExtension.swift */; };
 		38DEB06522CA993D000DD296 /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */; };
 		38E3C77322773FFA00FE4985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E3C77222773FFA00FE4985 /* Assets.xcassets */; };
@@ -108,7 +109,6 @@
 		3810DFF722DE1643000EF76E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3810DFFC22DE1643000EF76E /* RedZebraSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedZebraSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3810E00522DE1643000EF76E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntAsFormattedStringTests.swift; sourceTree = "<group>"; };
 		3817666422CAA12D005920B8 /* WordCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests.swift; sourceTree = "<group>"; };
 		38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontChooserViewController.swift; sourceTree = "<group>"; };
 		38327C252305635E0013DEE5 /* uppercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uppercase.swift; sourceTree = "<group>"; };
@@ -128,6 +128,7 @@
 		38793BEC22F2F21600A26791 /* WordCountTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests2.swift; sourceTree = "<group>"; };
 		38793BEE22F2F2AB00A26791 /* WordCountTests3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests3.swift; sourceTree = "<group>"; };
 		38924BE122D3C3E9008FE207 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		389F8F5523479956000318C0 /* BinaryIntegerAsFormattedStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryIntegerAsFormattedStringTests.swift; sourceTree = "<group>"; };
 		38A2819D2295DC8900AD0B4D /* WordCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
 		38A771A22219530B00261429 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		38AE2352233FB04B005C43C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,7 +195,7 @@
 		3810E00222DE1643000EF76E /* RedZebraSharedTests */ = {
 			isa = PBXGroup;
 			children = (
-				3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */,
+				389F8F5523479956000318C0 /* BinaryIntegerAsFormattedStringTests.swift */,
 				3817666422CAA12D005920B8 /* WordCountTests.swift */,
 				38793BEC22F2F21600A26791 /* WordCountTests2.swift */,
 				38793BEE22F2F2AB00A26791 /* WordCountTests3.swift */,
@@ -488,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D8EF062347CF3E00550C2E /* IntExtension.swift in Sources */,
 				387305AA22DE189500253AF0 /* Zalgo.swift in Sources */,
 				38327C282305639C0013DEE5 /* lowercase.swift in Sources */,
 				38FE6AB422F34772009B563F /* strikeThrough.swift in Sources */,
@@ -502,9 +504,9 @@
 			files = (
 				38793BED22F2F21600A26791 /* WordCountTests2.swift in Sources */,
 				38FE6AB622F347A2009B563F /* StrikeThroughTests.swift in Sources */,
+				389F8F5623479956000318C0 /* BinaryIntegerAsFormattedStringTests.swift in Sources */,
 				38793BEF22F2F2AB00A26791 /* WordCountTests3.swift in Sources */,
 				389026D522DE1B280087F6F6 /* WordCountTests.swift in Sources */,
-				386F4393234795630082DD17 /* IntAsFormattedStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,6 @@
 		3810DFFD22DE1643000EF76E /* RedZebraShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3810DFF422DE1643000EF76E /* RedZebraShared.framework */; };
 		3810E00922DE1643000EF76E /* RedZebraShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3810DFF422DE1643000EF76E /* RedZebraShared.framework */; };
 		3810E00A22DE1643000EF76E /* RedZebraShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3810DFF422DE1643000EF76E /* RedZebraShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3817666322CAA0EF005920B8 /* IntAsFormattedStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */; };
 		38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */; };
 		38327C262305635E0013DEE5 /* uppercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38327C252305635E0013DEE5 /* uppercase.swift */; };
 		38327C282305639C0013DEE5 /* lowercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38327C272305639C0013DEE5 /* lowercase.swift */; };
@@ -25,6 +24,7 @@
 		38539CAD22983523005C5DD8 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38539CAC22983523005C5DD8 /* WebContent.swift */; };
 		385D2C1722F844BD00F0904E /* doesHaveExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */; };
 		385D2C1922F846FE00F0904E /* doesHaveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1822F846FE00F0904E /* doesHaveExtension.swift */; };
+		386F4393234795630082DD17 /* IntAsFormattedStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */; };
 		387305A922DE189200253AF0 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		387305AA22DE189500253AF0 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385143AE22CBD9BF00D169D7 /* Zalgo.swift */; };
 		387410022297379500FCD187 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
@@ -180,6 +180,7 @@
 		3810DFF522DE1643000EF76E /* RedZebraShared */ = {
 			isa = PBXGroup;
 			children = (
+				387410012297379500FCD187 /* IntExtension.swift */,
 				38A2819D2295DC8900AD0B4D /* WordCount.swift */,
 				38FE6AB322F34772009B563F /* strikeThrough.swift */,
 				38327C252305635E0013DEE5 /* uppercase.swift */,
@@ -193,6 +194,7 @@
 		3810E00222DE1643000EF76E /* RedZebraSharedTests */ = {
 			isa = PBXGroup;
 			children = (
+				3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */,
 				3817666422CAA12D005920B8 /* WordCountTests.swift */,
 				38793BEC22F2F21600A26791 /* WordCountTests2.swift */,
 				38793BEE22F2F2AB00A26791 /* WordCountTests3.swift */,
@@ -285,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */,
-				387410012297379500FCD187 /* IntExtension.swift */,
 				38DEB06222CA978C000DD296 /* DocumentExtension.swift */,
 			);
 			path = Extensions;
@@ -305,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				38F5523322CAA08B00135C24 /* Info.plist */,
-				3817666222CAA0EF005920B8 /* IntAsFormattedStringTests.swift */,
 				385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */,
 			);
 			path = RedZebraTests;
@@ -504,6 +504,7 @@
 				38FE6AB622F347A2009B563F /* StrikeThroughTests.swift in Sources */,
 				38793BEF22F2F2AB00A26791 /* WordCountTests3.swift in Sources */,
 				389026D522DE1B280087F6F6 /* WordCountTests.swift in Sources */,
+				386F4393234795630082DD17 /* IntAsFormattedStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +538,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3817666322CAA0EF005920B8 /* IntAsFormattedStringTests.swift in Sources */,
 				385D2C1722F844BD00F0904E /* doesHaveExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import RedZebra
+@testable import RedZebraShared
 
 class IntAsFormattedStringTests: XCTestCase {
     

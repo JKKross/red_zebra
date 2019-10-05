@@ -30,10 +30,7 @@ class Document: UIDocument {
     }
     
     
-    override func contents(forType typeName: String) throws -> Any {
-        
-        return Data(text.utf8)
-    }
+    override func contents(forType typeName: String) throws -> Any { Data(text.utf8) }
     
     
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
@@ -41,7 +38,6 @@ class Document: UIDocument {
         guard let contents = contents as? Data else {
             throw DocumentHandlingError.couldNotLoad
         }
-        
         text = String(decoding: contents, as: UTF8.self)
     }
     

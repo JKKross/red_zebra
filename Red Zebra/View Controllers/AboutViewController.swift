@@ -38,6 +38,7 @@ class AboutViewController: CustomBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        aboutTheAppLabel.delegate = self
         aboutTheAppLabel.accessibilityLabel = "About the app"
         
         updateAboutTheAppTextView()
@@ -125,7 +126,7 @@ class AboutViewController: CustomBaseViewController {
 
 
 
-extension AboutViewController: MFMailComposeViewControllerDelegate {
+extension AboutViewController: MFMailComposeViewControllerDelegate, UITextViewDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
@@ -153,6 +154,14 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         }
         
         controller.dismiss(animated: true)
+    }
+    
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        // Added because default behavior of links in UITextViews in iOS13 does not respond to
+        // to taps by default
+        UIApplication.shared.open(URL, options: [:], completionHandler: nil)
+        return true
     }
     
 }

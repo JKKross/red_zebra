@@ -24,7 +24,7 @@ update some variable value or what have you...
 
 ### Branches:
 
-**Master** is the branch where all the new development is happening & it's version number should be close to the public beta.
+**Master** is the branch where all the new development is happening.
 
 The version that is on App Store is the "latest non-master branch" - for example: if there is branch named "**1.2.9**", that's the version that you can find on the App Store.
 **Master** is most likely a little bit ahead of the App Store version - given our example probably something like 1.3 or 1.2.10.

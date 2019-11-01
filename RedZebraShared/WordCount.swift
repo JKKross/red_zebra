@@ -16,16 +16,23 @@ public struct WordCount {
     
     public init(_ text: String) {
         
-        if text.count == 0 {
+        if text.isEmpty {
             return
         }
-        // count characters
-        self.bytes = text.utf8.count
-        self.characters = text.count
         
         var isInWord = false
         
         for i in text {
+            // count characters
+            self.characters += 1
+
+            // count bytes
+            if i.isASCII == false {
+                self.bytes += i.utf8.count
+            } else {
+                self.bytes += 1
+            }
+            
             // count lines
             if i.isNewline {
                 self.lines += 1

@@ -152,8 +152,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController, failedToImportDocumentAt documentURL: URL, error: Error?) {
-        
-        self.showErrorPopUp(message: "Unable to open file")
+        self.showErrorPopUp(message: "Unable to open file \(documentURL.lastPathComponent).\(documentURL.pathExtension)")
     }
     
     

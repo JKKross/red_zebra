@@ -33,8 +33,8 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(self.adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(self.adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(self.saveTheDocument), name: UIApplication.willResignActiveNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(self.saveTheDocument), name: UIApplication.willTerminateNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.saveAndClose), name: UIApplication.willResignActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.saveAndClose), name: UIApplication.willTerminateNotification, object: nil)
         
         textView.delegate = self
         
@@ -91,7 +91,7 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.saveTheDocument()
+        self.saveAndClose()
     }
     
     
@@ -212,7 +212,7 @@ extension DocumentViewController {
         let cut = UIKeyCommand(input: "x", modifierFlags: .command, action: #selector(doNothing))
         let copy = UIKeyCommand(input: "c", modifierFlags: .command, action: #selector(doNothing))
         let paste = UIKeyCommand(input: "v", modifierFlags: .command, action: #selector(doNothing))
-        let save = UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(saveTheDocument))
+        let save = UIKeyCommand(input: "s", modifierFlags: .command, action: #selector(saveAndClose))
         let closeWithoutSavingCmd = UIKeyCommand(input: "q", modifierFlags: .command, action: #selector(closeWithoutSaving))
         let saveAndClose = UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(dismissDocumentViewController))
         
@@ -237,7 +237,7 @@ extension DocumentViewController {
     }
     
     
-    @objc private func saveTheDocument() {
+    @objc private func saveAndClose() {
         
         guard self.saveWhileClosing else { return }
         guard self.document?.text != self.textView.text else { return }

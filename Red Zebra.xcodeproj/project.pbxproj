@@ -16,6 +16,7 @@
 		38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */; };
 		38327C262305635E0013DEE5 /* uppercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38327C252305635E0013DEE5 /* uppercase.swift */; };
 		38327C282305639C0013DEE5 /* lowercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38327C272305639C0013DEE5 /* lowercase.swift */; };
+		3838E24123845642007FA75A /* doesHaveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838E24023845641007FA75A /* doesHaveExtension.swift */; };
 		384F1E322213822500D35EFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E312213822500D35EFA /* AppDelegate.swift */; };
 		384F1E362213822500D35EFA /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E352213822500D35EFA /* DocumentViewController.swift */; };
 		384F1E382213822500D35EFA /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E372213822500D35EFA /* Document.swift */; };
@@ -23,7 +24,6 @@
 		384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E3E2213822600D35EFA /* LaunchScreen.storyboard */; };
 		38539CAD22983523005C5DD8 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38539CAC22983523005C5DD8 /* WebContent.swift */; };
 		385D2C1722F844BD00F0904E /* doesHaveExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */; };
-		385D2C1922F846FE00F0904E /* doesHaveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1822F846FE00F0904E /* doesHaveExtension.swift */; };
 		387305A922DE189200253AF0 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		387305AA22DE189500253AF0 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385143AE22CBD9BF00D169D7 /* Zalgo.swift */; };
 		387410022297379500FCD187 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
@@ -113,6 +113,7 @@
 		38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontChooserViewController.swift; sourceTree = "<group>"; };
 		38327C252305635E0013DEE5 /* uppercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uppercase.swift; sourceTree = "<group>"; };
 		38327C272305639C0013DEE5 /* lowercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lowercase.swift; sourceTree = "<group>"; };
+		3838E24023845641007FA75A /* doesHaveExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doesHaveExtension.swift; sourceTree = "<group>"; };
 		384F1E2E2213822500D35EFA /* RedZebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedZebra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384F1E312213822500D35EFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		384F1E352213822500D35EFA /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +124,6 @@
 		385143AE22CBD9BF00D169D7 /* Zalgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zalgo.swift; sourceTree = "<group>"; };
 		38539CAC22983523005C5DD8 /* WebContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContent.swift; sourceTree = "<group>"; };
 		385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doesHaveExtensionTests.swift; sourceTree = "<group>"; };
-		385D2C1822F846FE00F0904E /* doesHaveExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = doesHaveExtension.swift; path = "../../../../../my_projects/iOS_Projects/red_zebra/Red Zebra/util/doesHaveExtension.swift"; sourceTree = "<group>"; };
 		387410012297379500FCD187 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		38793BEC22F2F21600A26791 /* WordCountTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests2.swift; sourceTree = "<group>"; };
 		38793BEE22F2F2AB00A26791 /* WordCountTests3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests3.swift; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 			children = (
 				3809AED02232CC5E00296D38 /* CustomBaseViewController.swift */,
 				38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */,
-				385D2C1822F846FE00F0904E /* doesHaveExtension.swift */,
+				3838E24023845641007FA75A /* doesHaveExtension.swift */,
 				38B4CF812288C88200BBCCBA /* Extensions */,
 			);
 			path = util;
@@ -518,8 +518,8 @@
 				389026D322DE1AB50087F6F6 /* WordCount.swift in Sources */,
 				38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */,
 				38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */,
-				385D2C1922F846FE00F0904E /* doesHaveExtension.swift in Sources */,
 				38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */,
+				3838E24123845642007FA75A /* doesHaveExtension.swift in Sources */,
 				38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */,
 				38539CAD22983523005C5DD8 /* WebContent.swift in Sources */,
 				384F1E382213822500D35EFA /* Document.swift in Sources */,
@@ -603,6 +603,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RedZebraShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,6 +634,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = RedZebraShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

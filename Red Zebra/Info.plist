@@ -22,7 +22,7 @@
 				<string>public.text</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
@@ -38,7 +38,7 @@
 				<string>public.source-code</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
@@ -54,7 +54,7 @@
 				<string>public.script</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleRole</key>
@@ -70,7 +70,7 @@
 				<string>com.apple.property-list</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleRole</key>
@@ -86,7 +86,7 @@
 				<string>com.recordare.musicxml</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleRole</key>
@@ -102,7 +102,7 @@
 				<string>org.rust-lang.rust-source-code</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleRole</key>
@@ -118,7 +118,7 @@
 				<string>com.github.toml</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleRole</key>
@@ -134,7 +134,7 @@
 				<string>com.lock.lock</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleRole</key>
@@ -150,7 +150,7 @@
 				<string>com.yaml.yaml</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 		<dict>
 			<key>CFBundleRole</key>
@@ -166,7 +166,7 @@
 				<string>org.swift.gyb</string>
 			</array>
 			<key>NSUbiquitousDocumentUserActivityType</key>
-			<string>com.jankriz.RedZebra.openedDocumentUserActivity</string>
+			<string>com.jankriz.RedZebra.editing</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>

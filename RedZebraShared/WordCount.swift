@@ -7,37 +7,37 @@
 //
 
 public struct WordCount {
-    
-    public private(set) var words = 0
-    public private(set) var lines = 0
-    public private(set) var characters = 0
-    public private(set) var bytes = 0
-    
-    
+
+    public private(set) var words: UInt64 = 0
+    public private(set) var lines: UInt64 = 0
+    public private(set) var characters: UInt64 = 0
+    public private(set) var bytes: UInt64 = 0
+
+
     public init(_ text: String) {
-        
+
         if text.isEmpty {
             return
         }
-        
+
         var isInWord = false
-        
+
         for i in text {
             // count characters
             self.characters += 1
 
             // count bytes
             if i.isASCII == false {
-                self.bytes += i.utf8.count
+                self.bytes += UInt64(i.utf8.count)
             } else {
                 self.bytes += 1
             }
-            
+
             // count lines
             if i.isNewline {
                 self.lines += 1
             }
-            
+
             // count words
             if i.isWhitespace == false && isInWord == false {
                 self.words += 1
@@ -46,8 +46,8 @@ public struct WordCount {
                 isInWord = false
             }
         }
-        
-        
+
+
         if text.count > 1 && self.lines == 0 {
             // There may not be \n at the end of a single line,
             // but it's still one line
@@ -75,7 +75,7 @@ public struct WordCount {
             // For more info, see: https://stackoverflow.com/a/1761086/8742664
             self.lines += 1
         }
-        
+
     }
-    
+
 }

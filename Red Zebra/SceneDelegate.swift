@@ -13,18 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        if let userActivity = connectionOptions.userActivities.first ?? session.stateRestorationActivity {
-            // TODO: State restoration
-        }
-    }
-    
-    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) { }
+
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        
+
         guard !URLContexts.isEmpty else { return }
-        
+
         for urlContext in URLContexts {
             // For some reason, even if I select multiple documents in Files app,
             // tap "share" and pick "open in Red Zebra", URLContexts.count returns 1.
@@ -36,19 +30,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //
             // TODO: Figure out & fix...?
             guard urlContext.url.isFileURL else { return }
-            
+
             guard let documentBrowserViewController = window?.rootViewController as? DocumentBrowserViewController else { return }
-            
+
             documentBrowserViewController.revealDocument(at: urlContext.url, importIfNeeded: true) { (revealedDocumentURL, error) in
                 if let error = error {
                     documentBrowserViewController.showErrorPopUp(message: "Failed to reveal the document at URL \(urlContext.url) with error: '\(error)'")
                     return
                 }
-                
+
                 documentBrowserViewController.presentDocument(at: revealedDocumentURL!)
             }
         }
     }
-    
-    
+
+
 }

@@ -17,6 +17,7 @@ class Document: UIDocument {
     var text: String = ""
     
     override init(fileURL url: URL) {
+        let _ = url.startAccessingSecurityScopedResource()
         super.init(fileURL: url)
     }
     
@@ -27,6 +28,11 @@ class Document: UIDocument {
         let url     = tempDir.appendingPathComponent(fileName)
         
         super.init(fileURL: url)
+    }
+    
+    
+    deinit {
+        self.fileURL.stopAccessingSecurityScopedResource()
     }
     
     

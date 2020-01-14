@@ -22,7 +22,6 @@
 		384F1E382213822500D35EFA /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F1E372213822500D35EFA /* Document.swift */; };
 		384F1E3B2213822500D35EFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E392213822500D35EFA /* Main.storyboard */; };
 		384F1E402213822600D35EFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384F1E3E2213822600D35EFA /* LaunchScreen.storyboard */; };
-		38539CAD22983523005C5DD8 /* WebContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38539CAC22983523005C5DD8 /* WebContent.swift */; };
 		385D2C1722F844BD00F0904E /* doesHaveExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */; };
 		387305A922DE189200253AF0 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A2819D2295DC8900AD0B4D /* WordCount.swift */; };
 		387305AA22DE189500253AF0 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385143AE22CBD9BF00D169D7 /* Zalgo.swift */; };
@@ -39,8 +38,6 @@
 		38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C2F137222208BC004C29D1 /* AboutViewController.swift */; };
 		38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */; };
 		38D8EF062347CF3E00550C2E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387410012297379500FCD187 /* IntExtension.swift */; };
-		38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06222CA978C000DD296 /* DocumentExtension.swift */; };
-		38DEB06522CA993D000DD296 /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */; };
 		38E3C77322773FFA00FE4985 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E3C77222773FFA00FE4985 /* Assets.xcassets */; };
 		38FE6AB422F34772009B563F /* strikeThrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE6AB322F34772009B563F /* strikeThrough.swift */; };
 		38FE6AB622F347A2009B563F /* StrikeThroughTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FE6AB522F347A2009B563F /* StrikeThroughTests.swift */; };
@@ -122,7 +119,6 @@
 		384F1E3F2213822600D35EFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		384F1E412213822600D35EFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385143AE22CBD9BF00D169D7 /* Zalgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zalgo.swift; sourceTree = "<group>"; };
-		38539CAC22983523005C5DD8 /* WebContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContent.swift; sourceTree = "<group>"; };
 		385D2C1622F844BD00F0904E /* doesHaveExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doesHaveExtensionTests.swift; sourceTree = "<group>"; };
 		387410012297379500FCD187 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		38793BEC22F2F21600A26791 /* WordCountTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountTests2.swift; sourceTree = "<group>"; };
@@ -135,8 +131,6 @@
 		38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabBarViewController.swift; sourceTree = "<group>"; };
 		38C2F137222208BC004C29D1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		38D472262221C7EE0093B3D2 /* UserSettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsSingleton.swift; sourceTree = "<group>"; };
-		38DEB06222CA978C000DD296 /* DocumentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
-		38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
 		38E3C77222773FFA00FE4985 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F5522F22CAA08B00135C24 /* RedZebraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedZebraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F5523322CAA08B00135C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -258,7 +252,6 @@
 				384F1E352213822500D35EFA /* DocumentViewController.swift */,
 				38B9F13822468DFA0062372E /* SettingsTabBarViewController.swift */,
 				38280D9D222A6C1A00A6C990 /* FontChooserViewController.swift */,
-				38DEB06422CA993D000DD296 /* WebBrowserViewController.swift */,
 				38C2F137222208BC004C29D1 /* AboutViewController.swift */,
 				3809AED22232D02200296D38 /* LicenseViewController.swift */,
 			);
@@ -277,7 +270,6 @@
 		38A771A622199D1B00261429 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				38539CAC22983523005C5DD8 /* WebContent.swift */,
 				384F1E372213822500D35EFA /* Document.swift */,
 			);
 			path = Model;
@@ -287,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				380018E522972E6000FB6DF2 /* UIViewControllerExtension.swift */,
-				38DEB06222CA978C000DD296 /* DocumentExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -517,16 +508,13 @@
 				389026D422DE1AC40087F6F6 /* Zalgo.swift in Sources */,
 				389026D322DE1AB50087F6F6 /* WordCount.swift in Sources */,
 				38A771A32219530B00261429 /* DocumentBrowserViewController.swift in Sources */,
-				38DEB06322CA978C000DD296 /* DocumentExtension.swift in Sources */,
 				38B9F13922468DFA0062372E /* SettingsTabBarViewController.swift in Sources */,
 				3838E24123845642007FA75A /* doesHaveExtension.swift in Sources */,
 				38D472272221C7EE0093B3D2 /* UserSettingsSingleton.swift in Sources */,
-				38539CAD22983523005C5DD8 /* WebContent.swift in Sources */,
 				384F1E382213822500D35EFA /* Document.swift in Sources */,
 				38280D9E222A6C1A00A6C990 /* FontChooserViewController.swift in Sources */,
 				38C2F138222208BC004C29D1 /* AboutViewController.swift in Sources */,
 				387410022297379500FCD187 /* IntExtension.swift in Sources */,
-				38DEB06522CA993D000DD296 /* WebBrowserViewController.swift in Sources */,
 				3809AED12232CC5E00296D38 /* CustomBaseViewController.swift in Sources */,
 				3809AED32232D02200296D38 /* LicenseViewController.swift in Sources */,
 				384F1E362213822500D35EFA /* DocumentViewController.swift in Sources */,

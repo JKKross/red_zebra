@@ -15,7 +15,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     @IBOutlet var undoButtonLabel: UIBarButtonItem!
     @IBOutlet var redoButtonLabel: UIBarButtonItem!
     @IBOutlet var doneButtonLabel: UIBarButtonItem!
-    @IBOutlet var previewButtonLabel: UIBarButtonItem!
     @IBOutlet var moreButtonLabel: UIBarButtonItem!
     
     var document: Document?
@@ -48,15 +47,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
         redoButtonLabel.accessibilityLabel      = "Redo"
         doneButtonLabel.accessibilityLabel      = "Hide keyboard"
         moreButtonLabel.accessibilityLabel      = "More options"
-        
-        if self.document!.isHTML() {
-            previewButtonLabel.title              = "Preview"
-            previewButtonLabel.accessibilityLabel = "Preview \(document!.fileURL.lastPathComponent)"
-            previewButtonLabel.isEnabled          = true
-        } else {
-            previewButtonLabel.title     = ""
-            previewButtonLabel.isEnabled = false
-        }
     }
     
     
@@ -128,23 +118,6 @@ class DocumentViewController: CustomBaseViewController, UITextViewDelegate {
     
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         textView.resignFirstResponder()
-    }
-    
-    
-    
-    @IBAction func previewButton(_ sender: UIBarButtonItem) {
-        
-        if self.document!.isHTML() {
-            
-            let webBrowser = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebBrowserViewController") as! WebBrowserViewController
-            
-            webBrowser.modalPresentationStyle = .fullScreen
-            webBrowser.webContent = WebContent(data: self.textView.text, url: self.document?.fileURL)
-            
-            self.present(webBrowser, animated: true)
-            
-        }
-        
     }
     
     

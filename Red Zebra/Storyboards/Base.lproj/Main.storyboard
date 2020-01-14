@@ -58,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="License" id="pte-zb-bp6">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="dx0-4O-OW5">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="dx0-4O-OW5">
                                             <connections>
                                                 <action selector="backButtonTapped:" destination="neM-Oz-b0C" id="uxz-Vg-eZy"/>
                                             </connections>
@@ -116,7 +116,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="About" id="c1Q-hF-JMa">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="MyI-mp-63s">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="MyI-mp-63s">
                                             <connections>
                                                 <action selector="backButtonTapped:" destination="m28-uW-vhT" id="gOD-mZ-zJB"/>
                                             </connections>
@@ -276,7 +276,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Font" id="0mv-a4-9Ir">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="xXe-c3-xJC">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="xXe-c3-xJC">
                                             <connections>
                                                 <action selector="backButtonTapped:" destination="HXR-Vg-CuN" id="PZU-Gs-Mmr"/>
                                             </connections>

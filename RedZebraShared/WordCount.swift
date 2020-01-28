@@ -52,7 +52,7 @@ public struct WordCount {
             // There may not be \n at the end of a single line,
             // but it's still one line
             self.lines = 1
-        } else if text.last != "\n" && text.last != "\r" && text.last != "\0" {
+        } else if text.last != "\n" && text.last != "\r" && text.last != "\r\n" && text.last != "\0" {
             // This is more than peculiar:
             //
             // If you write something like this in Red Zebra or TextEdit:

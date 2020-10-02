@@ -148,6 +148,20 @@
 				<string>org.swift.gyb</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleRole</key>
+			<string>Editor</string>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeName</key>
+			<string>Jai</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.jai.jai</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
@@ -331,10 +345,23 @@
 			</dict>
 		</dict>
 		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+			</array>
 			<key>UTTypeDescription</key>
-			<string></string>
+			<string>Jai</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
+			<key>UTTypeIdentifier</key>
+			<string>org.jai.jai</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>jai</string>
+				</array>
+			</dict>
 		</dict>
 	</array>
 </dict>

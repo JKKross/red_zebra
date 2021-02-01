@@ -11,6 +11,11 @@
     <img src="https://img.shields.io/badge/UIKit-blue.svg" alt="UIKit"/>
   </p>
 
+<h2>THE APP IS NO LONGER MAINTAINED!!!</h2>
+
+Due to my personal issues with Apple, I decided to abandon this project. If anyone wants to "steal" the app, go for it. If you do, I'd appreciate some slight design changes & maybe an "honorable mention", but it's definitely not mandatory ;-)
+
+======================================================================================
 
 Hi there! This is Red Zebra - very simple text editor for iOS.
 It is heavily inspired by both [GNU's NANO](https://www.nano-editor.org) text editor and [louisdh's Textor](https://github.com/louisdh/textor).
